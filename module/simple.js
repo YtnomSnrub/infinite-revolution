@@ -4,12 +4,16 @@
  */
 
 // Import Modules
-import { PlayerActor } from "./actor/playerActor.js";
-import { PlayerActorSheet } from "./actor/playerActorSheet.js";
+import { ActorIR } from "./actor/entity.js";
+import { ActorSheetRevolver } from "./actor/revolver.js";
+import { ActorSheetVeil } from "./actor/veil.js";
+
 import { SimpleItem } from "./item.js";
 import { SimpleItemSheet } from "./itemSheet.js";
-import { preloadHandlebarsTemplates } from "./templates.js";
+
 import { SimpleToken, SimpleTokenDocument } from "./token.js";
+
+import { preloadHandlebarsTemplates } from "./templates.js";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -31,19 +35,20 @@ Hooks.once("init", async function () {
   };
 
   game.infiniteRevolution = {
-    PlayerActor,
+    ActorIR,
     useEntity: foundry.utils.isNewerVersion("9", game.version ?? game.data.version)
   };
 
   // Define custom Document classes
-  CONFIG.Actor.documentClass = PlayerActor;
+  CONFIG.Actor.documentClass = ActorIR;
   CONFIG.Item.documentClass = SimpleItem;
   CONFIG.Token.documentClass = SimpleTokenDocument;
   CONFIG.Token.objectClass = SimpleToken;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("infinite-revolution", PlayerActorSheet, { makeDefault: true });
+  Actors.registerSheet("infinite-revolution", ActorSheetRevolver, { types: ["revolver"], makeDefault: true });
+  Actors.registerSheet("infinite-revolution", ActorSheetVeil, { types: ["veil"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("infinite-revolution", SimpleItemSheet, { makeDefault: true });
 

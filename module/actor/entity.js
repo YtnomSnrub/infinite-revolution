@@ -4,27 +4,19 @@ import { EntitySheetHelper } from "../helper.js";
  * Extend the base Actor document to support attributes and groups with a custom template creation dialog.
  * @extends {Actor}
  */
-export class PlayerActor extends Actor {
+export class ActorIR extends Actor {
   /** @override */
   static async createDialog(data = {}, options = {}) {
     return EntitySheetHelper.createDialog.call(this, data, options);
-  }
-
-  /* -------------------------------------------- */
-
-  /**
-   * Is this Actor used as a template for other Actors?
-   * @type {boolean}
-   */
-  get isTemplate() {
-    return !!this.getFlag("infinite-revolution", "isTemplate");
   }
 
   /** @inheritdoc */
   async _preCreate(data, options, user) {
     await super._preCreate(data, options, user);
     // Player character configuration
-    this.data.token.update({ actorLink: true });
+    if (this.type === "revolver") {
+      this.data.token.update({ actorLink: true });
+    }
   }
 
   /* -------------------------------------------- */

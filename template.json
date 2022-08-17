@@ -1,9 +1,11 @@
 {
   "Actor": {
     "types": [
-      "player"
+      "revolver",
+      "veil"
     ],
-    "player": {
+    "revolver": {
+      "speed": 0,
       "biography": "",
       "attributes": {
         "hot": {
@@ -29,9 +31,11 @@
         "powers": [],
         "overdrive": ""
       },
-      "speed": 0,
       "driveStress": 0,
       "burnScarCount": 0
+    },
+    "veil": {
+      "speed": 0
     }
   },
   "Item": {

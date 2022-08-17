@@ -11,14 +11,10 @@ export class EntitySheetHelper {
 
     // Identify the template Actor types
     const collection = game.collections.get(this.documentName);
-    const templates = collection.filter(a => a.getFlag("infinite-revolution", "isTemplate"));
-    const defaultType = this.metadata.types[0];
     const types = {
-      [defaultType]: game.i18n.localize("SIMPLE.NoTemplate")
+      "revolver": game.i18n.localize("IR.ActorTypeRevolver"),
+      "veil": game.i18n.localize("IR.ActorTypeVeil"),
     };
-    for (let a of templates) {
-      types[a.id] = a.name;
-    }
 
     // Render the document creation form
     const useEntity = game.infiniteRevolution.useEntity;
@@ -28,7 +24,7 @@ export class EntitySheetHelper {
       folder: data.folder,
       folders: folders,
       hasFolders: folders.length > 1,
-      type: data.type || templates[0]?.id || "",
+      type: data.type || types[0] || "",
       types: types,
       hasTypes: true
     });
