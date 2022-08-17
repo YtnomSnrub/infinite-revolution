@@ -1,0 +1,28 @@
+{
+  "name": "infinite-revolution",
+  "title": "Infinite Revolution",
+  "description": "Infinite revolution.",
+  "version": "0.0.1",
+  "minimumCoreVersion": "0.8.9",
+  "compatibleCoreVersion": "9",
+  "author": "Infinite Revolution",
+  "esmodules": [
+    "module/simple.js"
+  ],
+  "styles": [
+    "styles/simple.css"
+  ],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 1,
+  "gridUnits": "",
+  "primaryTokenAttribute": "speed",
+  "url": "https://github.com/YtnomSnrub/infinite-revolution/",
+  "license": "LICENSE"
+}

@@ -1,0 +1,246 @@
+:root {
+  --color-primary: #fdc000;
+  --color-null: #d6b100;
+  --color-weak: #fedf00;
+  --color-strong: #ffef78;
+  --color-crit: #fff3b6;
+  --color-hot: #00c2e2;
+  --color-quick: #c4db00;
+  --color-bright: #ff008a;
+  --color-bg-window: #202020;
+}
+.infinite-revolution {
+  --color-border-light-primary: rgba(255, 255, 255, 0.6);
+  --color-border-light-secondary: rgba(255, 255, 255, 0.5);
+  --color-border-light-tertiary: rgba(255, 255, 255, 0.4);
+  --color-border-light-readonly: rgba(255, 255, 255, 0.2);
+  /* Sheet Tabs */
+  /* Items List */
+}
+.infinite-revolution input[type="text"],
+.infinite-revolution input[type="number"],
+.infinite-revolution input[type="password"],
+.infinite-revolution input[type="date"],
+.infinite-revolution input[type="time"] {
+  color: var(--color-text-light-highlight);
+}
+.infinite-revolution input[type="text"].input-core,
+.infinite-revolution input[type="number"].input-core,
+.infinite-revolution input[type="password"].input-core,
+.infinite-revolution input[type="date"].input-core,
+.infinite-revolution input[type="time"].input-core {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-bg-window);
+  font-size: 2em;
+  height: auto;
+  padding: 0 5px;
+  border: none;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.infinite-revolution input[type="text"]:focus,
+.infinite-revolution input[type="number"]:focus,
+.infinite-revolution input[type="password"]:focus,
+.infinite-revolution input[type="date"]:focus,
+.infinite-revolution input[type="time"]:focus {
+  box-shadow: 0 0 5px var(--color-primary);
+}
+.infinite-revolution input[type="text"]:read-only,
+.infinite-revolution input[type="number"]:read-only,
+.infinite-revolution input[type="password"]:read-only,
+.infinite-revolution input[type="date"]:read-only,
+.infinite-revolution input[type="time"]:read-only {
+  border-style: dotted;
+}
+.infinite-revolution .window-content {
+  height: 100%;
+  padding: 5px;
+  overflow-y: hidden;
+  background: none;
+  background-color: var(--color-bg-window);
+  color: var(--color-text-light-highlight);
+}
+.infinite-revolution form {
+  height: 100%;
+}
+.infinite-revolution .sheet-header {
+  flex: 0 100px;
+  margin-bottom: 10px;
+}
+.infinite-revolution .sheet-header .profile-img {
+  height: 100px;
+  margin-right: 10px;
+  border: none;
+}
+.infinite-revolution .sheet-header h1.charname {
+  height: 50px;
+  flex: 0;
+}
+.infinite-revolution .sheet-header h1.charname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.infinite-revolution .header-fields {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.infinite-revolution .attribute-list {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.infinite-revolution .property {
+  flex: 1;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.infinite-revolution .property input {
+  width: 100px;
+  height: 28px;
+}
+.infinite-revolution .property label {
+  display: block;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+.infinite-revolution .attribute label {
+  cursor: pointer;
+}
+.infinite-revolution .attribute label:hover {
+  text-decoration: underline;
+}
+.infinite-revolution .attribute.attribute-hot {
+  border-color: var(--color-hot);
+}
+.infinite-revolution .attribute.attribute-hot label {
+  color: var(--color-hot);
+}
+.infinite-revolution .attribute.attribute-quick label {
+  color: var(--color-quick);
+}
+.infinite-revolution .attribute.attribute-bright label {
+  color: var(--color-bright);
+}
+.infinite-revolution .core-section {
+  padding: 10px 10px;
+  border-left: 4px solid var(--color-primary);
+}
+.infinite-revolution .core-section:last-child {
+  border-image: linear-gradient(to bottom, var(--color-primary), rgba(0, 0, 0, 0)) 1 100%;
+}
+.infinite-revolution .core-section-divider {
+  border-bottom: 4px solid var(--color-primary);
+  border-image: linear-gradient(to right, var(--color-primary), rgba(0, 0, 0, 0)) 100% 1;
+}
+.infinite-revolution .core-property {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 0;
+}
+.infinite-revolution .core-property label {
+  flex: 0 80px;
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-right: 4px;
+}
+.infinite-revolution .core-property input {
+  flex: 1;
+}
+.infinite-revolution .core-property-group {
+  display: flex;
+  flex-direction: row;
+}
+.infinite-revolution .core-property-group > :not(:last-child) {
+  margin-right: 12px;
+}
+.infinite-revolution .core-property-list {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.infinite-revolution .core-section-heading {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.infinite-revolution .core-section-editor {
+  min-height: 50px;
+  height: 100%;
+  position: relative;
+}
+.infinite-revolution .tabs {
+  flex: 0 0 40px;
+  border-top: 1px solid #AAA;
+  border-bottom: 1px solid #AAA;
+}
+.infinite-revolution .tabs .item {
+  line-height: 40px;
+  font-weight: bold;
+}
+.infinite-revolution .tabs .item.active {
+  text-decoration: underline;
+  text-shadow: none;
+}
+.infinite-revolution .sheet-body {
+  overflow: hidden;
+}
+.infinite-revolution .sheet-body .tab {
+  height: 100%;
+  overflow-y: auto;
+}
+.infinite-revolution .editor,
+.infinite-revolution .editor-content {
+  height: 100%;
+}
+.infinite-revolution .item-list {
+  list-style: none;
+  margin: 7px 0;
+  padding: 0;
+  overflow-y: auto;
+}
+.infinite-revolution .item-list .item {
+  min-height: 30px;
+  line-height: 24px;
+  padding: 3px 0;
+  border-bottom: 1px solid #BBB;
+  align-items: stretch;
+}
+.infinite-revolution .item-list .item img {
+  flex: 0 0 24px;
+  margin-right: 5px;
+}
+.infinite-revolution .item-list .item-name {
+  margin: 0;
+}
+.infinite-revolution .item-list .item-controls {
+  flex: 0 0 36px;
+}
+.infinite-revolution .item-list .item-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  flex: 2;
+  justify-content: flex-start;
+}
+.infinite-revolution .item-list .item-button {
+  line-height: 1;
+  font-size: 11px;
+  flex: none;
+  width: auto;
+}
+.infinite-revolution.sheet.actor {
+  min-width: 560px;
+  min-height: 420px;
+}
+.infinite-revolution.sheet.item {
+  min-width: 460px;
+  min-height: 400px;
+}
