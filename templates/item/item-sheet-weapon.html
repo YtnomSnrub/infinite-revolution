@@ -1,0 +1,42 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="100" width="100" />
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+            </h1>
+        </div>
+    </header>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        <div class="sheet-property-group">
+            <div class="sheet-property">
+                <label>{{localize "IR.WeaponRangeType"}}</label>
+                <select name="data.rangeType">
+                    {{#select systemData.rangeType}}
+                    <option value="melee">{{localize "IR.WeaponRangeTypeMelee"}}</option>
+                    <option value="ranged">{{localize "IR.WeaponRangeTypeRanged"}}</option>
+                    {{/select}}
+                </select>
+            </div>
+            <div class="sheet-property">
+                <label>{{localize "IR.WeaponBand"}}</label>
+                <input type="text" name="data.band" value="{{systemData.band}}" />
+            </div>
+        </div>
+        <div class="sheet-property-group">
+            <div class="sheet-property">
+                <label>{{localize "IR.WeaponHits"}}</label>
+                <input type="text" name="data.hits" value="{{systemData.hits}}" />
+            </div>
+            <div class="sheet-property">
+                <label>{{localize "IR.WeaponHarm"}}</label>
+                <input type="text" name="data.harm" value="{{systemData.harm}}" />
+            </div>
+        </div>
+    </section>
+
+</form>

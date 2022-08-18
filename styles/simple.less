@@ -50,6 +50,14 @@
     }
   }
 
+  select {
+    color: var(--color-text-light-highlight);
+
+    option {
+      background-color: var(--color-bg-window);
+    }
+  }
+
   .window-content {
     height: 100%;
     padding: 5px;
@@ -147,7 +155,7 @@
     }
   }
 
-  .core-section {
+  .sheet-section {
     padding: 10px 10px;
     border-left: 4px solid var(--color-primary);
 
@@ -156,12 +164,12 @@
     }
   }
 
-  .core-section-divider {
+  .sheet-section-divider {
     border-bottom: 4px solid var(--color-primary);
     border-image: linear-gradient(to right, var(--color-primary), rgba(0, 0, 0, 0)) 100% 1;
   }
 
-  .core-property {
+  .sheet-property {
     flex: 1;
     display: flex;
     flex-direction: row;
@@ -175,12 +183,12 @@
       margin-right: 4px;
     }
 
-    input {
+    input, select {
       flex: 1;
     }
   }
 
-  .core-property-group {
+  .sheet-property-group {
     display: flex;
     flex-direction: row;
 
@@ -189,21 +197,31 @@
     }
   }
 
-  .core-property-list {
+  .sheet-property-list {
     display: flex;
     flex-direction: row;
     margin-top: 10px;
   }
 
-  .core-section-heading {
+  .sheet-section-heading {
+    flex: 1;
+
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 1.25em;
+    margin: 0;
   }
 
-  .core-section-editor {
+  .sheet-section-editor {
     min-height: 50px;
     height: 100%;
     position: relative;
+  }
+
+  .sheet-heading-toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
   /* Sheet Tabs */
@@ -237,48 +255,53 @@
     height: 100%;
   }
 
-  /* Items List */
-  .item-list {
-    list-style: none;
-    margin: 7px 0;
-    padding: 0;
-    overflow-y: auto;
+  .editor .editor-content {
+    min-height: 50px;
+  }
 
-    .item {
-      min-height: 30px;
-      line-height: 24px;
-      padding: 3px 0;
-      border-bottom: 1px solid #BBB;
-      align-items: stretch;
+  .tox {
+    min-height: 200px;
+  }
 
-      img {
-        flex: 0 0 24px;
-        margin-right: 5px;
-      }
+  .tox-edit-area {
+    background-color: #fafafa;
+    padding: 0 8px;
+  }
+
+  .editor .editor-edit {
+    color: var(--color-bg-window);
+  }
+
+  .item-table {
+    text-align: left;
+
+    tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.05);
     }
 
-    .item-name {
-      margin: 0;
+    td {
+      padding: 0.25em 0;
+    }
+
+    td:first-child {
+      padding-left: 0.25em;
+    }
+
+    td:last-child {
+      padding-right: 0.25em;
+    }
+
+    img {
+      border: none;
+      vertical-align: middle;
     }
 
     .item-controls {
-      flex: 0 0 36px;
+      text-align: right;
     }
 
-    .item-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      align-items: center;
-      flex: 2;
-      justify-content: flex-start;
-    }
-
-    .item-button {
-      line-height: 1;
-      font-size: 11px;
-      flex: none;
-      width: auto;
+    .item-control {
+      padding-right: 5px;
     }
   }
 }

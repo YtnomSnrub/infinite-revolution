@@ -29,7 +29,10 @@
           "content": ""
         },
         "powers": [],
-        "overdrive": ""
+        "overdrive": {
+          "title": "",
+          "content": ""
+        }
       },
       "driveStress": 0,
       "burnScarCount": 0
@@ -40,13 +43,20 @@
   },
   "Item": {
     "types": [
-      "item"
+      "weapon"
     ],
-    "item": {
-      "description": "",
-      "quantity": 1,
-      "attributes": {},
-      "groups": {}
+    "weapon": {
+      "category": "projected",
+      "projectedData": {
+        "pattern": "",
+        "patternTrait": "",
+        "type": ""
+      },
+      "rangeType": "melee",
+      "band": "M",
+      "hits": "1",
+      "harm": "1",
+      "tags": []
     }
   }
 }

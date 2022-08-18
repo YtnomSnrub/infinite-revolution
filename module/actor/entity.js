@@ -15,7 +15,7 @@ export class ActorIR extends Actor {
     await super._preCreate(data, options, user);
     // Player character configuration
     if (this.type === "revolver") {
-      this.data.token.update({ actorLink: true });
+      this.data.token.update({ actorLink: true, disposition: 1 });
     }
   }
 

@@ -15,7 +15,6 @@
   --color-border-light-tertiary: rgba(255, 255, 255, 0.4);
   --color-border-light-readonly: rgba(255, 255, 255, 0.2);
   /* Sheet Tabs */
-  /* Items List */
 }
 .infinite-revolution input[type="text"],
 .infinite-revolution input[type="number"],
@@ -53,6 +52,12 @@
 .infinite-revolution input[type="date"]:read-only,
 .infinite-revolution input[type="time"]:read-only {
   border-style: dotted;
+}
+.infinite-revolution select {
+  color: var(--color-text-light-highlight);
+}
+.infinite-revolution select option {
+  background-color: var(--color-bg-window);
 }
 .infinite-revolution .window-content {
   height: 100%;
@@ -127,53 +132,62 @@
 .infinite-revolution .attribute.attribute-bright label {
   color: var(--color-bright);
 }
-.infinite-revolution .core-section {
+.infinite-revolution .sheet-section {
   padding: 10px 10px;
   border-left: 4px solid var(--color-primary);
 }
-.infinite-revolution .core-section:last-child {
+.infinite-revolution .sheet-section:last-child {
   border-image: linear-gradient(to bottom, var(--color-primary), rgba(0, 0, 0, 0)) 1 100%;
 }
-.infinite-revolution .core-section-divider {
+.infinite-revolution .sheet-section-divider {
   border-bottom: 4px solid var(--color-primary);
   border-image: linear-gradient(to right, var(--color-primary), rgba(0, 0, 0, 0)) 100% 1;
 }
-.infinite-revolution .core-property {
+.infinite-revolution .sheet-property {
   flex: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 4px 0;
 }
-.infinite-revolution .core-property label {
+.infinite-revolution .sheet-property label {
   flex: 0 80px;
   color: var(--color-primary);
   font-weight: bold;
   margin-right: 4px;
 }
-.infinite-revolution .core-property input {
+.infinite-revolution .sheet-property input,
+.infinite-revolution .sheet-property select {
   flex: 1;
 }
-.infinite-revolution .core-property-group {
+.infinite-revolution .sheet-property-group {
   display: flex;
   flex-direction: row;
 }
-.infinite-revolution .core-property-group > :not(:last-child) {
+.infinite-revolution .sheet-property-group > :not(:last-child) {
   margin-right: 12px;
 }
-.infinite-revolution .core-property-list {
+.infinite-revolution .sheet-property-list {
   display: flex;
   flex-direction: row;
   margin-top: 10px;
 }
-.infinite-revolution .core-section-heading {
+.infinite-revolution .sheet-section-heading {
+  flex: 1;
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 1.25em;
+  margin: 0;
 }
-.infinite-revolution .core-section-editor {
+.infinite-revolution .sheet-section-editor {
   min-height: 50px;
   height: 100%;
   position: relative;
+}
+.infinite-revolution .sheet-heading-toolbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .infinite-revolution .tabs {
   flex: 0 0 40px;
@@ -199,42 +213,43 @@
 .infinite-revolution .editor-content {
   height: 100%;
 }
-.infinite-revolution .item-list {
-  list-style: none;
-  margin: 7px 0;
-  padding: 0;
-  overflow-y: auto;
+.infinite-revolution .editor .editor-content {
+  min-height: 50px;
 }
-.infinite-revolution .item-list .item {
-  min-height: 30px;
-  line-height: 24px;
-  padding: 3px 0;
-  border-bottom: 1px solid #BBB;
-  align-items: stretch;
+.infinite-revolution .tox {
+  min-height: 200px;
 }
-.infinite-revolution .item-list .item img {
-  flex: 0 0 24px;
-  margin-right: 5px;
+.infinite-revolution .tox-edit-area {
+  background-color: #fafafa;
+  padding: 0 8px;
 }
-.infinite-revolution .item-list .item-name {
-  margin: 0;
+.infinite-revolution .editor .editor-edit {
+  color: var(--color-bg-window);
 }
-.infinite-revolution .item-list .item-controls {
-  flex: 0 0 36px;
+.infinite-revolution .item-table {
+  text-align: left;
 }
-.infinite-revolution .item-list .item-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  flex: 2;
-  justify-content: flex-start;
+.infinite-revolution .item-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
 }
-.infinite-revolution .item-list .item-button {
-  line-height: 1;
-  font-size: 11px;
-  flex: none;
-  width: auto;
+.infinite-revolution .item-table td {
+  padding: 0.25em 0;
+}
+.infinite-revolution .item-table td:first-child {
+  padding-left: 0.25em;
+}
+.infinite-revolution .item-table td:last-child {
+  padding-right: 0.25em;
+}
+.infinite-revolution .item-table img {
+  border: none;
+  vertical-align: middle;
+}
+.infinite-revolution .item-table .item-controls {
+  text-align: right;
+}
+.infinite-revolution .item-table .item-control {
+  padding-right: 5px;
 }
 .infinite-revolution.sheet.actor {
   min-width: 560px;

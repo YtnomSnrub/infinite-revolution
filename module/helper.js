@@ -11,9 +11,15 @@ export class EntitySheetHelper {
 
     // Identify the template Actor types
     const collection = game.collections.get(this.documentName);
+    const collectionType = this.metadata.collection;
     const types = {
-      "revolver": game.i18n.localize("IR.ActorTypeRevolver"),
-      "veil": game.i18n.localize("IR.ActorTypeVeil"),
+      "actors": {
+        "revolver": game.i18n.localize("IR.ActorTypeRevolver"),
+        "veil": game.i18n.localize("IR.ActorTypeVeil"),
+      },
+      "items": {
+        "weapon": game.i18n.localize("IR.ItemTypeWeapon"),
+      }
     };
 
     // Render the document creation form
@@ -24,8 +30,8 @@ export class EntitySheetHelper {
       folder: data.folder,
       folders: folders,
       hasFolders: folders.length > 1,
-      type: data.type || types[0] || "",
-      types: types,
+      type: data.type || types[collectionType][0] || "",
+      types: types[collectionType],
       hasTypes: true
     });
 
@@ -35,7 +41,6 @@ export class EntitySheetHelper {
       content: html,
       label: title,
       callback: html => {
-
         // Get the form data
         const form = html[0].querySelector("form");
         const fd = new FormDataExtended(form);

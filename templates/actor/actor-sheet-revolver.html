@@ -36,30 +36,30 @@
         {{!-- Core Tab --}}
         <div class="tab core" data-group="primary" data-tab="core">
             <input type="text" name="data.core.name" value="{{systemData.core.name}}" class="input-core" />
-            <div class="core-section">
+            <div class="sheet-section">
                 {{!-- Core Properties --}}
-                <div class="core-property-group">
-                    <div class="core-property">
+                <div class="sheet-property-group">
+                    <div class="sheet-property">
                         <label>{{localize "IR.CorePattern"}}</label>
                         <input type="text" name="data.core.pattern" value="{{systemData.core.pattern}}" />
                     </div>
-                    <div class="core-property">
+                    <div class="sheet-property">
                         <label>{{localize "IR.CoreWeight"}}</label>
                         <input type="number" name="data.core.weight" value="{{systemData.core.weight}}" />
                     </div>
                 </div>
-                <div class="core-property-group">
-                    <div class="core-property">
+                <div class="sheet-property-group">
+                    <div class="sheet-property">
                         <label>{{localize "IR.CoreAccel"}}</label>
                         <input type="number" name="data.core.accel" value="{{systemData.core.accel}}" />
                     </div>
-                    <div class="core-property">
+                    <div class="sheet-property">
                         <label>{{localize "IR.CoreBurnGate"}}</label>
                         <input type="number" name="data.core.burnGate" value="{{systemData.core.burnGate}}" />
                     </div>
                 </div>
                 {{!-- Speed and Drive Stress --}}
-                <div class="core-property-list">
+                <div class="sheet-property-list">
                     <div class="property">
                         <label>{{localize "IR.CoreSpeed"}}</label>
                         <input type="number" name="data.speed" value="{{systemData.speed}}" />
@@ -72,9 +72,63 @@
                     </div>
                 </div>
             </div>
-            <div class="core-section-divider"></div>
-            <div class="core-section">
-                <h3 class="core-section-heading">Passive</h3>
+            <div class="sheet-section-divider"></div>
+            <div class="sheet-section">
+                <div class="sheet-heading-toolbar">
+                    <h3 class="sheet-section-heading">Weapons</h3>
+                    <a class="weapon-control" title="{{ localize 'IR.ItemCreate' }}" data-action="create"><i class="fas fa-plus"></i></a>
+                </div>
+                <table class="item-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Range</th>
+                            <th>Band</th>
+                            <th>Hits</th>
+                            <th>Harm</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each data.items as |item id|}}
+                        <tr data-item-id="{{item._id}}" class="item">
+                            <td>
+                                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                            </td>
+                            <td>{{item.name}}</td>
+                            <td>
+                                {{#if (eq item.data.rangeType "melee")}}
+                                <img src="icons/svg/sword.svg" title="Melee" width="24" height="24" />
+                                {{else}}
+                                <img src="icons/svg/target.svg" title="Melee" width="24" height="24" />
+                                {{/if}}
+                            </td>
+                            <td>{{item.data.band}}</td>
+                            <td>{{item.data.hits}}</td>
+                            <td>{{item.data.harm}}</td>
+                            <td class="item-controls">
+                                <a class="item-control weapon-control" title="{{ localize 'IR.ItemEdit' }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                                <a class="item-control weapon-control" title="{{ localize 'IR.ItemDelete' }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="sheet-section-divider"></div>
+            <div class="sheet-section">
+                <h3 class="sheet-section-heading">Passive</h3>
+                <div class="editor-wrapper">
+                    {{editor content=systemData.passive.content target="data.passive.content" button=true owner=owner editable=editable}}
+                </div>
+            </div>
+            <div class="sheet-section-divider"></div>
+            <div class="sheet-section">
+                <h3 class="sheet-section-heading">Overdrive</h3>
+                <div class="editor-wrapper">
+                    {{editor content=systemData.overdrive.content target="data.overdrive.content" button=true owner=owner editable=editable}}
+                </div>
             </div>
         </div>
 

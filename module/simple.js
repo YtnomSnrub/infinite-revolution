@@ -8,8 +8,8 @@ import { ActorIR } from "./actor/entity.js";
 import { ActorSheetRevolver } from "./actor/revolver.js";
 import { ActorSheetVeil } from "./actor/veil.js";
 
-import { SimpleItem } from "./item.js";
-import { SimpleItemSheet } from "./itemSheet.js";
+import { ItemIR } from "./item/item.js";
+import { ItemSheetWeapon } from "./item/weapon.js";
 
 import { SimpleToken, SimpleTokenDocument } from "./token.js";
 
@@ -41,7 +41,7 @@ Hooks.once("init", async function () {
 
   // Define custom Document classes
   CONFIG.Actor.documentClass = ActorIR;
-  CONFIG.Item.documentClass = SimpleItem;
+  CONFIG.Item.documentClass = ItemIR;
   CONFIG.Token.documentClass = SimpleTokenDocument;
   CONFIG.Token.objectClass = SimpleToken;
 
@@ -50,7 +50,7 @@ Hooks.once("init", async function () {
   Actors.registerSheet("infinite-revolution", ActorSheetRevolver, { types: ["revolver"], makeDefault: true });
   Actors.registerSheet("infinite-revolution", ActorSheetVeil, { types: ["veil"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("infinite-revolution", SimpleItemSheet, { makeDefault: true });
+  Items.registerSheet("infinite-revolution", ItemSheetWeapon, { types: ["weapon"], makeDefault: true });
 
   /**
    * Slugify a string.
