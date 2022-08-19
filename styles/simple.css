@@ -390,11 +390,26 @@
 .chat-message .message-header {
   color: var(--color-text-light-primary);
 }
-.chat-message h4.action {
+.chat-message .message-header h4.action {
   font-weight: 700;
   line-height: 1.5em;
   margin: 0;
 }
-.chat-message span.info {
+.chat-message .message-header span.info {
   line-height: 0.75rem;
+}
+.chat-message .check-hit {
+  font-weight: bold;
+}
+.chat-message .check-hit.hit-null {
+  color: var(--color-null);
+}
+.chat-message .check-hit.hit-weak {
+  color: var(--color-weak);
+}
+.chat-message .check-hit.hit-strong {
+  color: var(--color-strong);
+}
+.chat-message .check-hit.hit-crit {
+  color: var(--color-crit);
 }

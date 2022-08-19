@@ -480,15 +480,35 @@
 
   .message-header {
     color: var(--color-text-light-primary);
+
+    h4.action {
+      font-weight: 700;
+      line-height: 1.5em;
+      margin: 0;
+    }
+  
+    span.info {
+      line-height: .75rem;
+    }
   }
 
-  h4.action {
-    font-weight: 700;
-    line-height: 1.5em;
-    margin: 0;
-  }
+  .check-hit {
+    font-weight: bold;
 
-  span.info {
-    line-height: .75rem;
+    &.hit-null {
+      color: var(--color-null);
+    }
+  
+    &.hit-weak {
+      color: var(--color-weak);
+    }
+  
+    &.hit-strong {
+      color: var(--color-strong);
+    }
+  
+    &.hit-crit {
+      color: var(--color-crit);
+    }
   }
 }

@@ -8,15 +8,20 @@ export class RollHelper {
 
         // Calculate hit type
         let hitType = game.i18n.localize("IR.CheckResultNull");
-        if (strongHits >= 2)
+        let hitClass = "hit-null";
+        if (strongHits >= 2) {
             hitType = game.i18n.localize("IR.CheckResultCrit");
-        else if (strongHits >= 1)
+            hitClass = "hit-crit";
+        } else if (strongHits >= 1) {
             hitType = game.i18n.localize("IR.CheckResultStrong");
-        else if (weakHits >= 1)
+            hitClass = "hit-strong";
+        } else if (weakHits >= 1) {
             hitType = game.i18n.localize("IR.CheckResultWeak");
+            hitClass = "hit-weak";
+        }
 
         let html = "";
-        html += `<p>${hitType}</p>`;
+        html += `<p class="check-hit ${hitClass}">${hitType}</p>`;
         html += await roll.getTooltip();
 
         if (htmlContent) {
