@@ -30,6 +30,11 @@
   "IR.ItemDelete": "Delete Item",
   "IR.ItemNew": "New Item",
   
+  "IR.WeaponCategory": "Category",
+  "IR.WeaponCategoryProjected": "Projected",
+  "IR.WeaponCategoryMounted": "Mounted",
+  "IR.WeaponProjectedPattern": "Pattern",
+  "IR.WeaponProjectedType": "Type",
   "IR.WeaponRangeType": "Range",
   "IR.WeaponRangeTypeMelee": "Melee",
   "IR.WeaponRangeTypeRanged": "Ranged",

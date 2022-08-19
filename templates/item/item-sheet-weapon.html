@@ -7,6 +7,15 @@
             <h1 class="charname">
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
             </h1>
+            <div class="sheet-property">
+                <label>{{localize "IR.WeaponCategory"}}</label>
+                <select name="data.category">
+                    {{#select systemData.category}}
+                    <option value="projected">{{localize "IR.WeaponCategoryProjected"}}</option>
+                    <option value="mounted">{{localize "IR.WeaponCategoryMounted"}}</option>
+                    {{/select}}
+                </select>
+            </div>
         </div>
     </header>
 
@@ -37,6 +46,22 @@
                 <input type="text" name="data.harm" value="{{systemData.harm}}" />
             </div>
         </div>
+        {{#if (eq systemData.category "projected")}}
+        <div class="sheet-property-group">
+            <div class="sheet-property">
+                <label>{{localize "IR.WeaponProjectedPattern"}}</label>
+                <input type="text" name="data.projectedData.pattern" value="{{systemData.projectedData.pattern}}" />
+            </div>
+            <div class="sheet-property">
+                <label>{{localize "IR.WeaponProjectedType"}}</label>
+                <input type="text" name="data.projectedData.type" value="{{systemData.projectedData.type}}" />
+            </div>
+        </div>
+        <h3 class="sheet-subheading">Pattern Trait</h3>
+        <div class="editor-wrapper-flex">
+            {{editor content=systemData.projectedData.patternTrait target="data.projectedData.patternTrait" button=true owner=owner editable=editable}}
+        </div>
+        {{/if}}
     </section>
 
 </form>

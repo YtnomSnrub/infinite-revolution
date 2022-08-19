@@ -25,6 +25,7 @@
 .infinite-revolution select {
   color: var(--color-text-light-highlight);
   background-color: rgba(0, 0, 0, 0.1);
+  padding: 0 3px;
 }
 .infinite-revolution input[type="text"].input-core,
 .infinite-revolution input[type="number"].input-core,
@@ -64,6 +65,9 @@
 }
 .infinite-revolution button:hover {
   box-shadow: 0 0 5px var(--color-primary);
+}
+.infinite-revolution a:hover {
+  text-shadow: 0 0 8px var(--color-primary);
 }
 .infinite-revolution input[type="text"]:read-only,
 .infinite-revolution input[type="number"]:read-only,
@@ -142,12 +146,26 @@
 .infinite-revolution .attribute.attribute-bright label {
   color: var(--color-bright);
 }
+.infinite-revolution .sheet-subheading {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.25em;
+  margin: 0;
+  padding-top: 8px;
+}
 .infinite-revolution .sheet-section {
   padding: 10px 10px;
   border-left: 4px solid var(--color-primary);
 }
 .infinite-revolution .sheet-section:last-child {
   border-image: linear-gradient(to bottom, var(--color-primary), rgba(0, 0, 0, 0)) 1 100%;
+}
+.infinite-revolution .sheet-section-heading {
+  flex: 1;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.25em;
+  margin: 0;
 }
 .infinite-revolution .sheet-section-divider {
   border-bottom: 4px solid var(--color-primary);
@@ -182,13 +200,6 @@
   flex-direction: row;
   margin-top: 10px;
 }
-.infinite-revolution .sheet-section-heading {
-  flex: 1;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.25em;
-  margin: 0;
-}
 .infinite-revolution .sheet-section-editor {
   min-height: 50px;
   height: 100%;
@@ -213,6 +224,8 @@
   text-shadow: none;
 }
 .infinite-revolution .sheet-body {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 .infinite-revolution .sheet-body .tab {
@@ -225,6 +238,9 @@
 }
 .infinite-revolution .editor .editor-content {
   min-height: 50px;
+}
+.infinite-revolution .editor-wrapper-flex {
+  flex: 1;
 }
 .infinite-revolution .tox {
   min-height: 200px;
