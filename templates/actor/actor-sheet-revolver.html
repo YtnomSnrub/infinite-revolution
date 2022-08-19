@@ -74,47 +74,41 @@
             </div>
             <div class="sheet-section-divider"></div>
             <div class="sheet-section">
-                <div class="sheet-heading-toolbar">
-                    <h3 class="sheet-section-heading">Weapons</h3>
-                    <a class="weapon-control" title="{{ localize 'IR.ItemCreate' }}" data-action="create"><i class="fas fa-plus"></i></a>
-                </div>
-                <table class="item-table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Range</th>
-                            <th>Band</th>
-                            <th>Hits</th>
-                            <th>Harm</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each data.items as |item id|}}
-                        <tr data-item-id="{{item._id}}" class="item">
-                            <td>
+                <h3 class="sheet-section-heading">Weapons</h3>
+                <div class="item-list">
+                    <div class="item-list-header">
+                        <div class="item-list-heading item-name">Name</div>
+                        <div class="item-list-heading item-band">Band</div>
+                        <div class="item-list-heading item-hits">Hits</div>
+                        <div class="item-list-heading item-harm">Harm</div>
+                        <div class="item-list-heading item-attributes">Attacks</div>
+                        <div class="item-list-heading item-controls">
+                            <a class="weapon-control" title="{{ localize 'IR.ItemCreate' }}" data-action="create"><i class="fas fa-plus"></i></a>
+                        </div>
+                    </div>
+                    <ol class="item-list-body">
+                        {{#each items.weapons as |item id|}}
+                        <li data-item-id="{{item._id}}" class="item">
+                            <div class="item-name">
                                 <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
-                            </td>
-                            <td>{{item.name}}</td>
-                            <td>
-                                {{#if (eq item.data.rangeType "melee")}}
-                                <img src="icons/svg/sword.svg" title="Melee" width="24" height="24" />
-                                {{else}}
-                                <img src="icons/svg/target.svg" title="Melee" width="24" height="24" />
-                                {{/if}}
-                            </td>
-                            <td>{{item.data.band}}</td>
-                            <td>{{item.data.hits}}</td>
-                            <td>{{item.data.harm}}</td>
-                            <td class="item-controls">
+                                <div>{{item.name}}</div>
+                            </div>
+                            <div class="item-band">{{item.data.band}}</div>
+                            <div class="item-hits">{{item.data.hits}}</div>
+                            <div class="item-harm">{{item.data.harm}}</div>
+                            <div class="item-attributes">
+                                <button class="item-attribute weapon-attribute attribute-hot" data-attribute="hot">{{localize "IR.AttributeHotShort"}}</button>
+                                <button class="item-attribute weapon-attribute attribute-quick" data-attribute="quick">{{localize "IR.AttributeQuickShort"}}</button>
+                                <button class="item-attribute weapon-attribute attribute-bright" data-attribute="bright">{{localize "IR.AttributeBrightShort"}}</button>
+                            </div>
+                            <div class="item-controls">
                                 <a class="item-control weapon-control" title="{{ localize 'IR.ItemEdit' }}" data-action="edit"><i class="fas fa-edit"></i></a>
                                 <a class="item-control weapon-control" title="{{ localize 'IR.ItemDelete' }}" data-action="delete"><i class="fas fa-trash"></i></a>
-                            </td>
-                        </tr>
+                            </div>
+                        </li>
                         {{/each}}
-                    </tbody>
-                </table>
+                    </ol>
+                </div>
             </div>
             <div class="sheet-section-divider"></div>
             <div class="sheet-section">

@@ -20,14 +20,19 @@
 .infinite-revolution input[type="number"],
 .infinite-revolution input[type="password"],
 .infinite-revolution input[type="date"],
-.infinite-revolution input[type="time"] {
+.infinite-revolution input[type="time"],
+.infinite-revolution button,
+.infinite-revolution select {
   color: var(--color-text-light-highlight);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .infinite-revolution input[type="text"].input-core,
 .infinite-revolution input[type="number"].input-core,
 .infinite-revolution input[type="password"].input-core,
 .infinite-revolution input[type="date"].input-core,
-.infinite-revolution input[type="time"].input-core {
+.infinite-revolution input[type="time"].input-core,
+.infinite-revolution button.input-core,
+.infinite-revolution select.input-core {
   width: 100%;
   background-color: var(--color-primary);
   color: var(--color-bg-window);
@@ -43,7 +48,21 @@
 .infinite-revolution input[type="number"]:focus,
 .infinite-revolution input[type="password"]:focus,
 .infinite-revolution input[type="date"]:focus,
-.infinite-revolution input[type="time"]:focus {
+.infinite-revolution input[type="time"]:focus,
+.infinite-revolution button:focus,
+.infinite-revolution select:focus {
+  box-shadow: 0 0 5px var(--color-primary);
+}
+.infinite-revolution input[type="text"] option,
+.infinite-revolution input[type="number"] option,
+.infinite-revolution input[type="password"] option,
+.infinite-revolution input[type="date"] option,
+.infinite-revolution input[type="time"] option,
+.infinite-revolution button option,
+.infinite-revolution select option {
+  background-color: var(--color-bg-window);
+}
+.infinite-revolution button:hover {
   box-shadow: 0 0 5px var(--color-primary);
 }
 .infinite-revolution input[type="text"]:read-only,
@@ -52,12 +71,6 @@
 .infinite-revolution input[type="date"]:read-only,
 .infinite-revolution input[type="time"]:read-only {
   border-style: dotted;
-}
-.infinite-revolution select {
-  color: var(--color-text-light-highlight);
-}
-.infinite-revolution select option {
-  background-color: var(--color-bg-window);
 }
 .infinite-revolution .window-content {
   height: 100%;
@@ -119,9 +132,6 @@
 }
 .infinite-revolution .attribute label:hover {
   text-decoration: underline;
-}
-.infinite-revolution .attribute.attribute-hot {
-  border-color: var(--color-hot);
 }
 .infinite-revolution .attribute.attribute-hot label {
   color: var(--color-hot);
@@ -220,7 +230,6 @@
   min-height: 200px;
 }
 .infinite-revolution .tox-edit-area {
-  background-color: #fafafa;
   padding: 0 8px;
 }
 .infinite-revolution .editor .editor-edit {
@@ -251,6 +260,114 @@
 .infinite-revolution .item-table .item-control {
   padding-right: 5px;
 }
+.infinite-revolution .item-list {
+  margin-top: 6px;
+}
+.infinite-revolution .item-list .item-list-header {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.infinite-revolution .item-list .item-list-header .item-list-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 0;
+  border-left: none;
+}
+.infinite-revolution .item-list .item-list-header .item-name {
+  padding-left: 3px;
+}
+.infinite-revolution .item-list .item-list-header .item-controls {
+  padding-right: 6px;
+}
+.infinite-revolution .item-list .item-list-body {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.infinite-revolution .item-list .item-list-body img {
+  border: none;
+  margin: 3px;
+  margin-right: 6px;
+}
+.infinite-revolution .item-list .item-list-body li {
+  display: flex;
+  flex-direction: row;
+}
+.infinite-revolution .item-list .item-list-body li:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.infinite-revolution .item-list .item-name,
+.infinite-revolution .item-list .item-band,
+.infinite-revolution .item-list .item-hits,
+.infinite-revolution .item-list .item-harm,
+.infinite-revolution .item-list .item-attributes,
+.infinite-revolution .item-list .item-controls {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.infinite-revolution .item-list .item-harm,
+.infinite-revolution .item-list .item-hits,
+.infinite-revolution .item-list .item-band,
+.infinite-revolution .item-list .item-attributes,
+.infinite-revolution .item-list .item-controls {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+.infinite-revolution .item-list .item-name {
+  justify-content: flex-start;
+}
+.infinite-revolution .item-list .item-band {
+  flex: 0 0 80px;
+}
+.infinite-revolution .item-list .item-hits {
+  flex: 0 0 50px;
+}
+.infinite-revolution .item-list .item-harm {
+  flex: 0 0 50px;
+}
+.infinite-revolution .item-list .item-attributes {
+  flex: 0 0 100px;
+}
+.infinite-revolution .item-list .item-attributes .item-attribute {
+  cursor: pointer;
+}
+.infinite-revolution .item-list .item-controls {
+  flex: 0 0 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.infinite-revolution .item-list .item-controls .item-control {
+  padding-right: 6px;
+}
+.infinite-revolution .item-attributes {
+  display: flex;
+  flex-direction: row;
+}
+.infinite-revolution .item-attributes button {
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border-light-tertiary);
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1;
+  padding-top: 6px;
+  padding-bottom: 4px;
+}
+.infinite-revolution .item-attributes .attribute-hot {
+  color: var(--color-hot);
+}
+.infinite-revolution .item-attributes .attribute-quick {
+  color: var(--color-quick);
+}
+.infinite-revolution .item-attributes .attribute-bright {
+  color: var(--color-bright);
+}
 .infinite-revolution.sheet.actor {
   min-width: 560px;
   min-height: 420px;
@@ -258,4 +375,26 @@
 .infinite-revolution.sheet.item {
   min-width: 460px;
   min-height: 400px;
+}
+.infinite-revolution-highlight {
+  color: var(--color-primary);
+}
+.mce-content-body {
+  color: var(--color-text-light-highlight);
+}
+.chat-message {
+  color: var(--color-text-light-highlight);
+  background: none;
+  background-color: var(--color-bg-window);
+}
+.chat-message .message-header {
+  color: var(--color-text-light-primary);
+}
+.chat-message h4.action {
+  font-weight: 700;
+  line-height: 1.5em;
+  margin: 0;
+}
+.chat-message span.info {
+  line-height: 0.75rem;
 }

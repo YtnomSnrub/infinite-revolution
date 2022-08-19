@@ -2,6 +2,14 @@
   "IR.AttributeHot": "Hot",
   "IR.AttributeQuick": "Quick",
   "IR.AttributeBright": "Bright",
+  "IR.AttributeHotShort": "H",
+  "IR.AttributeQuickShort": "Q",
+  "IR.AttributeBrightShort": "B",
+
+  "IR.CheckResultNull": "Null",
+  "IR.CheckResultWeak": "Weak Hit",
+  "IR.CheckResultStrong": "Strong Hit",
+  "IR.CheckResultCrit": "Critical Hit",
 
   "IR.PlayerSectionCore": "Core",
   "IR.PlayerSectionDescription": "Description",

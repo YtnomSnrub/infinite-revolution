@@ -1,29 +1,47 @@
 export class RollHelper {
-    static createCheckRoll(title, diceCount, rollData) {
+    static async createCheckRoll(r, htmlHeader, htmlContent) {
         // Perform roll
-        const r = new Roll(`${diceCount}d6`, rollData);
-        r.evaluate({ async: true }).then(response => {
-            // Get number of each hit type
-            const weakHits = response.dice[0].results.filter(x => x.result === 4 || x.result === 5).length;
-            const strongHits = response.dice[0].results.filter(x => x.result === 6).length;
+        const roll = await r.roll({ async: true });
+        // Get number of each hit type
+        const weakHits = roll.dice[0].results.filter(x => x.result === 4 || x.result === 5).length;
+        const strongHits = roll.dice[0].results.filter(x => x.result === 6).length;
 
-            // Calculate hit type
-            let hitType = "Null";
-            if (strongHits >= 2)
-                hitType = "Critical Hit";
-            else if (strongHits >= 1)
-                hitType = "Strong Hit";
-            else if (weakHits >= 1)
-                hitType = "Weak Hit";
+        // Calculate hit type
+        let hitType = game.i18n.localize("IR.CheckResultNull");
+        if (strongHits >= 2)
+            hitType = game.i18n.localize("IR.CheckResultCrit");
+        else if (strongHits >= 1)
+            hitType = game.i18n.localize("IR.CheckResultStrong");
+        else if (weakHits >= 1)
+            hitType = game.i18n.localize("IR.CheckResultWeak");
 
-            // Send roll message
-            response.toMessage({
-                user: game.user.id,
-                speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-                flavor: `<h2>${title}</h2><p>${hitType}</p>`
-            }).then(x => {
-                console.log(x);
-            });
+        let html = "";
+        html += `<p>${hitType}</p>`;
+        html += await roll.getTooltip();
+
+        if (htmlContent) {
+            html += htmlContent;
+        }
+
+        // Send roll message
+        await ChatMessage.create({
+            roll: roll,
+            type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+            rollMode: game.settings.get("core", "rollMode"),
+            user: game.user.id,
+            speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+            flavor: htmlHeader,
+            content: html
         });
+    }
+
+    static createAttributeCheckRoll(attributeName, attributeValue, rollData) {
+        const r = new Roll(`${attributeValue}d6`, rollData);
+        this.createCheckRoll(r, `<h4 class="action">Attribute: ${attributeName}</h4>`);
+    }
+
+    static createWeaponCheckRoll(item, attributeValue, rollData) {
+        const r = new Roll(`${attributeValue}d6`, rollData);
+        this.createCheckRoll(r, `<h4 class="action">Attack: ${item.name}</h4>`);
     }
 }

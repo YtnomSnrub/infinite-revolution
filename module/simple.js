@@ -45,6 +45,19 @@ Hooks.once("init", async function () {
   CONFIG.Token.documentClass = SimpleTokenDocument;
   CONFIG.Token.objectClass = SimpleToken;
 
+  // TinyMCE
+  CONFIG.TinyMCE.content_css = CONFIG.TinyMCE.content_css.concat("systems/infinite-revolution/styles/simple.css");
+  CONFIG.TinyMCE.style_formats = (CONFIG.TinyMCE.style_formats ?? []).concat({
+    title: "Infinite Revolution",
+    items: [
+      {
+        title: "Highlight",
+        inline: "span",
+        classes: "infinite-revolution-highlight",
+      },
+    ],
+  });
+
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("infinite-revolution", ActorSheetRevolver, { types: ["revolver"], makeDefault: true });

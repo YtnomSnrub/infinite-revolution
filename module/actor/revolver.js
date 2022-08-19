@@ -25,6 +25,7 @@ export class ActorSheetRevolver extends ActorSheet {
     const context = super.getData();
     context.actor = this.actor.data.toObject(false);
     context.systemData = context.data.data;
+    context.items.weapons = context.data.items.filter(x => x.type === 'weapon');
     return context;
   }
 
@@ -41,6 +42,8 @@ export class ActorSheetRevolver extends ActorSheet {
     html.find(".attribute label").on("click", this._onAttributeRoll.bind(this));
     html.find("input").on("focus", this._onInputClick.bind(this));
 
+    // Item attacks
+    html.find(".weapon-attribute").on("click", this._onWeaponAttack.bind(this));
     // Item controls
     html.find(".weapon-control[data-action='create']").on("click", this._onWeaponCreate.bind(this));
     html.find(".weapon-control[data-action='edit']").on("click", this._onWeaponEdit.bind(this));
@@ -56,7 +59,7 @@ export class ActorSheetRevolver extends ActorSheet {
     const title = button.text();
     const attribute = button.data("attribute");
     const attributeValue = this.getData().systemData.attributes[attribute].value;
-    RollHelper.createCheckRoll(title, attributeValue, this.actor.getRollData());
+    RollHelper.createAttributeCheckRoll(title, attributeValue, this.actor.getRollData());
   }
 
   /**
@@ -68,7 +71,7 @@ export class ActorSheetRevolver extends ActorSheet {
   }
 
   /**
-   * Listen for click events weapon create button.
+   * Listen for click events on weapon create button.
    * @param {MouseEvent} event The originating left click event
    */
   _onWeaponCreate(event) {
@@ -77,7 +80,7 @@ export class ActorSheetRevolver extends ActorSheet {
   }
 
   /**
-   * Listen for click events weapon edit button.
+   * Listen for click events on weapon edit button.
    * @param {MouseEvent} event The originating left click event
    */
   _onWeaponEdit(event) {
@@ -90,7 +93,7 @@ export class ActorSheetRevolver extends ActorSheet {
   }
 
   /**
-   * Listen for click events weapon delete button.
+   * Listen for click events on weapon delete button.
    * @param {MouseEvent} event The originating left click event
    */
   _onWeaponDelete(event) {
@@ -100,6 +103,21 @@ export class ActorSheetRevolver extends ActorSheet {
     const li = button.closest(".item");
     const item = this.actor.items.get(li?.dataset.itemId);
     return item.delete();
+  }
+
+  /**
+   * Listen for attack events on weapons.
+   * @param {MouseEvent} event The originating left click event
+   */
+  _onWeaponAttack(event) {
+    let button = event.currentTarget;
+    const attribute = button?.dataset.attribute;
+    const attributeValue = this.getData().systemData.attributes[attribute].value;
+
+    const li = button.closest(".item");
+    const item = this.actor.items.get(li?.dataset.itemId);
+
+    RollHelper.createWeaponCheckRoll(item, attributeValue, this.actor.getRollData());
   }
 
   /* -------------------------------------------- */
