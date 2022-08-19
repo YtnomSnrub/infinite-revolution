@@ -67,6 +67,7 @@ export class ActorSheetRevolver extends ActorSheet {
    * @param {MouseEvent} event The originating left click event
    */
   _onInputClick(event) {
+    event.preventDefault();
     event.currentTarget.select();
   }
 
@@ -110,6 +111,8 @@ export class ActorSheetRevolver extends ActorSheet {
    * @param {MouseEvent} event The originating left click event
    */
   _onWeaponAttack(event) {
+    event.preventDefault();
+
     let button = event.currentTarget;
     const attribute = button?.dataset.attribute;
     const attributeValue = this.getData().systemData.attributes[attribute].value;
