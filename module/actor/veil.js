@@ -1,5 +1,5 @@
 import { EntitySheetHelper } from "../helper.js";
-import { RollHelper } from "../rollHelper.js";
+import { RollHelper } from "../chat/rollHelper.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications

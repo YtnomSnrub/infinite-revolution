@@ -1,0 +1,33 @@
+.infinite-revolution {
+    .trait-list {
+        overflow: auto;
+        list-style: none;
+
+        margin: 0;
+        padding: 0;
+
+        .trait-selection-label {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .trait-label {
+                flex: 2;
+            }
+
+            input:disabled {
+                display: none;
+            }
+
+            input[type="number"] {
+                flex: 0 0 60px;
+            }
+        }
+    }
+
+    .trait-footer {
+        flex: 0;
+
+        margin-top: 5px;
+    }
+}

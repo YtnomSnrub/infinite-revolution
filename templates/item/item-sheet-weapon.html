@@ -16,6 +16,21 @@
                     {{/select}}
                 </select>
             </div>
+            <div class="sheet-property">
+                <label>{{localize "IR.WeaponTags"}}</label>
+                <div class="item-tag-list">
+                    {{#each tagLabels as |tag key|}}
+                    {{#if (eq tag.type "number")}}
+                    <span class="item-tag">{{localize tag.label}} {{tag.value}}</span>
+                    {{else}}
+                    <span class="item-tag">{{localize tag.label}}</span>
+                    {{/if}}
+                    {{/each}}
+                </div>
+                <a class="weapon-control" title="{{localize 'IR.WeaponTags'}}" data-action="tags">
+                    <i class="fas fa-edit"></i>
+                </a>
+            </div>
         </div>
     </header>
 

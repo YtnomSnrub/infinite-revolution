@@ -1,0 +1,16 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+    <ol class="trait-list">
+        {{#each traits as |trait key|}}
+        <li class="trait-item">
+            <div class="trait-selection-label">
+                <input type="checkbox" name="{{trait.name}}" {{checked trait.selected}} {{disabled trait.disabled}} />
+                <label class="trait-label">{{localize trait.label}}</label>
+                {{#if (eq trait.type "number")}}
+                <input type="number" name="{{trait.name}}" value="{{trait.value}}" {{disabled (not trait.selected)}} />
+                {{/if}}
+            </div>
+        </li>
+        {{/each}}
+    </ol>
+    <button class="trait-footer" type="submit" name="submit" value="1"><i class="far fa-save"></i>{{localize "IR.Done"}}</button>
+</form>

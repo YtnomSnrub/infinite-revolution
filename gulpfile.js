@@ -1,16 +1,19 @@
 const gulp = require('gulp');
 const less = require('gulp-less');
+const concat = require('gulp-concat-css');
 
 /* ----------------------------------------- */
 /*  Compile LESS
 /* ----------------------------------------- */
 
-const SIMPLE_LESS = ["styles/*.less"];
+const SIMPLE_LESS = ["styles/**/*.less"];
 function compileLESS() {
-  return gulp.src("styles/simple.less")
+  return gulp.src("styles/**/*.less")
     .pipe(less())
-    .pipe(gulp.dest("./styles/"))
+    .pipe(concat("_styles.css"))
+    .pipe(gulp.dest("./styles"))
 }
+
 const css = gulp.series(compileLESS);
 
 /* ----------------------------------------- */
@@ -29,4 +32,5 @@ exports.default = gulp.series(
   gulp.parallel(css),
   watchUpdates
 );
+
 exports.css = css;

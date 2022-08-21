@@ -1,3 +1,5 @@
+import { WEAPON_TRAITS } from "../item/weapon.js";
+
 export class RollHelper {
     static async createCheckRoll(r, htmlHeader, htmlContent) {
         // Perform roll
@@ -45,8 +47,14 @@ export class RollHelper {
         this.createCheckRoll(r, `<h4 class="action">Attribute: ${attributeName}</h4>`);
     }
 
-    static createWeaponCheckRoll(item, attributeValue, rollData) {
-        const r = new Roll(`${attributeValue}d6`, rollData);
-        this.createCheckRoll(r, `<h4 class="action">Attack: ${item.name}</h4>`);
+    static async createWeaponCheckRoll(item, attributeValue, rollData) {
+        let dice = attributeValue;
+        if (item.data.data.tags.some(x => x.name === "precise"))
+            dice += 1;
+
+        const r = new Roll(`${dice}d6`, rollData);
+        const tagLabels = item.data.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }));
+        const content = await renderTemplate("systems/infinite-revolution/templates/chat/action/attack.html", { item: item.data, tagLabels });
+        this.createCheckRoll(r, content);
     }
 }

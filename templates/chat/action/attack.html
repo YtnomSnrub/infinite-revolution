@@ -1,0 +1,15 @@
+<h4 class="action">Attack: {{item.name}}</h4>
+
+<div class="item-tag-list">
+    {{#each tagLabels as |tag key|}}
+    {{#if (eq tag.type "number")}}
+    <span class="item-tag" title="{{localize tag.description}}">{{localize tag.label}} {{tag.value}}</span>
+    {{else}}
+    <span class="item-tag" title="{{localize tag.description}}">{{localize tag.label}}</span>
+    {{/if}}
+    {{/each}}
+</div>
+
+<div class="info">Band: {{item.data.band}}</div>
+<div class="info">Hits: {{item.data.hits}}</div>
+<div class="info">Harm: {{item.data.harm}}</div>

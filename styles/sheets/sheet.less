@@ -1,17 +1,3 @@
-:root {
-  --color-primary: #fdc000;
-  --color-null: #d6b100;
-  --color-weak: #fedf00;
-  --color-strong: #ffef78;
-  --color-crit: #fff3b6;
-
-  --color-hot: #00c2e2;
-  --color-quick: #c4db00;
-  --color-bright: #ff008a;
-
-  --color-bg-window: #202020;
-}
-
 .infinite-revolution {
   --color-border-light-primary: rgba(255, 255, 255, 0.6);
   --color-border-light-secondary: rgba(255, 255, 255, 0.5);
@@ -97,14 +83,20 @@
     }
 
     h1.charname {
-      height: 50px;
       flex: 0;
+      height: 50px;
+
+      padding-bottom: 4px;
 
       input {
         width: 100%;
         height: 100%;
         margin: 0;
       }
+    }
+
+    .sheet-property {
+      padding: 0;
     }
   }
 
@@ -272,204 +264,6 @@
       overflow-y: auto;
     }
   }
-
-  .editor,
-  .editor-content {
-    height: 100%;
-  }
-
-  .editor .editor-content {
-    min-height: 50px;
-  }
-
-  .editor-wrapper-flex {
-    flex: 1;
-  }
-
-  .tox {
-    min-height: 200px;
-  }
-
-  .tox-edit-area {
-    padding: 0 8px;
-  }
-
-  .editor .editor-edit {
-    color: var(--color-bg-window);
-  }
-
-  .item-table {
-    text-align: left;
-
-    tr:nth-child(even) {
-      background-color: rgba(255, 255, 255, 0.05);
-    }
-
-    td {
-      padding: 0.25em 0;
-    }
-
-    td:first-child {
-      padding-left: 0.25em;
-    }
-
-    td:last-child {
-      padding-right: 0.25em;
-    }
-
-    img {
-      border: none;
-      vertical-align: middle;
-    }
-
-    .item-controls {
-      text-align: right;
-    }
-
-    .item-control {
-      padding-right: 5px;
-    }
-  }
-
-  .item-list {
-    margin-top: 6px;
-
-    .item-list-header {
-      display: flex;
-      flex-direction: row;
-
-      background-color: rgba(0, 0, 0, 0.5);
-      border-top: 1px solid rgba(0, 0, 0, 0.5);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-
-      .item-list-heading {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        padding: 4px 0;
-
-        border-left: none;
-      }
-
-      .item-name {
-        padding-left: 3px;
-      }
-
-      .item-controls {
-        padding-right: 6px;
-      }
-    }
-
-    .item-list-body {
-      margin: 0;
-      padding: 0;
-
-      list-style: none;
-
-      img {
-        border: none;
-        margin: 3px;
-        margin-right: 6px;
-      }
-
-      li {
-        display: flex;
-        flex-direction: row;
-
-        &:nth-child(even) {
-          background-color: rgba(255, 255, 255, 0.05);
-        }
-      }
-    }
-
-    .item-name,
-    .item-band,
-    .item-hits,
-    .item-harm,
-    .item-attributes,
-    .item-controls {
-      flex: 1;
-
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .item-harm,
-    .item-hits,
-    .item-band,
-    .item-attributes,
-    .item-controls {
-      border-left: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .item-name {
-      justify-content: flex-start;
-    }
-
-    .item-band {
-      flex: 0 0 80px;
-    }
-
-    .item-hits {
-      flex: 0 0 50px;
-    }
-
-    .item-harm {
-      flex: 0 0 50px;
-    }
-
-    .item-attributes {
-      flex: 0 0 100px;
-
-      .item-attribute {
-        cursor: pointer;
-      }
-    }
-
-    .item-controls {
-      flex: 0 0 56px;
-
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-
-      .item-control {
-        padding-right: 6px;
-      }
-    }
-  }
-
-  .item-attributes {
-    display: flex;
-    flex-direction: row;
-
-    button {
-      background-color: rgba(0, 0, 0, 0.25);
-      border: 1px solid var(--color-border-light-tertiary);
-
-      text-transform: uppercase;
-      font-weight: bold;
-
-      line-height: 1;
-      padding-top: 6px;
-      padding-bottom: 4px;
-    }
-
-    .attribute-hot {
-      color: var(--color-hot);
-    }
-
-    .attribute-quick {
-      color: var(--color-quick);
-    }
-
-    .attribute-bright {
-      color: var(--color-bright);
-    }
-  }
 }
 
 .infinite-revolution.sheet.actor {
@@ -481,53 +275,4 @@
 .infinite-revolution.sheet.item {
   min-width: 460px;
   min-height: 400px;
-}
-
-.infinite-revolution-highlight {
-  color: var(--color-primary);
-}
-
-.mce-content-body {
-  color: var(--color-text-light-highlight);
-}
-
-.chat-message {
-  color: var(--color-text-light-highlight);
-
-  background: none;
-  background-color: var(--color-bg-window);
-
-  .message-header {
-    color: var(--color-text-light-primary);
-
-    h4.action {
-      font-weight: 700;
-      line-height: 1.5em;
-      margin: 0;
-    }
-
-    span.info {
-      line-height: .75rem;
-    }
-  }
-
-  .check-hit {
-    font-weight: bold;
-
-    &.hit-null {
-      color: var(--color-null);
-    }
-
-    &.hit-weak {
-      color: var(--color-weak);
-    }
-
-    &.hit-strong {
-      color: var(--color-strong);
-    }
-
-    &.hit-crit {
-      color: var(--color-crit);
-    }
-  }
 }
