@@ -1,4 +1,5 @@
 .chat-message {
+  --color-border-light-primary: #b0b0b0;
   color: var(--color-text-light-highlight);
   background: none;
   background-color: var(--color-bg-window);
@@ -14,8 +15,35 @@
   margin: 0;
 }
 
-.chat-message .message-header .info {
+.chat-message .message-header .chat-item-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 0;
+  border-top: 1px solid var(--color-border-light-primary);
+  border-bottom: 1px solid var(--color-border-light-primary);
+}
+
+.chat-message .message-header .chat-item-header img {
+  height: 36px;
+  margin-right: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+}
+
+.chat-message .message-header .chat-item-header h3 {
+  flex: 1;
+  margin: 0;
+  font-family: var(--font-headings), sans-serif;
+  font-size: 1.5em;
+  font-weight: normal;
+  color: var(--color-text-light-heading);
+}
+
+.chat-message .info {
   line-height: 1.5;
+  font-size: var(--font-size-12);
+  color: var(--color-text-light-primary);
 }
 
 .chat-message .check-hit {
@@ -105,6 +133,42 @@
 
 .mce-content-body {
   color: var(--color-text-light-highlight);
+}
+:root {
+  --font-headings: "Kdam Thmor Pro", sans-serif;
+}
+
+/* khmer */
+
+@font-face {
+  font-family: 'Kdam Thmor Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../../../../../../../systems/infinite-revolution/fonts/KdamThmorPro.ttf") format('woff2');
+  unicode-range: U+1780-17FF, U+200C, U+25CC;
+}
+
+/* latin-ext */
+
+@font-face {
+  font-family: 'Kdam Thmor Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../../../../../../../systems/infinite-revolution/fonts/KdamThmorPro.ttf") format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+
+@font-face {
+  font-family: 'Kdam Thmor Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../../../../../../../systems/infinite-revolution/fonts/KdamThmorPro.ttf") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 .infinite-revolution .item-table {
   text-align: left;
@@ -345,13 +409,23 @@
   width: 100%;
   background-color: var(--color-primary);
   color: var(--color-bg-window);
+  font-family: var(--font-headings), sans-serif;
   font-size: 2em;
   height: auto;
-  padding: 0 5px;
+  padding: 2px 5px 0;
   border: none;
   border-radius: 0;
   text-transform: uppercase;
-  font-weight: bold;
+}
+
+.infinite-revolution input[type="text"].input-core:focus,
+.infinite-revolution input[type="number"].input-core:focus,
+.infinite-revolution input[type="password"].input-core:focus,
+.infinite-revolution input[type="date"].input-core:focus,
+.infinite-revolution input[type="time"].input-core:focus,
+.infinite-revolution button.input-core:focus,
+.infinite-revolution select.input-core:focus {
+  text-transform: none;
 }
 
 .infinite-revolution input[type="text"]:focus,
@@ -416,8 +490,9 @@
 
 .infinite-revolution .sheet-header h1.charname {
   flex: 0;
-  height: 50px;
   padding-bottom: 4px;
+  font-family: var(--font-headings), sans-serif;
+  font-size: 1.5em;
 }
 
 .infinite-revolution .sheet-header h1.charname input {
@@ -519,10 +594,11 @@
 
 .infinite-revolution .sheet-subheading {
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 1.25em;
   margin: 0;
   padding-top: 8px;
+  font-family: var(--font-headings), sans-serif;
 }
 
 .infinite-revolution .sheet-section {
@@ -537,9 +613,10 @@
 .infinite-revolution .sheet-section-heading {
   flex: 1;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 1.25em;
   margin: 0;
+  font-family: var(--font-headings), sans-serif;
 }
 
 .infinite-revolution .sheet-section-divider {

@@ -20,15 +20,19 @@
       background-color: var(--color-primary);
       color: var(--color-bg-window);
 
+      font-family: var(--font-headings), sans-serif;
       font-size: 2em;
       height: auto;
 
-      padding: 0 5px;
+      padding: 2px 5px 0;
       border: none;
       border-radius: 0;
 
       text-transform: uppercase;
-      font-weight: bold;
+
+      &:focus {
+        text-transform: none;
+      }
     }
 
     &:focus {
@@ -84,9 +88,11 @@
 
     h1.charname {
       flex: 0;
-      height: 50px;
 
       padding-bottom: 4px;
+    
+      font-family: var(--font-headings), sans-serif;
+      font-size: 1.5em;
 
       input {
         width: 100%;
@@ -197,10 +203,12 @@
 
   .sheet-subheading {
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1.25em;
     margin: 0;
     padding-top: 8px;
+    
+    font-family: var(--font-headings), sans-serif;
   }
 
   .sheet-section {
@@ -216,9 +224,11 @@
     flex: 1;
 
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1.25em;
     margin: 0;
+    
+    font-family: var(--font-headings), sans-serif;
   }
 
   .sheet-section-divider {
