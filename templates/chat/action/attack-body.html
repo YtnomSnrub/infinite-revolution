@@ -1,5 +1,3 @@
-<h4 class="action">Attack: {{item.name}}</h4>
-
 <div class="item-tag-list">
     {{#each tagLabels as |tag key|}}
     {{#if (eq tag.type "number")}}
@@ -10,6 +8,10 @@
     {{/each}}
 </div>
 
-<div class="info">Band: {{item.data.band}}</div>
-<div class="info">Hits: {{item.data.hits}}</div>
-<div class="info">Harm: {{item.data.harm}}</div>
+<div class="chat-item-data">
+    <div class="chat-item-data-column">
+        <div class="info">Band: {{item.data.band}}</div>
+        <div class="info">Hits: {{item.data.hits}}</div>
+        <div class="info">Harm: {{item.data.harm}}</div>
+    </div>
+</div>

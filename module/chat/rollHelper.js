@@ -22,13 +22,9 @@ export class RollHelper {
             hitClass = "hit-weak";
         }
 
-        let html = "";
+        let html = htmlContent || "";
         html += `<p class="check-hit ${hitClass}">${hitType}</p>`;
         html += await roll.getTooltip();
-
-        if (htmlContent) {
-            html += htmlContent;
-        }
 
         // Send roll message
         await ChatMessage.create({
@@ -54,7 +50,8 @@ export class RollHelper {
 
         const r = new Roll(`${dice}d6`, rollData);
         const tagLabels = item.data.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }));
-        const content = await renderTemplate("systems/infinite-revolution/templates/chat/action/attack.html", { item: item.data, tagLabels });
-        this.createCheckRoll(r, content);
+        const header = await renderTemplate("systems/infinite-revolution/templates/chat/action/attack-header.html", { item: item.data, tagLabels });
+        const content = await renderTemplate("systems/infinite-revolution/templates/chat/action/attack-body.html", { item: item.data, tagLabels });
+        this.createCheckRoll(r, header, content);
     }
 }
