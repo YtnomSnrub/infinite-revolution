@@ -23,8 +23,7 @@ export class RollHelper {
         }
 
         let html = htmlContent || "";
-        html += `<p class="check-hit ${hitClass}">${hitType}</p>`;
-        html += await roll.getTooltip();
+        html += `<div class="result-data"><p class="check-hit ${hitClass}">${hitType}</p>${await roll.getTooltip()}</div>`;
 
         // Send roll message
         await ChatMessage.create({

@@ -91,6 +91,11 @@
   color: #000;
   filter: none;
 }
+
+.chat-message .dice-tooltip .dice-rolls .roll.rerolled {
+  color: #000;
+  filter: opacity(0.25);
+}
 :root {
   --color-primary: #fdc000;
   --color-null: #d6b100;

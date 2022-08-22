@@ -11,6 +11,8 @@ import { ActorSheetVeil } from "./actor/veil.js";
 import { ItemIR } from "./item/item.js";
 import { ItemSheetWeapon } from "./item/weapon.js";
 
+import { ChatLogIR } from "./chat/chatLog.js";
+
 import { SimpleToken, SimpleTokenDocument } from "./token.js";
 
 import { preloadHandlebarsTemplates } from "./templates.js";
@@ -30,8 +32,8 @@ Hooks.once("init", async function () {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-    formula: "1d20",
-    decimals: 2
+    formula: "0",
+    decimals: 0
   };
 
   game.infiniteRevolution = {
@@ -44,6 +46,8 @@ Hooks.once("init", async function () {
   CONFIG.Item.documentClass = ItemIR;
   CONFIG.Token.documentClass = SimpleTokenDocument;
   CONFIG.Token.objectClass = SimpleToken;
+  
+  CONFIG.ui.chat = ChatLogIR;
 
   // TinyMCE
   CONFIG.TinyMCE.content_css = CONFIG.TinyMCE.content_css.concat("systems/infinite-revolution/styles/simple.css");
