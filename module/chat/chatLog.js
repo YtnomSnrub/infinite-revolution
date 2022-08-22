@@ -15,18 +15,20 @@ export class ChatLogIR extends ChatLog {
                     roll.dice.forEach(x => {
                         const results = x.results;
                         if (results.length > 0) {
+                            // Mark the lowest dice as rerolled
                             const resultValues = results.filter(x => x.active !== false).map(x => x.result);
                             const lowestValue = Math.min(...resultValues);
-                            console.log(x.results, lowestValue);
                             const lowestIndex = x.results.findIndex(x => x.result === lowestValue && x.active !== false);
                             x.results[lowestIndex].active = false;
                             x.results[lowestIndex].rerolled = true;
+
+                            // Don't reroll existing dice
+                            x.results.forEach(r => r.hidden = true);
+
+                            // Roll the new dice
+                            x.number = 1;
+                            x._evaluated = false;
                         }
-
-                        x.results.forEach(r => r.hidden = true);
-
-                        x.number = 1;
-                        x._evaluated = false;
                     });
 
                     const content = new DOMParser().parseFromString(message.data.content, "text/html");
