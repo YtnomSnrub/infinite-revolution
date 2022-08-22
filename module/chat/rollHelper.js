@@ -5,8 +5,9 @@ export class RollHelper {
         // Perform roll
         const roll = await r.roll({ async: true });
         // Get number of each hit type
-        const weakHits = roll.dice[0].results.filter(x => x.result === 4 || x.result === 5).length;
-        const strongHits = roll.dice[0].results.filter(x => x.result === 6).length;
+        const results = roll.dice[0].results.filter(x => x.active !== false);
+        const weakHits = results.filter(x => x.result === 4 || x.result === 5).length;
+        const strongHits = results.filter(x => x.result === 6).length;
 
         // Calculate hit type
         let hitType = game.i18n.localize("IR.CheckResultNull");
