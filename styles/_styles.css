@@ -441,17 +441,33 @@
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+.infinite-revolution .sheet-property-list {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  justify-content: space-evenly;
+}
+
+.infinite-revolution .sheet-property-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.infinite-revolution .sheet-property-group > :not(:last-child) {
+  margin-right: 12px;
 }
 
 .infinite-revolution .property {
-  flex: 1;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
 }
 
 .infinite-revolution .property input {
-  width: 100px;
+  width: 80px;
   height: 28px;
 }
 
@@ -459,6 +475,26 @@
   display: block;
   margin-bottom: 5px;
   text-decoration: none;
+}
+
+.infinite-revolution .sheet-property {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.infinite-revolution .sheet-property label {
+  flex: 0 80px;
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.infinite-revolution .sheet-property input,
+.infinite-revolution .sheet-property select {
+  flex: 1;
 }
 
 .infinite-revolution .attribute label {
@@ -509,41 +545,6 @@
 .infinite-revolution .sheet-section-divider {
   border-bottom: 4px solid var(--color-primary);
   border-image: linear-gradient(to right, var(--color-primary), rgba(0, 0, 0, 0)) 100% 1;
-}
-
-.infinite-revolution .sheet-property {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 4px 0;
-}
-
-.infinite-revolution .sheet-property label {
-  flex: 0 80px;
-  color: var(--color-primary);
-  font-weight: bold;
-  margin-right: 4px;
-}
-
-.infinite-revolution .sheet-property input,
-.infinite-revolution .sheet-property select {
-  flex: 1;
-}
-
-.infinite-revolution .sheet-property-group {
-  display: flex;
-  flex-direction: row;
-}
-
-.infinite-revolution .sheet-property-group > :not(:last-child) {
-  margin-right: 12px;
-}
-
-.infinite-revolution .sheet-property-list {
-  display: flex;
-  flex-direction: row;
-  margin-top: 10px;
 }
 
 .infinite-revolution .sheet-section-editor {

@@ -6,6 +6,7 @@
     ],
     "revolver": {
       "speed": 0,
+      "inertia": 0,
       "biography": "",
       "attributes": {
         "hot": {

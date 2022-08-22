@@ -19,6 +19,7 @@
   "IR.CoreAccel": "Accel:",
   "IR.CoreBurnGate": "Burn Gate:",
   "IR.CoreSpeed": "Speed",
+  "IR.CoreInertia": "Inertia",
   "IR.CoreDriveStress": "Drive Stress",
 
   "IR.ActorTypeRevolver": "Revolver",
