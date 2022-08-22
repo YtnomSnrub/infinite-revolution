@@ -4,8 +4,15 @@
       "revolver",
       "veil"
     ],
+    "templates": {
+      "common": {
+        "speed": 0
+      }
+    },
     "revolver": {
-      "speed": 0,
+      "templates": [
+        "common"
+      ],
       "inertia": 0,
       "biography": "",
       "attributes": {
@@ -41,14 +48,35 @@
       "burnScarCount": 0
     },
     "veil": {
-      "speed": 0
+      "templates": [
+        "common"
+      ],
+      "rank": "chaff",
+      "agility": {
+        "value": 1,
+        "max": 1
+      },
+      "armor": 0,
+      "presence": 1,
+      "powers": [],
+      "counters": []
     }
   },
   "Item": {
     "types": [
       "weapon"
     ],
+    "templates": {
+      "common": {
+        "band": "M",
+        "hits": "1",
+        "tags": []
+      }
+    },
     "weapon": {
+      "templates": [
+        "common"
+      ],
       "category": "projected",
       "projectedData": {
         "pattern": "",
@@ -56,10 +84,14 @@
         "type": ""
       },
       "rangeType": "melee",
-      "band": "M",
-      "hits": "1",
-      "harm": "1",
-      "tags": []
+      "harm": "1"
+    },
+    "attack": {
+      "templates": [
+        "common"
+      ],
+      "impact": "1",
+      "notes": ""
     }
   }
 }
