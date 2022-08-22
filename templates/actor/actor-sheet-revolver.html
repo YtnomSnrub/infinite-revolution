@@ -55,7 +55,7 @@
                     </div>
                     <div class="sheet-property">
                         <label>{{localize "IR.CoreBurnGate"}}</label>
-                        <input type="number" name="data.core.burnGate" value="{{systemData.core.burnGate}}" />
+                        <input type="number" name="data.driveStress.max" value="{{systemData.driveStress.max}}" />
                     </div>
                 </div>
                 {{!-- Speed and Drive Stress --}}
@@ -70,9 +70,9 @@
                     </div>
                     <div class="property">
                         <label>{{localize "IR.CoreDriveStress"}}</label>
-                        <input type="number" name="data.driveStress" value="{{systemData.driveStress}}" />
+                        <input type="number" name="data.driveStress.value" value="{{systemData.driveStress.value}}" />
                         <span> / </span>
-                        <input type="number" name="data.data.core.burnGateReadonly" value="{{systemData.core.burnGate}}" readonly />
+                        <input type="number" value="{{systemData.driveStress.max}}" readonly />
                     </div>
                 </div>
             </div>
