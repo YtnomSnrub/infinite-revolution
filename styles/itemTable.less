@@ -53,7 +53,7 @@
                 border-left: none;
             }
 
-            .item-name {
+            .item-title {
                 padding-left: 3px;
             }
         }
@@ -73,6 +73,7 @@
             li {
                 display: flex;
                 flex-direction: row;
+                flex-wrap: wrap;
 
                 &:nth-child(even) {
                     background-color: rgba(255, 255, 255, 0.05);
@@ -80,7 +81,7 @@
             }
         }
 
-        .item-name,
+        .item-title,
         .item-band,
         .item-hits,
         .item-harm,
@@ -104,7 +105,7 @@
             border-left: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .item-name {
+        .item-title {
             justify-content: flex-start;
         }
 
@@ -171,6 +172,65 @@
 
         .attribute-bright {
             color: var(--color-bright);
+        }
+    }
+
+    .item {
+        .item-title {
+            img {
+                cursor: pointer;
+            }
+        }
+
+        .item-name {
+            cursor: pointer;
+            transition: color 0.1s ease;
+
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+
+        .item-summary {
+            flex: 100%;
+            padding: 12px 8px 0;
+
+            display: none;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+            opacity: 0;
+
+            background-color: var(--color-bg-window);
+
+            transition: opacity 0.2s ease;
+
+            .item-summary-heading {
+                text-transform: uppercase;
+                font-weight: normal;
+                font-size: 1em;
+                margin: 0;
+
+                line-height: 1;
+                padding-bottom: 8px;
+                padding-top: 2px;
+
+                font-family: var(--font-headings), sans-serif;
+            }
+
+            .item-tag-list {
+                margin-bottom: 12px;
+            }
+
+            p {
+                margin-top: 0;
+                margin-bottom: 12px;
+            }
+        }
+
+        &.expanded .item-summary {
+            opacity: 1;
         }
     }
 }

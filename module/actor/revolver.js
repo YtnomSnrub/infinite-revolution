@@ -1,5 +1,7 @@
-import { EntitySheetHelper } from "../helper.js";
+import { Helper } from "../helper.js";
 import { RollHelper } from "../chat/rollHelper.js";
+
+import { WEAPON_TRAITS } from "../item/weapon.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -25,7 +27,12 @@ export class ActorSheetRevolver extends ActorSheet {
     const context = super.getData();
     context.actor = this.actor.data.toObject(false);
     context.systemData = context.data.data;
-    context.items.weapons = context.data.items.filter(x => x.type === 'weapon');
+
+    context.items.weapons = context.data.items.filter(x => x.type === 'weapon').map(item => ({
+      ...item,
+      tagLabels: item.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }))
+    }));
+
     context.items.powers = context.data.items.filter(x => x.type === 'power');
     return context;
   }
@@ -46,6 +53,8 @@ export class ActorSheetRevolver extends ActorSheet {
     // Item attacks
     html.find(".weapon-attribute").on("click", this._onWeaponAttack.bind(this));
     // Item controls
+    html.find(".item img").on("click", this._onItemSendToChat.bind(this));
+    html.find(".item-name").on("click", this._onItemExpand.bind(this));
     html.find(".item-control[data-action='create']").on("click", this._onItemCreate.bind(this));
     html.find(".item-control[data-action='edit']").on("click", this._onItemEdit.bind(this));
     html.find(".item-control[data-action='delete']").on("click", this._onItemDelete.bind(this));
@@ -74,24 +83,60 @@ export class ActorSheetRevolver extends ActorSheet {
   }
 
   /**
-   * Listen for click events on weapon create button.
+   * Listen for click events on item expand button.
+   * @param {MouseEvent} event The originating left click event
+   */
+  _onItemSendToChat(event) {
+    event.preventDefault();
+
+    const button = event.currentTarget;
+    const li = button.closest(".item");
+    const item = this.actor.items.get(li?.dataset.itemId);
+    if (item.data.data.tags) {
+      item.data.data.tagLabels = item.data.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }));
+    }
+
+    Helper.sendItemToChat(item);
+  }
+
+  /**
+   * Listen for click events on item expand button.
+   * @param {MouseEvent} event The originating left click event
+   */
+  _onItemExpand(event) {
+    event.preventDefault();
+
+    const button = event.currentTarget;
+    const $li = $(button.closest(".item"));
+
+    if ($li.hasClass("expanded")) {
+      $li.children(".item-summary").slideUp(200);
+      $li.removeClass("expanded");
+    } else {
+      $li.children(".item-summary").slideDown(200);
+      $li.addClass("expanded");
+    }
+  }
+
+  /**
+   * Listen for click events on item create button.
    * @param {MouseEvent} event The originating left click event
    */
   _onItemCreate(event) {
     event.preventDefault();
-    
+
     const button = event.currentTarget;
     const cls = getDocumentClass("Item");
-    return cls.create({name: game.i18n.localize("IR.ItemNew"), type: button.dataset.itemType}, {parent: this.actor});
+    return cls.create({ name: game.i18n.localize("IR.ItemNew"), type: button.dataset.itemType }, { parent: this.actor });
   }
 
   /**
-   * Listen for click events on weapon edit button.
+   * Listen for click events on item edit button.
    * @param {MouseEvent} event The originating left click event
    */
   _onItemEdit(event) {
     event.preventDefault();
-    
+
     const button = event.currentTarget;
     const li = button.closest(".item");
     const item = this.actor.items.get(li?.dataset.itemId);
@@ -99,7 +144,7 @@ export class ActorSheetRevolver extends ActorSheet {
   }
 
   /**
-   * Listen for click events on weapon delete button.
+   * Listen for click events on item delete button.
    * @param {MouseEvent} event The originating left click event
    */
   _onItemDelete(event) {

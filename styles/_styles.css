@@ -20,6 +20,7 @@
   flex-direction: row;
   align-items: center;
   padding: 4px 0;
+  font-size: 0.75rem;
   border-top: 1px solid var(--color-border-light-primary);
   border-bottom: 1px solid var(--color-border-light-primary);
 }
@@ -32,12 +33,15 @@
 }
 
 .chat-message .message-header .chat-item-header h3 {
-  flex: 1;
   margin: 0;
   font-family: var(--font-headings), sans-serif;
   font-size: 1.5em;
   font-weight: normal;
   color: var(--color-text-light-heading);
+}
+
+.chat-message .message-header .chat-item-header .chat-card-title {
+  flex: 1;
 }
 
 .chat-message .info {
@@ -250,7 +254,7 @@
   border-left: none;
 }
 
-.infinite-revolution .item-list .item-list-header .item-name {
+.infinite-revolution .item-list .item-list-header .item-title {
   padding-left: 3px;
 }
 
@@ -269,13 +273,14 @@
 .infinite-revolution .item-list .item-list-body li {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .infinite-revolution .item-list .item-list-body li:nth-child(even) {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-.infinite-revolution .item-list .item-name,
+.infinite-revolution .item-list .item-title,
 .infinite-revolution .item-list .item-band,
 .infinite-revolution .item-list .item-hits,
 .infinite-revolution .item-list .item-harm,
@@ -298,7 +303,7 @@
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.infinite-revolution .item-list .item-name {
+.infinite-revolution .item-list .item-title {
   justify-content: flex-start;
 }
 
@@ -362,6 +367,54 @@
 
 .infinite-revolution .item-attributes .attribute-bright {
   color: var(--color-bright);
+}
+
+.infinite-revolution .item .item-title img {
+  cursor: pointer;
+}
+
+.infinite-revolution .item .item-name {
+  cursor: pointer;
+  transition: color 0.1s ease;
+}
+
+.infinite-revolution .item .item-name:hover {
+  color: var(--color-primary);
+}
+
+.infinite-revolution .item .item-summary {
+  flex: 100%;
+  padding: 12px 8px 0;
+  display: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  background-color: var(--color-bg-window);
+  transition: opacity 0.2s ease;
+}
+
+.infinite-revolution .item .item-summary .item-summary-heading {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1em;
+  margin: 0;
+  line-height: 1;
+  padding-bottom: 8px;
+  padding-top: 2px;
+  font-family: var(--font-headings), sans-serif;
+}
+
+.infinite-revolution .item .item-summary .item-tag-list {
+  margin-bottom: 12px;
+}
+
+.infinite-revolution .item .item-summary p {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.infinite-revolution .item.expanded .item-summary {
+  opacity: 1;
 }
 .infinite-revolution .trait-list {
   overflow: auto;

@@ -1,4 +1,4 @@
-export class EntitySheetHelper {
+export class Helper {
   /**
    * @see ClientDocumentMixin.createDialog
    */
@@ -62,6 +62,17 @@ export class EntitySheetHelper {
       },
       rejectClose: false,
       options: options
+    });
+  }
+
+  static async sendItemToChat(item) {
+    const content = await renderTemplate(`systems/infinite-revolution/templates/chat/item-card-${item.type}.html`, { item: item.data });
+
+    await ChatMessage.create({
+        rollMode: game.settings.get("core", "rollMode"),
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        content: content
     });
   }
 }

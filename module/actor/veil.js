@@ -1,4 +1,4 @@
-import { EntitySheetHelper } from "../helper.js";
+import { Helper } from "../helper.js";
 import { RollHelper } from "../chat/rollHelper.js";
 
 /**
