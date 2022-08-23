@@ -64,10 +64,13 @@
 
             list-style: none;
 
+            .item-icon {
+                margin: 3px 6px 3px 3px;
+            }
+
             img {
                 border: none;
-                margin: 3px;
-                margin-right: 6px;
+                margin: 0;
             }
 
             li {
@@ -177,8 +180,40 @@
 
     .item {
         .item-title {
-            img {
+            .item-icon {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
                 cursor: pointer;
+
+                width: 24px;
+                height: 24px;
+
+                img {
+                    filter: none;
+                    transition: filter 0.1s ease;
+                }
+
+                i {
+                    position: absolute;
+                    font-size: 16px;
+
+                    opacity: 0;
+                    
+                    transition: opacity 0.1s ease;
+                }
+
+                &:hover {
+                    img {
+                        filter: brightness(0.25);
+                    }
+
+                    i {
+                        opacity: 1;
+                    }
+                }
             }
         }
 

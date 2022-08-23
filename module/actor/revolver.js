@@ -53,7 +53,7 @@ export class ActorSheetRevolver extends ActorSheet {
     // Item attacks
     html.find(".weapon-attribute").on("click", this._onWeaponAttack.bind(this));
     // Item controls
-    html.find(".item img").on("click", this._onItemSendToChat.bind(this));
+    html.find(".item-icon").on("click", this._onItemSendToChat.bind(this));
     html.find(".item-name").on("click", this._onItemExpand.bind(this));
     html.find(".item-control[data-action='create']").on("click", this._onItemCreate.bind(this));
     html.find(".item-control[data-action='edit']").on("click", this._onItemEdit.bind(this));

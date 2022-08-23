@@ -264,10 +264,13 @@
   list-style: none;
 }
 
+.infinite-revolution .item-list .item-list-body .item-icon {
+  margin: 3px 6px 3px 3px;
+}
+
 .infinite-revolution .item-list .item-list-body img {
   border: none;
-  margin: 3px;
-  margin-right: 6px;
+  margin: 0;
 }
 
 .infinite-revolution .item-list .item-list-body li {
@@ -369,8 +372,34 @@
   color: var(--color-bright);
 }
 
-.infinite-revolution .item .item-title img {
+.infinite-revolution .item .item-title .item-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.infinite-revolution .item .item-title .item-icon img {
+  filter: none;
+  transition: filter 0.1s ease;
+}
+
+.infinite-revolution .item .item-title .item-icon i {
+  position: absolute;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.infinite-revolution .item .item-title .item-icon:hover img {
+  filter: brightness(0.25);
+}
+
+.infinite-revolution .item .item-title .item-icon:hover i {
+  opacity: 1;
 }
 
 .infinite-revolution .item .item-name {

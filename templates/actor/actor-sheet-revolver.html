@@ -94,7 +94,10 @@
                         {{#each items.weapons as |item id|}}
                         <li data-item-id="{{item._id}}" class="item">
                             <div class="item-title">
-                                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                                <div class="item-icon">
+                                    <img src="{{item.img}}" title="{{item.name}}" />
+                                    <i class="fas fa-comment-alt"></i>
+                                </div>
                                 <div class="item-name">{{item.name}}</div>
                             </div>
                             <div class="item-band">{{item.data.band}}</div>
@@ -160,7 +163,10 @@
                         {{#each items.powers as |item id|}}
                         <li data-item-id="{{item._id}}" class="item">
                             <div class="item-title">
-                                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                                <div class="item-icon">
+                                    <img src="{{item.img}}" title="{{item.name}}" />
+                                    <i class="fas fa-comment-alt"></i>
+                                </div>
                                 <div class="item-name">{{item.name}}</div>
                             </div>
                             <div class="item-cost">{{item.data.cost}}</div>
