@@ -33,3 +33,25 @@
 .mce-content-body {
     color: var(--color-text-light-highlight);
 }
+
+.tox-menu.tox-collection.tox-collection--list {
+    background-color: var(--color-bg-window);
+    color: var(--color-text-light-highlight);
+
+    .tox-collection__item--active {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
+        color: var(--color-text-light-highlight);
+    }
+    
+    .tox-collection__item-label,
+    .tox-collection__item-caret {
+        color: var(--color-text-light-highlight);
+    }
+
+    .tox-collection__item-caret svg {
+        fill: var(--color-text-light-highlight);
+    }
+}

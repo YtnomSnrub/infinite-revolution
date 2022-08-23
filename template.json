@@ -64,7 +64,9 @@
   },
   "Item": {
     "types": [
-      "weapon"
+      "weapon",
+      "attack",
+      "power"
     ],
     "templates": {
       "common": {
@@ -92,6 +94,10 @@
       ],
       "impact": "1",
       "notes": ""
+    },
+    "power": {
+      "cost": 0,
+      "description": ""
     }
   }
 }

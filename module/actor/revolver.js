@@ -26,6 +26,7 @@ export class ActorSheetRevolver extends ActorSheet {
     context.actor = this.actor.data.toObject(false);
     context.systemData = context.data.data;
     context.items.weapons = context.data.items.filter(x => x.type === 'weapon');
+    context.items.powers = context.data.items.filter(x => x.type === 'power');
     return context;
   }
 
@@ -45,9 +46,9 @@ export class ActorSheetRevolver extends ActorSheet {
     // Item attacks
     html.find(".weapon-attribute").on("click", this._onWeaponAttack.bind(this));
     // Item controls
-    html.find(".weapon-control[data-action='create']").on("click", this._onWeaponCreate.bind(this));
-    html.find(".weapon-control[data-action='edit']").on("click", this._onWeaponEdit.bind(this));
-    html.find(".weapon-control[data-action='delete']").on("click", this._onWeaponDelete.bind(this));
+    html.find(".item-control[data-action='create']").on("click", this._onItemCreate.bind(this));
+    html.find(".item-control[data-action='edit']").on("click", this._onItemEdit.bind(this));
+    html.find(".item-control[data-action='delete']").on("click", this._onItemDelete.bind(this));
   }
 
   /**
@@ -55,6 +56,7 @@ export class ActorSheetRevolver extends ActorSheet {
    * @param {MouseEvent} event The originating left click event
    */
   _onAttributeRoll(event) {
+    event.preventDefault();
     let button = $(event.currentTarget);
     const title = button.text();
     const attribute = button.data("attribute");
@@ -75,16 +77,19 @@ export class ActorSheetRevolver extends ActorSheet {
    * Listen for click events on weapon create button.
    * @param {MouseEvent} event The originating left click event
    */
-  _onWeaponCreate(event) {
+  _onItemCreate(event) {
+    event.preventDefault();
+    
+    const button = event.currentTarget;
     const cls = getDocumentClass("Item");
-    return cls.create({name: game.i18n.localize("IR.ItemNew"), type: "weapon"}, {parent: this.actor});
+    return cls.create({name: game.i18n.localize("IR.ItemNew"), type: button.dataset.itemType}, {parent: this.actor});
   }
 
   /**
    * Listen for click events on weapon edit button.
    * @param {MouseEvent} event The originating left click event
    */
-  _onWeaponEdit(event) {
+  _onItemEdit(event) {
     event.preventDefault();
     
     const button = event.currentTarget;
@@ -97,7 +102,7 @@ export class ActorSheetRevolver extends ActorSheet {
    * Listen for click events on weapon delete button.
    * @param {MouseEvent} event The originating left click event
    */
-  _onWeaponDelete(event) {
+  _onItemDelete(event) {
     event.preventDefault();
 
     const button = event.currentTarget;

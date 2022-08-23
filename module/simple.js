@@ -10,6 +10,8 @@ import { ActorSheetVeil } from "./actor/veil.js";
 
 import { ItemIR } from "./item/item.js";
 import { ItemSheetWeapon } from "./item/weapon.js";
+import { ItemSheetAttack } from "./item/attack.js";
+import { ItemSheetPower } from "./item/power.js";
 
 import { ChatLogIR } from "./chat/chatLog.js";
 
@@ -25,7 +27,7 @@ import { preloadHandlebarsTemplates } from "./templates.js";
  * Init hook.
  */
 Hooks.once("init", async function () {
-  console.log(`Initializing Simple InfiniteRevolution System`);
+  console.log(`Initializing Infinite Revolution System`);
 
   /**
    * Set an initiative formula for the system. This will be updated later.
@@ -50,7 +52,7 @@ Hooks.once("init", async function () {
   CONFIG.ui.chat = ChatLogIR;
 
   // TinyMCE
-  CONFIG.TinyMCE.content_css = CONFIG.TinyMCE.content_css.concat("systems/infinite-revolution/styles/simple.css");
+  CONFIG.TinyMCE.content_css = CONFIG.TinyMCE.content_css.concat("systems/infinite-revolution/styles/_styles.css");
   CONFIG.TinyMCE.style_formats = (CONFIG.TinyMCE.style_formats ?? []).concat({
     title: "Infinite Revolution",
     items: [
@@ -68,6 +70,8 @@ Hooks.once("init", async function () {
   Actors.registerSheet("infinite-revolution", ActorSheetVeil, { types: ["veil"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("infinite-revolution", ItemSheetWeapon, { types: ["weapon"], makeDefault: true });
+  Items.registerSheet("infinite-revolution", ItemSheetAttack, { types: ["attack"], makeDefault: true });
+  Items.registerSheet("infinite-revolution", ItemSheetPower, { types: ["power"], makeDefault: true });
 
   /**
    * Slugify a string.

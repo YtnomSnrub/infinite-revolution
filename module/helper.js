@@ -19,6 +19,8 @@ export class EntitySheetHelper {
       },
       "items": {
         "weapon": game.i18n.localize("IR.ItemTypeWeapon"),
+        "attack": game.i18n.localize("IR.ItemTypeAttack"),
+        "power": game.i18n.localize("IR.ItemTypePower"),
       }
     };
 

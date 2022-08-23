@@ -81,13 +81,13 @@
                 <h3 class="sheet-section-heading">Weapons</h3>
                 <div class="item-list">
                     <div class="item-list-header">
-                        <div class="item-list-heading item-name">Name</div>
-                        <div class="item-list-heading item-band">Band</div>
-                        <div class="item-list-heading item-hits">Hits</div>
-                        <div class="item-list-heading item-harm">Harm</div>
-                        <div class="item-list-heading item-attributes">Attacks</div>
+                        <div class="item-list-heading item-name">{{localize "IR.WeaponName"}}</div>
+                        <div class="item-list-heading item-band">{{localize "IR.WeaponBand"}}</div>
+                        <div class="item-list-heading item-hits">{{localize "IR.WeaponHits"}}</div>
+                        <div class="item-list-heading item-harm">{{localize "IR.WeaponHarm"}}</div>
+                        <div class="item-list-heading item-attributes">{{localize "IR.WeaponAttacks"}}</div>
                         <div class="item-list-heading item-controls">
-                            <a class="weapon-control" title="{{ localize 'IR.ItemCreate' }}" data-action="create"><i class="fas fa-plus"></i></a>
+                            <a class="item-control" title="{{ localize 'IR.ItemCreate' }}" data-action="create" data-item-type="weapon"><i class="fas fa-plus"></i></a>
                         </div>
                     </div>
                     <ol class="item-list-body">
@@ -101,13 +101,47 @@
                             <div class="item-hits">{{item.data.hits}}</div>
                             <div class="item-harm">{{item.data.harm}}</div>
                             <div class="item-attributes">
-                                <button class="item-attribute weapon-attribute attribute-hot" data-attribute="hot" type="button">{{localize "IR.AttributeHotShort"}}</button>
-                                <button class="item-attribute weapon-attribute attribute-quick" data-attribute="quick" type="button">{{localize "IR.AttributeQuickShort"}}</button>
-                                <button class="item-attribute weapon-attribute attribute-bright" data-attribute="bright" type="button">{{localize "IR.AttributeBrightShort"}}</button>
+                                <button class="item-attribute weapon-attribute attribute-hot" data-attribute="hot" type="button">
+                                    {{localize "IR.AttributeHotShort"}}
+                                </button>
+                                <button class="item-attribute weapon-attribute attribute-quick" data-attribute="quick" type="button">
+                                    {{localize "IR.AttributeQuickShort"}}
+                                </button>
+                                <button class="item-attribute weapon-attribute attribute-bright" data-attribute="bright" type="button">
+                                    {{localize "IR.AttributeBrightShort"}}
+                                </button>
                             </div>
                             <div class="item-controls">
                                 <a class="item-control weapon-control" title="{{ localize 'IR.ItemEdit' }}" data-action="edit"><i class="fas fa-edit"></i></a>
                                 <a class="item-control weapon-control" title="{{ localize 'IR.ItemDelete' }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ol>
+                </div>
+            </div>
+            <div class="sheet-section-divider"></div>
+            <div class="sheet-section">
+                <h3 class="sheet-section-heading">Powers</h3>
+                <div class="item-list">
+                    <div class="item-list-header">
+                        <div class="item-list-heading item-name">{{localize "IR.PowerName"}}</div>
+                        <div class="item-list-heading item-cost">{{localize "IR.PowerCost"}}</div>
+                        <div class="item-list-heading item-controls">
+                            <a class="item-control" title="{{ localize 'IR.ItemCreate' }}" data-action="create" data-item-type="power"><i class="fas fa-plus"></i></a>
+                        </div>
+                    </div>
+                    <ol class="item-list-body">
+                        {{#each items.powers as |item id|}}
+                        <li data-item-id="{{item._id}}" class="item">
+                            <div class="item-name">
+                                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                                <div>{{item.name}}</div>
+                            </div>
+                            <div class="item-cost">{{item.data.cost}}</div>
+                            <div class="item-controls">
+                                <a class="item-control" title="{{ localize 'IR.ItemEdit' }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                                <a class="item-control" title="{{ localize 'IR.ItemDelete' }}" data-action="delete"><i class="fas fa-trash"></i></a>
                             </div>
                         </li>
                         {{/each}}

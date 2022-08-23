@@ -56,10 +56,6 @@
             .item-name {
                 padding-left: 3px;
             }
-
-            .item-controls {
-                padding-right: 6px;
-            }
         }
 
         .item-list-body {
@@ -88,6 +84,7 @@
         .item-band,
         .item-hits,
         .item-harm,
+        .item-cost,
         .item-attributes,
         .item-controls {
             flex: 1;
@@ -98,9 +95,10 @@
             justify-content: center;
         }
 
-        .item-harm,
-        .item-hits,
         .item-band,
+        .item-hits,
+        .item-harm,
+        .item-cost,
         .item-attributes,
         .item-controls {
             border-left: 1px solid rgba(255, 255, 255, 0.1);
@@ -120,6 +118,10 @@
 
         .item-harm {
             flex: 0 0 50px;
+        }
+
+        .item-cost {
+            flex: 0 0 60px;
         }
 
         .item-attributes {

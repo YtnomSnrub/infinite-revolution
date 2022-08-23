@@ -25,16 +25,20 @@
   "IR.ActorTypeRevolver": "Revolver",
   "IR.ActorTypeVeil": "Veil",
   "IR.ItemTypeWeapon": "Weapon",
+  "IR.ItemTypeAttack": "Attack",
+  "IR.ItemTypePower": "Power",
 
   "IR.ItemCreate": "Create Item",
   "IR.ItemEdit": "Edit Item",
   "IR.ItemDelete": "Delete Item",
   "IR.ItemNew": "New Item",
   
+  "IR.WeaponName": "Name",
   "IR.WeaponCategory": "Category",
   "IR.WeaponCategoryProjected": "Projected",
   "IR.WeaponCategoryMounted": "Mounted",
   "IR.WeaponProjectedPattern": "Pattern",
+  "IR.WeaponProjectedPatternTrait": "Pattern Trait",
   "IR.WeaponProjectedType": "Type",
   "IR.WeaponRangeType": "Range",
   "IR.WeaponRangeTypeMelee": "Melee",
@@ -43,6 +47,7 @@
   "IR.WeaponHits": "Hits",
   "IR.WeaponHarm": "Harm",
   "IR.WeaponTags": "Tags",
+  "IR.WeaponAttacks": "Attacks",
 
   "IR.WeaponTagAgile": "Agile",
   "IR.WeaponTagAgileDescription": "Can attack before or after taking a normal Boost action.",
@@ -82,6 +87,10 @@
   "IR.WeaponTagTaxingDescription": "Can't attack if you've Boosted at all this turn. Once you've attacked, you can't Boost until the start of your next turn.",
   "IR.WeaponTagWeaken": "Weaken",
   "IR.WeaponTagWeakenDescription": "On a Strong Hit, Weakens targets until the start of your next turn.",
+
+  "IR.PowerName": "Cost",
+  "IR.PowerCost": "Cost",
+  "IR.PowerDescription": "Description",
 
   "IR.Done": "Done",
 
