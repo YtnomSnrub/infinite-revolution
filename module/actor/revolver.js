@@ -58,6 +58,8 @@ export class ActorSheetRevolver extends ActorSheet {
     html.find(".item-control[data-action='create']").on("click", this._onItemCreate.bind(this));
     html.find(".item-control[data-action='edit']").on("click", this._onItemEdit.bind(this));
     html.find(".item-control[data-action='delete']").on("click", this._onItemDelete.bind(this));
+    
+    html.find("[data-action='message']").on("click", this._onSendToChat.bind(this));
   }
 
   /**
@@ -97,6 +99,22 @@ export class ActorSheetRevolver extends ActorSheet {
     }
 
     Helper.sendItemToChat(item);
+  }
+
+  /**
+   * Listen for click events on item expand button.
+   * @param {MouseEvent} event The originating left click event
+   */
+  async _onSendToChat(event) {
+    event.preventDefault();
+
+    const button = event.currentTarget;
+    await ChatMessage.create({
+      rollMode: game.settings.get("core", "rollMode"),
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: this.object.data.data[button?.dataset.attribute]
+  });
   }
 
   /**

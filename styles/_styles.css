@@ -753,6 +753,10 @@
   align-items: center;
 }
 
+.infinite-revolution .sheet-heading-toolbar a {
+  padding-right: 6px;
+}
+
 .infinite-revolution .tabs {
   flex: 0 0 40px;
   border-top: 1px solid #AAA;

@@ -184,16 +184,22 @@
             </div>
             <div class="sheet-section-divider"></div>
             <div class="sheet-section">
-                <h3 class="sheet-section-heading">Passive</h3>
+                <div class="sheet-heading-toolbar">
+                    <h3 class="sheet-section-heading">Passive</h3>
+                    <a class="sheet-section-button" data-action="message" data-attribute="passive"><i class="fas fa-comment-alt"></i></a>
+                </div>
                 <div class="editor-wrapper">
-                    {{editor content=systemData.passive.content target="data.passive.content" button=true owner=owner editable=editable}}
+                    {{editor content=systemData.passive target="data.passive" button=true owner=owner editable=editable}}
                 </div>
             </div>
             <div class="sheet-section-divider"></div>
             <div class="sheet-section">
-                <h3 class="sheet-section-heading">Overdrive</h3>
+                <div class="sheet-heading-toolbar">
+                    <h3 class="sheet-section-heading">Overdrive</h3>
+                    <a class="sheet-section-button" data-action="message" data-attribute="overdrive"><i class="fas fa-comment-alt"></i></a>
+                </div>
                 <div class="editor-wrapper">
-                    {{editor content=systemData.overdrive.content target="data.overdrive.content" button=true owner=owner editable=editable}}
+                    {{editor content=systemData.overdrive target="data.overdrive" button=true owner=owner editable=editable}}
                 </div>
             </div>
         </div>
