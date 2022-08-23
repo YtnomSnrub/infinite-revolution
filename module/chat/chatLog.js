@@ -6,7 +6,12 @@ export class ChatLogIR extends ChatLog {
         options.push(
             {
                 name: "IR.RerollMenu.RerollLowest",
-                icon: '<i class="fas fa-dice"></i>',
+                icon: '<i class="fas fa-dice-d6"></i>',
+                condition: ($li) => {
+                    const message = game.messages.get($li.attr("data-message-id") ?? "", { strict: true });
+                    const roll = message.isRoll ? message.roll : null;
+                    return roll;
+                },
                 callback: async (li) => {
                     const message = game.messages.get(li.data("messageId"));
                     const roll = message.roll;
