@@ -31,15 +31,8 @@
         "pattern": "Balanced",
         "weight": 1,
         "accel": 3,
-        "passive": {
-          "title": "",
-          "content": ""
-        },
         "powers": [],
-        "overdrive": {
-          "title": "",
-          "content": ""
-        }
+        "sections": []
       },
       "driveStress": {
         "value": 0,
@@ -66,7 +59,8 @@
     "types": [
       "weapon",
       "attack",
-      "power"
+      "power",
+      "section"
     ],
     "templates": {
       "common": {
@@ -97,6 +91,11 @@
     },
     "power": {
       "cost": 0,
+      "description": ""
+    },
+    "section": {
+      "useResource": false,
+      "resource": {},
       "description": ""
     }
   }

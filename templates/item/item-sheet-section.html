@@ -1,0 +1,31 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+            </h1>
+            <div class="sheet-property">
+                <label>{{localize "IR.SectionUseResource"}}</label>
+                <input type="checkbox" name="data.useResource" {{checked systemData.useResource}} />
+            </div>
+            {{#if systemData.useResource}}
+            <div class="sheet-property">
+                <label>{{localize "IR.SectionResource"}}</label>
+                <input type="text" name="data.resource.name" value="{{systemData.resource.name}}" />
+            </div>
+            {{/if}}
+        </div>
+    </header>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        <h3 class="sheet-subheading">{{localize "IR.SectionDescription"}}</h3>
+        <div class="editor-wrapper-flex">
+            {{editor content=systemData.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+    </section>
+
+</form>

@@ -12,6 +12,7 @@ import { ItemIR } from "./item/item.js";
 import { ItemSheetWeapon } from "./item/weapon.js";
 import { ItemSheetAttack } from "./item/attack.js";
 import { ItemSheetPower } from "./item/power.js";
+import { ItemSheetSection } from "./item/section.js";
 
 import { ChatLogIR } from "./chat/chatLog.js";
 
@@ -72,6 +73,7 @@ Hooks.once("init", async function () {
   Items.registerSheet("infinite-revolution", ItemSheetWeapon, { types: ["weapon"], makeDefault: true });
   Items.registerSheet("infinite-revolution", ItemSheetAttack, { types: ["attack"], makeDefault: true });
   Items.registerSheet("infinite-revolution", ItemSheetPower, { types: ["power"], makeDefault: true });
+  Items.registerSheet("infinite-revolution", ItemSheetSection, { types: ["section"], makeDefault: true });
 
   /**
    * Slugify a string.

@@ -659,7 +659,7 @@
 }
 
 .infinite-revolution .property input {
-  width: 80px;
+  max-width: 80px;
   height: 28px;
 }
 
@@ -674,19 +674,30 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   padding: 4px 0;
 }
 
 .infinite-revolution .sheet-property label {
-  flex: 0 80px;
+  flex: 0 100px;
   color: var(--color-primary);
   font-weight: bold;
   margin-right: 4px;
 }
 
-.infinite-revolution .sheet-property input,
+.infinite-revolution .sheet-property input[type="text"],
+.infinite-revolution .sheet-property input[type="number"],
 .infinite-revolution .sheet-property select {
   flex: 1;
+}
+
+.infinite-revolution .sheet-property input[type="checkbox"] {
+  margin: 0;
+}
+
+.infinite-revolution .sheet-property .sheet-property-button {
+  padding-right: 4px;
+  padding-left: 8px;
 }
 
 .infinite-revolution .attribute label {
@@ -709,15 +720,6 @@
   color: var(--color-bright);
 }
 
-.infinite-revolution .sheet-subheading {
-  text-transform: uppercase;
-  font-weight: normal;
-  font-size: 1.25em;
-  margin: 0;
-  padding-top: 8px;
-  font-family: var(--font-headings), sans-serif;
-}
-
 .infinite-revolution .sheet-section {
   padding: 10px 10px;
   border-left: 4px solid var(--color-primary);
@@ -728,7 +730,6 @@
 }
 
 .infinite-revolution .sheet-section-heading {
-  flex: 1;
   text-transform: uppercase;
   font-weight: normal;
   font-size: 1.25em;
@@ -747,6 +748,18 @@
   position: relative;
 }
 
+.infinite-revolution .sheet-subsection {
+  padding-bottom: 8px;
+}
+
+.infinite-revolution .sheet-subheading {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1.25em;
+  margin: 0;
+  font-family: var(--font-headings), sans-serif;
+}
+
 .infinite-revolution .sheet-heading-toolbar {
   display: flex;
   flex-direction: row;
@@ -755,6 +768,19 @@
 
 .infinite-revolution .sheet-heading-toolbar a {
   padding-right: 6px;
+}
+
+.infinite-revolution .sheet-heading-toolbar .sheet-section-heading,
+.infinite-revolution .sheet-heading-toolbar .sheet-subheading {
+  flex: 1;
+}
+
+.infinite-revolution .sheet-section-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
 }
 
 .infinite-revolution .tabs {

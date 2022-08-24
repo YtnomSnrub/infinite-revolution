@@ -1,7 +1,7 @@
 import { Helper } from "../helper.js";
 
 /**
- * Extend the base Item document to support attributes and groups with a custom template creation dialog.
+ * Extend the base Item document for Infinite Revolution
  * @extends {Item}
  */
 export class ItemIR extends Item {
@@ -13,11 +13,7 @@ export class ItemIR extends Item {
   /** @inheritdoc */
   async _preCreate(data, options, user) {
     await super._preCreate(data, options, user);
-    // Item configuration
-    switch (data.type) {
-      case "weapon":
-        break;
-    }
+
     if (this.type === "weapon") {
       this.data.update({ img: "icons/svg/sword.svg" });
     }

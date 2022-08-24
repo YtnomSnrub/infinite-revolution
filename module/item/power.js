@@ -2,7 +2,7 @@ import { Helper } from "../helper.js";
 import { TraitSelector } from "../traitSelector.js";
 
 /**
- * Extend the basic ItemSheet with some very simple modifications
+ * ItemSheet for powers used by actors
  * @extends {ItemSheet}
  */
 export class ItemSheetPower extends ItemSheet {

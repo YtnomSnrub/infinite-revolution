@@ -16,7 +16,8 @@ export class ActorSheetRevolver extends ActorSheet {
       template: "systems/infinite-revolution/templates/actor/actor-sheet-revolver.html",
       width: 600,
       height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "core" }]
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "core" }],
+      dragDrop: [{ dragSelector: ".item-list .item, .sheet-section.item", dropSelector: null }]
     });
   }
 
@@ -28,12 +29,17 @@ export class ActorSheetRevolver extends ActorSheet {
     context.actor = this.actor.data.toObject(false);
     context.systemData = context.data.data;
 
+    // Add weapons
     context.items.weapons = context.data.items.filter(x => x.type === 'weapon').map(item => ({
       ...item,
       tagLabels: item.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }))
     }));
 
+    // Add powers
     context.items.powers = context.data.items.filter(x => x.type === 'power');
+    // Add sections
+    context.items.sections = context.data.items.filter(x => x.type === 'section');
+
     return context;
   }
 
@@ -58,7 +64,7 @@ export class ActorSheetRevolver extends ActorSheet {
     html.find(".item-control[data-action='create']").on("click", this._onItemCreate.bind(this));
     html.find(".item-control[data-action='edit']").on("click", this._onItemEdit.bind(this));
     html.find(".item-control[data-action='delete']").on("click", this._onItemDelete.bind(this));
-    
+
     html.find("[data-action='message']").on("click", this._onSendToChat.bind(this));
   }
 
@@ -114,7 +120,7 @@ export class ActorSheetRevolver extends ActorSheet {
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       content: this.object.data.data[button?.dataset.attribute]
-  });
+    });
   }
 
   /**

@@ -36,42 +36,46 @@
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
-        <div class="sheet-property-group">
-            <div class="sheet-property">
-                <label>{{localize "IR.WeaponRangeType"}}</label>
-                <select name="data.rangeType">
-                    {{#select systemData.rangeType}}
-                    <option value="melee">{{localize "IR.WeaponRangeTypeMelee"}}</option>
-                    <option value="ranged">{{localize "IR.WeaponRangeTypeRanged"}}</option>
-                    {{/select}}
-                </select>
+        <div class="sheet-subsection">
+            <div class="sheet-property-group">
+                <div class="sheet-property">
+                    <label>{{localize "IR.WeaponRangeType"}}</label>
+                    <select name="data.rangeType">
+                        {{#select systemData.rangeType}}
+                        <option value="melee">{{localize "IR.WeaponRangeTypeMelee"}}</option>
+                        <option value="ranged">{{localize "IR.WeaponRangeTypeRanged"}}</option>
+                        {{/select}}
+                    </select>
+                </div>
+                <div class="sheet-property">
+                    <label>{{localize "IR.WeaponBand"}}</label>
+                    <input type="text" name="data.band" value="{{systemData.band}}" />
+                </div>
             </div>
-            <div class="sheet-property">
-                <label>{{localize "IR.WeaponBand"}}</label>
-                <input type="text" name="data.band" value="{{systemData.band}}" />
+            <div class="sheet-property-group">
+                <div class="sheet-property">
+                    <label>{{localize "IR.WeaponHits"}}</label>
+                    <input type="text" name="data.hits" value="{{systemData.hits}}" />
+                </div>
+                <div class="sheet-property">
+                    <label>{{localize "IR.WeaponHarm"}}</label>
+                    <input type="text" name="data.harm" value="{{systemData.harm}}" />
+                </div>
             </div>
-        </div>
-        <div class="sheet-property-group">
-            <div class="sheet-property">
-                <label>{{localize "IR.WeaponHits"}}</label>
-                <input type="text" name="data.hits" value="{{systemData.hits}}" />
+            {{#if (eq systemData.category "projected")}}
+            <div class="sheet-property-group">
+                <div class="sheet-property">
+                    <label>{{localize "IR.WeaponProjectedPattern"}}</label>
+                    <input type="text" name="data.projectedData.pattern" value="{{systemData.projectedData.pattern}}" />
+                </div>
+                <div class="sheet-property">
+                    <label>{{localize "IR.WeaponProjectedType"}}</label>
+                    <input type="text" name="data.projectedData.type" value="{{systemData.projectedData.type}}" />
+                </div>
             </div>
-            <div class="sheet-property">
-                <label>{{localize "IR.WeaponHarm"}}</label>
-                <input type="text" name="data.harm" value="{{systemData.harm}}" />
-            </div>
+            {{/if}}
         </div>
         {{#if (eq systemData.category "projected")}}
-        <div class="sheet-property-group">
-            <div class="sheet-property">
-                <label>{{localize "IR.WeaponProjectedPattern"}}</label>
-                <input type="text" name="data.projectedData.pattern" value="{{systemData.projectedData.pattern}}" />
-            </div>
-            <div class="sheet-property">
-                <label>{{localize "IR.WeaponProjectedType"}}</label>
-                <input type="text" name="data.projectedData.type" value="{{systemData.projectedData.type}}" />
-            </div>
-        </div>
         <h3 class="sheet-subheading">{{localize "IR.WeaponProjectedPatternTrait"}}</h3>
         <div class="editor-wrapper-flex">
             {{editor content=systemData.projectedData.patternTrait target="data.projectedData.patternTrait" button=true owner=owner editable=editable}}

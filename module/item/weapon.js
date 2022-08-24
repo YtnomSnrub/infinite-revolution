@@ -24,7 +24,7 @@ export const WEAPON_TRAITS = [
 ];
 
 /**
- * Extend the basic ItemSheet with some very simple modifications
+ * ItemSheet for weapons used by actors
  * @extends {ItemSheet}
  */
 export class ItemSheetWeapon extends ItemSheet {

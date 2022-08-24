@@ -19,8 +19,9 @@ export class Helper {
       },
       "items": {
         "weapon": game.i18n.localize("IR.ItemTypeWeapon"),
-        "attack": game.i18n.localize("IR.ItemTypeAttack"),
         "power": game.i18n.localize("IR.ItemTypePower"),
+        "attack": game.i18n.localize("IR.ItemTypeAttack"),
+        "section": game.i18n.localize("IR.ItemTypeSection"),
       }
     };
 

@@ -12,7 +12,14 @@
   "IR.CheckResultCrit": "Critical Hit",
 
   "IR.PlayerSectionCore": "Core",
+  "IR.PlayerSectionEffects": "Effects",
   "IR.PlayerSectionDescription": "Description",
+
+  "IR.SheetHeadingWeapons": "Weapons",
+  "IR.SheetHeadingPowers": "Powers",
+  "IR.SheetHeadingPassive": "Passive",
+  "IR.SheetHeadingOverdrive": "Overdrive",
+  "IR.SheetButtonAddSection": "Add Section",
   
   "IR.CorePattern": "Pattern:",
   "IR.CoreWeight": "Weight:",
@@ -27,6 +34,7 @@
   "IR.ItemTypeWeapon": "Weapon",
   "IR.ItemTypeAttack": "Attack",
   "IR.ItemTypePower": "Power",
+  "IR.ItemTypeSection": "Section",
 
   "IR.ItemCreate": "Create Item",
   "IR.ItemEdit": "Edit Item",
@@ -91,6 +99,10 @@
   "IR.PowerName": "Name",
   "IR.PowerCost": "Cost",
   "IR.PowerDescription": "Description",
+
+  "IR.SectionResource": "Resource",
+  "IR.SectionUseResource": "Use Resource",
+  "IR.SectionDescription": "Description",
 
   "IR.Done": "Done",
 
