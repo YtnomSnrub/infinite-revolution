@@ -13,6 +13,7 @@
       "templates": [
         "common"
       ],
+      "color": "#fdc000",
       "inertia": 0,
       "biography": "",
       "attributes": {

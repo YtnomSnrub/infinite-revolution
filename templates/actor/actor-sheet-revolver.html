@@ -1,12 +1,15 @@
-<form class="flexcol {{cssClass}}" autocomplete="off">
+<form class="flexcol {{cssClass}}" autocomplete="off" style="--color-primary: {{systemData.color}};">
 
     {{!-- Sheet Header --}}
     <header class="sheet-header">
         <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="100" width="100" />
         <div class="header-fields">
-            <h1 class="charname">
-                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
-            </h1>
+            <div class="header-fields-row">
+                <h1 class="charname">
+                    <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+                </h1>
+                <input name="data.color" type="color" value="{{systemData.color}}" />
+            </div>
             <div class="attribute-list">
                 <div class="property attribute attribute-hot">
                     <label data-attribute="hot">{{localize "IR.AttributeHot"}}</label>

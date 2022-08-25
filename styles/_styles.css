@@ -541,6 +541,7 @@
 .infinite-revolution input[type="password"],
 .infinite-revolution input[type="date"],
 .infinite-revolution input[type="time"],
+.infinite-revolution input[type="color"],
 .infinite-revolution button,
 .infinite-revolution select {
   color: var(--color-text-light-highlight);
@@ -553,6 +554,7 @@
 .infinite-revolution input[type="password"].input-core,
 .infinite-revolution input[type="date"].input-core,
 .infinite-revolution input[type="time"].input-core,
+.infinite-revolution input[type="color"].input-core,
 .infinite-revolution button.input-core,
 .infinite-revolution select.input-core {
   width: 100%;
@@ -572,6 +574,7 @@
 .infinite-revolution input[type="password"].input-core:focus,
 .infinite-revolution input[type="date"].input-core:focus,
 .infinite-revolution input[type="time"].input-core:focus,
+.infinite-revolution input[type="color"].input-core:focus,
 .infinite-revolution button.input-core:focus,
 .infinite-revolution select.input-core:focus {
   text-transform: none;
@@ -582,6 +585,7 @@
 .infinite-revolution input[type="password"]:focus,
 .infinite-revolution input[type="date"]:focus,
 .infinite-revolution input[type="time"]:focus,
+.infinite-revolution input[type="color"]:focus,
 .infinite-revolution button:focus,
 .infinite-revolution select:focus {
   box-shadow: 0 0 5px var(--color-primary);
@@ -592,6 +596,7 @@
 .infinite-revolution input[type="password"] option,
 .infinite-revolution input[type="date"] option,
 .infinite-revolution input[type="time"] option,
+.infinite-revolution input[type="color"] option,
 .infinite-revolution button option,
 .infinite-revolution select option {
   background-color: var(--color-bg-window);
@@ -639,7 +644,6 @@
 
 .infinite-revolution .sheet-header h1.charname {
   flex: 0;
-  padding-bottom: 4px;
   font-family: var(--font-headings), sans-serif;
   font-size: 1.5em;
 }
@@ -648,6 +652,24 @@
   width: 100%;
   height: 100%;
   margin: 0;
+  padding: 1px 4px;
+}
+
+.infinite-revolution .sheet-header input[type="color"] {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  padding: 0;
+  margin-left: 4px;
+  overflow: hidden;
+}
+
+.infinite-revolution .sheet-header input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.infinite-revolution .sheet-header input[type="color"]::-webkit-color-swatch {
+  border: none;
 }
 
 .infinite-revolution .sheet-header .sheet-property {
@@ -664,6 +686,16 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+.infinite-revolution .header-fields .header-fields-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.infinite-revolution .header-fields .header-fields-row h1.charname {
+  flex: 1;
 }
 
 .infinite-revolution .attribute-list {
@@ -845,6 +877,16 @@
 
 .infinite-revolution .sheet-body .tab {
   height: 100%;
+}
+
+.infinite-revolution ::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+}
+
+.infinite-revolution ::-webkit-scrollbar-track {
+  border-radius: 0;
 }
 
 .infinite-revolution.sheet.actor {

@@ -9,6 +9,7 @@
   input[type="password"],
   input[type="date"],
   input[type="time"],
+  input[type="color"],
   button,
   select {
     color: var(--color-text-light-highlight);
@@ -89,8 +90,6 @@
     h1.charname {
       flex: 0;
 
-      padding-bottom: 4px;
-
       font-family: var(--font-headings), sans-serif;
       font-size: 1.5em;
 
@@ -98,6 +97,27 @@
         width: 100%;
         height: 100%;
         margin: 0;
+
+        padding: 1px 4px;
+      }
+    }
+
+    input[type="color"] {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+
+      padding: 0;
+      margin-left: 4px;
+
+      overflow: hidden;
+
+      &::-webkit-color-swatch-wrapper {
+        padding: 0;
+      }
+
+      &::-webkit-color-swatch {
+        border: none;
       }
     }
 
@@ -115,6 +135,16 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+    }
+
+    .header-fields-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      h1.charname {
+        flex: 1;
+      }
     }
   }
 
@@ -309,6 +339,16 @@
     .tab {
       height: 100%;
     }
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 0;
   }
 }
 
