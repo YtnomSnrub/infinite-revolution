@@ -2,13 +2,14 @@
 
     {{!-- Sheet Header --}}
     <header class="sheet-header">
-        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="100" width="100" />
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
         <div class="header-fields">
             <div class="header-fields-row">
                 <h1 class="charname">
                     <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
                 </h1>
                 <input name="data.color" type="color" value="{{systemData.color}}" />
+                <div class="title-color-indicator title-color-{{systemData.titleTheme}}"><i class="fas fa-font"></i></div>
             </div>
             <div class="attribute-list">
                 <div class="property attribute attribute-hot">
@@ -40,7 +41,7 @@
         {{!-- Core Tab --}}
         <div class="tab core" data-group="primary" data-tab="core">
             <div>
-                <input type="text" name="data.core.name" value="{{systemData.core.name}}" class="input-core" />
+                <input type="text" name="data.core.name" value="{{systemData.core.name}}" class="input-core title-color-{{systemData.titleTheme}}" />
                 <div class="sheet-section">
                     {{!-- Core Properties --}}
                     <div class="sheet-property-group">
@@ -103,7 +104,7 @@
                     {{#if item.data.useResource}}
                     <div class="sheet-property">
                         <label>{{item.data.resource.name}}</label>
-                        <input type="text" class="item-action" value="{{item.data.resource.value}}" data-action="resource-edit" />
+                        <input type="text" value="{{item.data.resource.value}}" data-action="resource-edit" />
                     </div>
                     {{/if}}
                     {{{item.data.description}}}

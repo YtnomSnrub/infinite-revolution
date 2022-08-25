@@ -6,7 +6,7 @@
                 <input type="checkbox" name="{{trait.name}}" {{checked trait.selected}} {{disabled trait.disabled}} />
                 <label class="trait-label">{{localize trait.label}}</label>
                 {{#if (eq trait.type "number")}}
-                <input type="number" name="{{trait.name}}" value="{{trait.value}}" {{disabled (not trait.selected)}} />
+                <input type="text" name="{{trait.name}}" value="{{trait.value}}" {{disabled (not trait.selected)}} />
                 {{/if}}
             </div>
         </li>

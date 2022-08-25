@@ -24,7 +24,7 @@ export class TraitSelector extends FormApplication {
     _onCheckboxChange(event) {
         const checkbox = $(event.currentTarget);
         const parent = $(checkbox.parent());
-        const numberInput = parent.children(`input[type="number"]`);
+        const numberInput = parent.children(`input[type="number"], input[type="text"]`);
         if (checkbox.prop("checked")) {
             numberInput.val(1);
             numberInput.prop("disabled", false);

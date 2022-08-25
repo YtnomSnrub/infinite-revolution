@@ -2,7 +2,7 @@
 
     {{!-- Sheet Header --}}
     <header class="sheet-header">
-        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="100" width="100" />
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
         <div class="header-fields">
             <h1 class="charname">
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
@@ -16,7 +16,7 @@
                     {{/select}}
                 </select>
             </div>
-            <div class="sheet-property">
+            <div class="sheet-property sheet-property-tags">
                 <label>{{localize "IR.WeaponTags"}}</label>
                 <div class="item-tag-list">
                     {{#each tagLabels as |tag key|}}

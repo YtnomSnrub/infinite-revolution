@@ -55,6 +55,7 @@ export class ActorSheetRevolver extends ActorSheetIR {
     if (!this.isEditable) return;
 
     // Form controls
+    html.find(".title-color-indicator").on("click", this._onToggleTitleTheme.bind(this));
     html.find(".attribute label").on("click", this._onAttributeRoll.bind(this));
 
     // Weapon actions
@@ -66,7 +67,20 @@ export class ActorSheetRevolver extends ActorSheetIR {
     html.find(".item-control[data-action='edit']").on("click", this._onItemEdit.bind(this));
     html.find(".item-control[data-action='delete']").on("click", this._onItemDelete.bind(this));
     html.find(".item-action[data-action='message']").on("click", this._onItemSendToChat.bind(this));
-    html.find(".item-action[data-action='resource-edit']").on("change", this._onChangeResourceValue.bind(this));
+    html.find("input[data-action='resource-edit']").on("change", this._onChangeResourceValue.bind(this));
+  }
+
+  /**
+   * Listen for click on toggle title theme button.
+   * @param {MouseEvent} event The originating left click event
+   */
+  _onToggleTitleTheme(event) {
+    event.preventDefault();
+    if (this.object.data.data.titleTheme === "dark") {
+      this.object.update({ "data.titleTheme": "light" });
+    } else {
+      this.object.update({ "data.titleTheme": "dark" });
+    }
   }
 
   /**

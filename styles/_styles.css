@@ -2,7 +2,12 @@
   --color-border-light-primary: #b0b0b0;
   color: var(--color-text-light-highlight);
   background: none;
-  background-color: var(--color-bg-window);
+  background-color: var(--color-bg-chat);
+}
+
+.chat-message.whisper {
+  background: none;
+  background-color: var(--color-bg-chat-whisper);
 }
 
 .chat-message .message-header {
@@ -145,6 +150,10 @@
   --color-quick: #c4db00;
   --color-bright: #ff008a;
   --color-bg-window: #202020;
+  --color-bg-chat: #202020;
+  --color-bg-chat-whisper: #21202a;
+  --color-title-dark: #202020;
+  --color-title-light: #ffffff;
 }
 .infinite-revolution .editor,
 .infinite-revolution .editor-content {
@@ -161,10 +170,6 @@
 
 .infinite-revolution .tox {
   min-height: 200px;
-}
-
-.infinite-revolution .tox-edit-area {
-  padding: 0 8px;
 }
 
 .infinite-revolution .editor .editor-edit {
@@ -482,6 +487,11 @@
 
 .infinite-revolution .item-action {
   cursor: pointer;
+  transition: color 0.1s ease;
+}
+
+.infinite-revolution .item-action:hover {
+  color: var(--color-primary);
 }
 .infinite-revolution .trait-list {
   overflow: auto;
@@ -504,6 +514,7 @@
   display: none;
 }
 
+.infinite-revolution .trait-list .trait-selection-label input[type="text"],
 .infinite-revolution .trait-list .trait-selection-label input[type="number"] {
   flex: 0 0 60px;
 }
@@ -580,6 +591,28 @@
   text-transform: none;
 }
 
+.infinite-revolution input[type="text"].input-core.title-color-dark,
+.infinite-revolution input[type="number"].input-core.title-color-dark,
+.infinite-revolution input[type="password"].input-core.title-color-dark,
+.infinite-revolution input[type="date"].input-core.title-color-dark,
+.infinite-revolution input[type="time"].input-core.title-color-dark,
+.infinite-revolution input[type="color"].input-core.title-color-dark,
+.infinite-revolution button.input-core.title-color-dark,
+.infinite-revolution select.input-core.title-color-dark {
+  color: var(--color-title-dark);
+}
+
+.infinite-revolution input[type="text"].input-core.title-color-light,
+.infinite-revolution input[type="number"].input-core.title-color-light,
+.infinite-revolution input[type="password"].input-core.title-color-light,
+.infinite-revolution input[type="date"].input-core.title-color-light,
+.infinite-revolution input[type="time"].input-core.title-color-light,
+.infinite-revolution input[type="color"].input-core.title-color-light,
+.infinite-revolution button.input-core.title-color-light,
+.infinite-revolution select.input-core.title-color-light {
+  color: var(--color-title-light);
+}
+
 .infinite-revolution input[type="text"]:focus,
 .infinite-revolution input[type="number"]:focus,
 .infinite-revolution input[type="password"]:focus,
@@ -614,8 +647,18 @@
 .infinite-revolution input[type="number"]:read-only,
 .infinite-revolution input[type="password"]:read-only,
 .infinite-revolution input[type="date"]:read-only,
-.infinite-revolution input[type="time"]:read-only {
-  border-style: dotted;
+.infinite-revolution input[type="time"]:read-only,
+.infinite-revolution select:read-only {
+  border: 1px dotted var(--color-border-light-tertiary);
+}
+
+.infinite-revolution input[type="text"]:disabled,
+.infinite-revolution input[type="number"]:disabled,
+.infinite-revolution input[type="password"]:disabled,
+.infinite-revolution input[type="date"]:disabled,
+.infinite-revolution input[type="time"]:disabled,
+.infinite-revolution select:disabled {
+  opacity: 0.75;
 }
 
 .infinite-revolution .window-content {
@@ -652,16 +695,19 @@
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 1px 4px;
+  padding: 0 4px;
 }
 
 .infinite-revolution .sheet-header input[type="color"] {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  padding: 0;
+  padding: 2px;
   margin-left: 4px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  background-color: var(--color-primary);
   overflow: hidden;
+  cursor: pointer;
 }
 
 .infinite-revolution .sheet-header input[type="color"]::-webkit-color-swatch-wrapper {
@@ -672,8 +718,36 @@
   border: none;
 }
 
-.infinite-revolution .sheet-header .sheet-property {
+.infinite-revolution .sheet-header .title-color-indicator {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
+  margin-left: 4px;
+  border: 2px solid var(--color-border-light-tertiary);
+  cursor: pointer;
+}
+
+.infinite-revolution .sheet-header .title-color-indicator.title-color-dark {
+  background-color: var(--color-title-light);
+  color: var(--color-title-dark);
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.infinite-revolution .sheet-header .title-color-indicator.title-color-light {
+  background-color: var(--color-title-dark);
+  color: var(--color-title-light);
+}
+
+.infinite-revolution .sheet-header .sheet-property {
+  padding: 4px 0 0;
+}
+
+.infinite-revolution .sheet-header .sheet-property-tags {
+  flex: 0;
 }
 
 .infinite-revolution .header-fields {
@@ -759,6 +833,7 @@
 .infinite-revolution .sheet-property input[type="number"],
 .infinite-revolution .sheet-property select {
   flex: 1;
+  padding: 0 5px;
 }
 
 .infinite-revolution .sheet-property input[type="checkbox"] {
