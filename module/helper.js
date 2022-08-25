@@ -66,8 +66,9 @@ export class Helper {
     });
   }
 
-  static async sendItemToChat(item) {
-    const content = await renderTemplate(`systems/infinite-revolution/templates/chat/item-card-${item.type}.html`, { item: item.data });
+  static async sendItemToChat(item, color) {
+    console.log(color);
+    const content = await renderTemplate(`systems/infinite-revolution/templates/chat/item-card-${item.type}.html`, { item: item.data, color });
 
     await ChatMessage.create({
         rollMode: game.settings.get("core", "rollMode"),

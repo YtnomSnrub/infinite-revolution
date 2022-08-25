@@ -96,7 +96,7 @@ export class ActorSheetRevolver extends ActorSheetIR {
       item.data.data.tagLabels = item.data.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }));
     }
 
-    Helper.sendItemToChat(item);
+    Helper.sendItemToChat(item, this.object.data.data.color);
   }
 
   /**
@@ -110,22 +110,6 @@ export class ActorSheetRevolver extends ActorSheetIR {
     const li = input.closest(".item");
     const item = this.actor.items.get(li?.dataset.itemId);
     item.update({ "data.resource.value": input.value });
-  }
-
-  /**
-   * Listen for click events on item expand button.
-   * @param {MouseEvent} event The originating left click event
-   */
-  async _onSendToChat(event) {
-    event.preventDefault();
-
-    const button = event.currentTarget;
-    await ChatMessage.create({
-      rollMode: game.settings.get("core", "rollMode"),
-      user: game.user.id,
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: this.object.data.data[button?.dataset.attribute]
-    });
   }
 
   /**
