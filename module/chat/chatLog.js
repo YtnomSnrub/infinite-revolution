@@ -12,7 +12,7 @@ export class ChatLogIR extends ChatLog {
                     const $content = $(message.data.flavor);
 
                     const roll = message.isRoll ? message.roll : null;
-                    return $content.data("action") === "attack" && roll;
+                    return ["attack", "attribute"].includes($content.data("action")) && roll;
                 },
                 callback: async (li) => {
                     const message = game.messages.get(li.data("messageId"));
