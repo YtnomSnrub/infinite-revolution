@@ -1,14 +1,15 @@
 import { Helper } from "../helper.js";
 import { RollHelper } from "../chat/rollHelper.js";
 
+import { ActorSheetIR } from "./actorSheet.js";
+
 import { WEAPON_TRAITS } from "../item/weapon.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class ActorSheetRevolver extends ActorSheet {
-
+export class ActorSheetRevolver extends ActorSheetIR {
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
@@ -32,7 +33,8 @@ export class ActorSheetRevolver extends ActorSheet {
     // Add weapons
     context.items.weapons = context.data.items.filter(x => x.type === 'weapon').map(item => ({
       ...item,
-      tagLabels: item.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }))
+      tagLabels: item.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value })),
+      hasParry: item.data.tags.some(x => x.name === "parry")
     }));
 
     // Add powers
@@ -54,18 +56,17 @@ export class ActorSheetRevolver extends ActorSheet {
 
     // Form controls
     html.find(".attribute label").on("click", this._onAttributeRoll.bind(this));
-    html.find("input").on("focus", this._onInputClick.bind(this));
 
-    // Item attacks
+    // Weapon actions
     html.find(".weapon-attribute").on("click", this._onWeaponAttack.bind(this));
+    html.find(".weapon-action[data-action='parry']").on("click", this._onWeaponParry.bind(this));
     // Item controls
-    html.find(".item-icon").on("click", this._onItemSendToChat.bind(this));
     html.find(".item-name").on("click", this._onItemExpand.bind(this));
     html.find(".item-control[data-action='create']").on("click", this._onItemCreate.bind(this));
     html.find(".item-control[data-action='edit']").on("click", this._onItemEdit.bind(this));
     html.find(".item-control[data-action='delete']").on("click", this._onItemDelete.bind(this));
-
-    html.find("[data-action='message']").on("click", this._onSendToChat.bind(this));
+    html.find(".item-action[data-action='message']").on("click", this._onItemSendToChat.bind(this));
+    html.find(".item-action[data-action='resource-edit']").on("change", this._onChangeResourceValue.bind(this));
   }
 
   /**
@@ -78,16 +79,7 @@ export class ActorSheetRevolver extends ActorSheet {
     const title = button.text();
     const attribute = button.data("attribute");
     const attributeValue = this.getData().systemData.attributes[attribute].value;
-    RollHelper.createAttributeCheckRoll(title, attributeValue, this.actor.getRollData());
-  }
-
-  /**
-   * Listen for click events on inputs.
-   * @param {MouseEvent} event The originating left click event
-   */
-  _onInputClick(event) {
-    event.preventDefault();
-    event.currentTarget.select();
+    RollHelper.createAttributeCheckRoll(attribute, title, attributeValue, this.actor.getRollData());
   }
 
   /**
@@ -105,6 +97,19 @@ export class ActorSheetRevolver extends ActorSheet {
     }
 
     Helper.sendItemToChat(item);
+  }
+
+  /**
+   * Listen for resource value change events.
+   * @param {MouseEvent} event The originating left click event
+   */
+  _onChangeResourceValue(event) {
+    event.preventDefault();
+
+    const input = event.currentTarget;
+    const li = input.closest(".item");
+    const item = this.actor.items.get(li?.dataset.itemId);
+    item.update({ "data.resource.value": input.value });
   }
 
   /**
@@ -195,6 +200,20 @@ export class ActorSheetRevolver extends ActorSheet {
     const item = this.actor.items.get(li?.dataset.itemId);
 
     RollHelper.createWeaponCheckRoll(item, attributeValue, this.actor.getRollData());
+  }
+
+  /**
+   * Listen for parry events on weapons.
+   * @param {MouseEvent} event The originating left click event
+   */
+  _onWeaponParry(event) {
+    event.preventDefault();
+
+    let button = event.currentTarget;
+    const li = button.closest(".item");
+    const item = this.actor.items.get(li?.dataset.itemId);
+
+    RollHelper.createWeaponParryRoll(item, this.actor.getRollData());
   }
 
   /* -------------------------------------------- */

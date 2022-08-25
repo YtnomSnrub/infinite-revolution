@@ -1,0 +1,7 @@
+<div class="chat-item-header">
+    <img src="{{item.img}}" />
+    <h3 class="chat-card-title">{{item.name}}</h3>
+    {{#if (eq item.data.category "projected")}}
+    <div>{{item.data.projectedData.pattern}}</div>
+    {{/if}}
+</div>

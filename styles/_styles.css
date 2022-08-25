@@ -50,6 +50,22 @@
   color: var(--color-text-light-primary);
 }
 
+.chat-message .attribute {
+  font-weight: bold;
+}
+
+.chat-message .attribute.attribute-hot {
+  color: var(--color-hot);
+}
+
+.chat-message .attribute.attribute-quick {
+  color: var(--color-quick);
+}
+
+.chat-message .attribute.attribute-bright {
+  color: var(--color-bright);
+}
+
 .chat-message .check-hit {
   font-weight: bold;
 }
@@ -70,6 +86,14 @@
   color: var(--color-crit);
 }
 
+.chat-message .check-hit.hit-failure {
+  color: var(--color-null);
+}
+
+.chat-message .check-hit.hit-success {
+  color: var(--color-strong);
+}
+
 .chat-message .item-tag-list {
   padding-top: 2px;
   padding-bottom: 4px;
@@ -80,7 +104,7 @@
 }
 
 .chat-message .item-tag-list .item-tag {
-  padding: 1px 4px;
+  padding: 2px 4px;
   margin-right: 2px;
   margin-top: 1px;
   margin-bottom: 1px;
@@ -88,6 +112,17 @@
   color: var(--color-text-light-heading);
   border: 1px solid var(--color-border-light-primary);
   border-radius: 3px;
+  font-size: 0.9em;
+  line-height: 1;
+}
+
+.chat-message .item-tag-list .item-tag-divider {
+  margin-left: 0px;
+  margin-right: 2px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  background-color: var(--color-text-light-heading);
+  width: 1px;
 }
 
 .chat-message .dice-tooltip .dice-rolls .roll.failure,
@@ -327,7 +362,7 @@
 }
 
 .infinite-revolution .item-list .item-attributes {
-  flex: 0 0 100px;
+  flex: 0 0 110px;
 }
 
 .infinite-revolution .item-list .item-attributes .item-attribute {
@@ -377,7 +412,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   width: 24px;
   height: 24px;
 }
@@ -444,6 +478,10 @@
 
 .infinite-revolution .item.expanded .item-summary {
   opacity: 1;
+}
+
+.infinite-revolution .item-action {
+  cursor: pointer;
 }
 .infinite-revolution .trait-list {
   overflow: auto;
@@ -802,12 +840,11 @@
 .infinite-revolution .sheet-body {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .infinite-revolution .sheet-body .tab {
   height: 100%;
-  overflow-y: auto;
 }
 
 .infinite-revolution.sheet.actor {

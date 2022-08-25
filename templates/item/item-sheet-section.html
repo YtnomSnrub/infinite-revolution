@@ -22,9 +22,11 @@
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
-        <h3 class="sheet-subheading">{{localize "IR.SectionDescription"}}</h3>
-        <div class="editor-wrapper-flex">
-            {{editor content=systemData.description target="data.description" button=true owner=owner editable=editable}}
+        <div class="sheet-subsection">
+            <h3 class="sheet-subheading">{{localize "IR.SectionDescription"}}</h3>
+            <div class="editor-wrapper-flex">
+                {{editor content=systemData.description target="data.description" button=true owner=owner editable=editable}}
+            </div>
         </div>
     </section>
 

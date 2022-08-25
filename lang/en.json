@@ -1,15 +1,19 @@
 {
+  "IR.AttributeCheck": "Attribute",
   "IR.AttributeHot": "Hot",
   "IR.AttributeQuick": "Quick",
   "IR.AttributeBright": "Bright",
   "IR.AttributeHotShort": "H",
   "IR.AttributeQuickShort": "Q",
   "IR.AttributeBrightShort": "B",
+  "IR.AttributeParryShort": "P",
 
   "IR.CheckResultNull": "Null",
   "IR.CheckResultWeak": "Weak Hit",
   "IR.CheckResultStrong": "Strong Hit",
   "IR.CheckResultCrit": "Critical Hit",
+  "IR.CheckResultFailure": "Failure",
+  "IR.CheckResultSuccess": "Success",
 
   "IR.PlayerSectionCore": "Core",
   "IR.PlayerSectionEffects": "Effects",
@@ -40,6 +44,10 @@
   "IR.ItemEdit": "Edit Item",
   "IR.ItemDelete": "Delete Item",
   "IR.ItemNew": "New Item",
+  "IR.ItemSendToChat": "Send to Chat",
+
+  "IR.ActionAttack": "Attack",
+  "IR.ActionParry": "Parry",
   
   "IR.WeaponName": "Name",
   "IR.WeaponCategory": "Category",
@@ -56,6 +64,8 @@
   "IR.WeaponHarm": "Harm",
   "IR.WeaponTags": "Tags",
   "IR.WeaponAttacks": "Attacks",
+  "IR.WeaponStrongHitMinimum": "Strong Hit Minimum",
+  "IR.WeaponParryDice": "Parry Dice",
 
   "IR.WeaponTagAgile": "Agile",
   "IR.WeaponTagAgileDescription": "Can attack before or after taking a normal Boost action.",
@@ -91,6 +101,8 @@
   "IR.WeaponTagSlowingDescription": "On a Strong Hit, Slows targets until the start of your next turn.",
   "IR.WeaponTagStun": "Stun",
   "IR.WeaponTagStunDescription": "On a Strong Hit, Stuns targets until the start of your next turn.",
+  "IR.WeaponTagStunCritOnly": "Stun (Crit only)",
+  "IR.WeaponTagStunCritOnlyDescription": "On a Critical Hit, Stuns targets until the start of your next turn.",
   "IR.WeaponTagTaxing": "Taxing",
   "IR.WeaponTagTaxingDescription": "Can't attack if you've Boosted at all this turn. Once you've attacked, you can't Boost until the start of your next turn.",
   "IR.WeaponTagWeaken": "Weaken",

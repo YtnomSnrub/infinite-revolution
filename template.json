@@ -80,7 +80,9 @@
         "type": ""
       },
       "rangeType": "melee",
-      "harm": "1"
+      "harm": "1",
+      "strongHitMinimum": 6,
+      "parryDice": 1
     },
     "attack": {
       "templates": [
@@ -95,7 +97,10 @@
     },
     "section": {
       "useResource": false,
-      "resource": {},
+      "resource": {
+        "name": "",
+        "value": ""
+      },
       "description": ""
     }
   }

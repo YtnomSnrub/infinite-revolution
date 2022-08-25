@@ -1,4 +1,7 @@
 import { Helper } from "../helper.js";
+
+import { ItemSheetIR } from "./itemSheet.js";
+
 import { TraitSelector } from "../traitSelector.js";
 
 export const WEAPON_TRAITS = [
@@ -19,6 +22,7 @@ export const WEAPON_TRAITS = [
   { "name": "prime", "label": "IR.WeaponTagPrime", "description": "IR.WeaponTagPrimeDescription", "type": "boolean" },
   { "name": "slowing", "label": "IR.WeaponTagSlowing", "description": "IR.WeaponTagSlowingDescription", "type": "boolean" },
   { "name": "stun", "label": "IR.WeaponTagStun", "description": "IR.WeaponTagStunDescription", "type": "boolean" },
+  { "name": "stun-crit", "label": "IR.WeaponTagStunCritOnly", "description": "IR.WeaponTagStunCritOnlyDescription", "type": "boolean" },
   { "name": "taxing", "label": "IR.WeaponTagTaxing", "description": "IR.WeaponTagTaxingDescription", "type": "boolean" },
   { "name": "weaken", "label": "IR.WeaponTagWeaken", "description": "IR.WeaponTagWeakenDescription", "type": "boolean" },
 ];
@@ -27,7 +31,7 @@ export const WEAPON_TRAITS = [
  * ItemSheet for weapons used by actors
  * @extends {ItemSheet}
  */
-export class ItemSheetWeapon extends ItemSheet {
+export class ItemSheetWeapon extends ItemSheetIR {
 
   /** @inheritdoc */
   static get defaultOptions() {
@@ -46,7 +50,8 @@ export class ItemSheetWeapon extends ItemSheet {
   getData() {
     const context = super.getData();
     context.systemData = context.data.data;
-    context.tagLabels = context.systemData.tags.map(x => ({...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value}));
+    context.tagLabels = context.systemData.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }));
+    context.hasParry = context.systemData.tags.some(x => x.name === "parry");
     return context;
   }
 

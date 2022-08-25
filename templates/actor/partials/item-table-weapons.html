@@ -1,0 +1,73 @@
+<div class="item-list">
+    <div class="item-list-header">
+        <div class="item-list-heading item-title">{{localize "IR.WeaponName"}}</div>
+        <div class="item-list-heading item-band">{{localize "IR.WeaponBand"}}</div>
+        <div class="item-list-heading item-hits">{{localize "IR.WeaponHits"}}</div>
+        <div class="item-list-heading item-harm">{{localize "IR.WeaponHarm"}}</div>
+        <div class="item-list-heading item-attributes">{{localize "IR.WeaponAttacks"}}</div>
+        <div class="item-list-heading item-controls">
+            <a class="item-control" title="{{ localize 'IR.ItemCreate' }}" data-action="create" data-item-type="weapon"><i class="fas fa-plus"></i></a>
+        </div>
+    </div>
+    <ol class="item-list-body">
+        {{#each items.weapons as |item id|}}
+        <li data-item-id="{{item._id}}" class="item">
+            <div class="item-title">
+                <div class="item-icon item-action" title="{{ localize 'IR.ItemSendToChat' }}" data-action="message">
+                    <img src="{{item.img}}" title="{{item.name}}" />
+                    <i class="fas fa-comment-alt"></i>
+                </div>
+                <div class="item-name">{{item.name}}</div>
+            </div>
+            <div class="item-band">{{item.data.band}}</div>
+            <div class="item-hits">{{item.data.hits}}</div>
+            <div class="item-harm">{{item.data.harm}}</div>
+            <div class="item-attributes">
+                <button class="item-attribute weapon-attribute attribute-hot" data-attribute="hot" type="button">
+                    {{localize "IR.AttributeHotShort"}}
+                </button>
+                <button class="item-attribute weapon-attribute attribute-quick" data-attribute="quick" type="button">
+                    {{localize "IR.AttributeQuickShort"}}
+                </button>
+                <button class="item-attribute weapon-attribute attribute-bright" data-attribute="bright" type="button">
+                    {{localize "IR.AttributeBrightShort"}}
+                </button>
+                {{#if item.hasParry}}
+                <button class="item-attribute weapon-action attribute-parry" data-action="parry" type="button">
+                    {{localize "IR.AttributeParryShort"}}
+                </button>
+                {{/if}}
+            </div>
+            <div class="item-controls">
+                <a class="item-control weapon-control" title="{{ localize 'IR.ItemEdit' }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                <a class="item-control weapon-control" title="{{ localize 'IR.ItemDelete' }}" data-action="delete"><i class="fas fa-trash"></i></a>
+            </div>
+            <div class="item-summary">
+                {{#if item.tagLabels}}
+                <p class="item-summary-heading">{{localize "IR.WeaponTags"}}</p>
+                <div class="item-tag-list">
+                    {{#each item.tagLabels as |tag key|}}
+                    {{#if (eq tag.type "number")}}
+                    <span class="item-tag" title="{{localize tag.description}}">{{localize tag.label}} {{tag.value}}</span>
+                    {{else}}
+                    <span class="item-tag" title="{{localize tag.description}}">{{localize tag.label}}</span>
+                    {{/if}}
+                    {{/each}}
+                </div>
+                {{/if}}
+
+                {{#if (eq item.data.category "projected")}}
+                <p class="item-summary-heading">{{localize "IR.WeaponProjectedPattern"}}</p>
+                <div class="item-tag-list">
+                    <span class="item-tag" title="{{localize 'IR.WeaponProjectedPattern'}}">{{item.data.projectedData.pattern}}</span>
+                    <span class="item-tag" title="{{localize 'IR.WeaponProjectedType'}}">{{item.data.projectedData.type}}</span>
+                </div>
+                {{#if item.data.projectedData.patternTrait}}
+                {{{item.data.projectedData.patternTrait}}}
+                {{/if}}
+                {{/if}}
+            </div>
+        </li>
+        {{/each}}
+    </ol>
+</div>

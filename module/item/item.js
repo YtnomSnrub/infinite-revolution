@@ -13,9 +13,5 @@ export class ItemIR extends Item {
   /** @inheritdoc */
   async _preCreate(data, options, user) {
     await super._preCreate(data, options, user);
-
-    if (this.type === "weapon") {
-      this.data.update({ img: "icons/svg/sword.svg" });
-    }
   }
 }

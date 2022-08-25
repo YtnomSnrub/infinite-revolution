@@ -65,6 +65,18 @@
             {{#if (eq systemData.category "projected")}}
             <div class="sheet-property-group">
                 <div class="sheet-property">
+                    <label>{{localize "IR.WeaponStrongHitMinimum"}}</label>
+                    <input type="number" name="data.strongHitMinimum" value="{{systemData.strongHitMinimum}}" />
+                </div>
+                {{#if hasParry}}
+                <div class="sheet-property">
+                    <label>{{localize "IR.WeaponParryDice"}}</label>
+                    <input type="number" name="data.parryDice" value="{{systemData.parryDice}}" />
+                </div>
+                {{/if}}
+            </div>
+            <div class="sheet-property-group">
+                <div class="sheet-property">
                     <label>{{localize "IR.WeaponProjectedPattern"}}</label>
                     <input type="text" name="data.projectedData.pattern" value="{{systemData.projectedData.pattern}}" />
                 </div>

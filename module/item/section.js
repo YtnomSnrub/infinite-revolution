@@ -1,11 +1,14 @@
 import { Helper } from "../helper.js";
+
+import { ItemSheetIR } from "./itemSheet.js";
+
 import { TraitSelector } from "../traitSelector.js";
 
 /**
  * ItemSheet for sections within actor sheets
  * @extends {ItemSheet}
  */
-export class ItemSheetSection extends ItemSheet {
+export class ItemSheetSection extends ItemSheetIR {
 
   /** @inheritdoc */
   static get defaultOptions() {

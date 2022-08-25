@@ -1,11 +1,13 @@
 import { Helper } from "../helper.js";
 import { RollHelper } from "../chat/rollHelper.js";
 
+import { ActorSheetIR } from "./actorSheet.js";
+
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class ActorSheetVeil extends ActorSheet {
+export class ActorSheetVeil extends ActorSheetIR {
 
   /** @inheritdoc */
   static get defaultOptions() {

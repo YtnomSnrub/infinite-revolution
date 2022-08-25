@@ -1,11 +1,14 @@
 import { Helper } from "../helper.js";
+
+import { ItemSheetIR } from "./itemSheet.js";
+
 import { TraitSelector } from "../traitSelector.js";
 
 /**
  * ItemSheet for attacks made by actors
  * @extends {ItemSheet}
  */
-export class ItemSheetAttack extends ItemSheet {
+export class ItemSheetAttack extends ItemSheetIR {
 
   /** @inheritdoc */
   static get defaultOptions() {

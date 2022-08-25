@@ -56,6 +56,22 @@
         color: var(--color-text-light-primary);
     }
 
+    .attribute {
+        font-weight: bold;
+
+        &.attribute-hot {
+            color: var(--color-hot);
+        }
+
+        &.attribute-quick {
+            color: var(--color-quick);
+        }
+
+        &.attribute-bright {
+            color: var(--color-bright);
+        }
+    }
+
     .check-hit {
         font-weight: bold;
 
@@ -74,6 +90,14 @@
         &.hit-crit {
             color: var(--color-crit);
         }
+
+        &.hit-failure {
+            color: var(--color-null);
+        }
+
+        &.hit-success {
+            color: var(--color-strong);
+        }
     }
 
     .item-tag-list {
@@ -87,7 +111,7 @@
         line-height: 1rem;
 
         .item-tag {
-            padding: 1px 4px;
+            padding: 2px 4px;
             margin-right: 2px;
             margin-top: 1px;
             margin-bottom: 1px;
@@ -97,6 +121,19 @@
             color: var(--color-text-light-heading);
             border: 1px solid var(--color-border-light-primary);
             border-radius: 3px;
+            
+            font-size: 0.9em;
+            line-height: 1;
+        }
+
+        .item-tag-divider {
+            margin-left: 0px;
+            margin-right: 2px;
+            margin-top: 4px;
+            margin-bottom: 4px;
+
+            background-color: var(--color-text-light-heading);
+            width: 1px;
         }
     }
 
