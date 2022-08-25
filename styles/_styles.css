@@ -10,6 +10,11 @@
   background-color: var(--color-bg-chat-whisper);
 }
 
+.chat-message.blind {
+  background: none;
+  background-color: var(--color-bg-chat-blind);
+}
+
 .chat-message .message-header {
   color: var(--color-text-light-primary);
 }
@@ -151,7 +156,8 @@
   --color-bright: #ff008a;
   --color-bg-window: #202020;
   --color-bg-chat: #202020;
-  --color-bg-chat-whisper: #21202a;
+  --color-bg-chat-whisper: #20212a;
+  --color-bg-chat-blind: #27202a;
   --color-title-dark: #202020;
   --color-title-light: #ffffff;
 }
@@ -355,7 +361,7 @@
 }
 
 .infinite-revolution .item-list .item-hits {
-  flex: 0 0 50px;
+  flex: 0 0 70px;
 }
 
 .infinite-revolution .item-list .item-harm {
