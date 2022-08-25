@@ -16,7 +16,43 @@
   "styles": [
     "styles/_styles.css"
   ],
-  "packs": [],
+  "packs": [
+    {
+      "name": "drive-overdrives",
+      "label": "Drive: Overdrives",
+      "system": "infinite-revolution",
+      "path": "./packs/drive-overdrives.db",
+      "type": "Item"
+    },
+    {
+      "name": "drive-passives",
+      "label": "Drive: Passives",
+      "system": "infinite-revolution",
+      "path": "./packs/drive-passives.db",
+      "type": "Item"
+    },
+    {
+      "name": "drive-powers",
+      "label": "Drive: Powers",
+      "system": "infinite-revolution",
+      "path": "./packs/drive-powers.db",
+      "type": "Item"
+    },
+    {
+      "name": "weapons-mounted",
+      "label": "Weapons: Mounted",
+      "system": "infinite-revolution",
+      "path": "./packs/weapons-mounted.db",
+      "type": "Item"
+    },
+    {
+      "name": "weapons-projected",
+      "label": "Weapons: Projected",
+      "system": "infinite-revolution",
+      "path": "./packs/weapons-projected.db",
+      "type": "Item"
+    }
+  ],
   "languages": [
     {
       "lang": "en",
@@ -28,5 +64,6 @@
   "gridUnits": "",
   "primaryTokenAttribute": "speed",
   "url": "https://github.com/YtnomSnrub/infinite-revolution/",
+  "manifest": "https://raw.githubusercontent.com/YtnomSnrub/infinite-revolution/main/system.json",
   "license": "LICENSE"
 }
