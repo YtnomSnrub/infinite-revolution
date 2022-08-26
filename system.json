@@ -72,6 +72,6 @@
   "primaryTokenAttribute": "speed",
   "url": "https://github.com/YtnomSnrub/infinite-revolution/",
   "manifest": "https://github.com/YtnomSnrub/infinite-revolution/releases/download/latest/system.json",
-  "download": "https://github.com/YtnomSnrub/infinite-revolution/releases/download/latest/pf2e.zip",
+  "download": "https://github.com/YtnomSnrub/infinite-revolution/releases/download/latest/infinite-revolution.zip",
   "license": "LICENSE"
 }
