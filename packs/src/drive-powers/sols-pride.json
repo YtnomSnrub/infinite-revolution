@@ -1,0 +1,17 @@
+{
+  "_id": "4dyy560greLwUg5L",
+  "name": "Sol's Pride",
+  "type": "power",
+  "img": "icons/magic/water/orb-ice-web.webp",
+  "data": {
+    "cost": "3",
+    "description": "<p>Until the start of your next turn, you gain +2 <strong>Weight</strong>, and whenever a foe activates, they must attack you if able.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

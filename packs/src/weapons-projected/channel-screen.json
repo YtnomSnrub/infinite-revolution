@@ -1,0 +1,33 @@
+{
+  "_id": "O2MHanUD0HLjXg49",
+  "name": "Channel: Screen",
+  "type": "weapon",
+  "img": "icons/magic/lightning/orb-ball-spiral-blue.webp",
+  "data": {
+    "band": "T3",
+    "hits": "2",
+    "tags": [
+      {
+        "name": "agile",
+        "value": true
+      }
+    ],
+    "category": "projected",
+    "projectedData": {
+      "pattern": "Channel",
+      "patternTrait": "<p>When you choose a Channel as your Projected weapon, pick two <strong>Configs</strong> to learn &mdash; one active, one reserve. Your Channel always has the stats and tags of its active <strong>Config</strong>. 1/round at any point during your turn, you can <strong>swap</strong> your active and reserve <strong>Configs</strong>, no action required.&nbsp;</p>",
+      "type": "Screen"
+    },
+    "rangeType": "ranged",
+    "harm": "2",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

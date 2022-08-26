@@ -1,0 +1,17 @@
+{
+  "_id": "4S8InoVssowSFxuI",
+  "name": "Gamma Flash",
+  "type": "power",
+  "img": "icons/magic/light/beams-strike-blue.webp",
+  "data": {
+    "cost": "2",
+    "description": "<p>Deal 2 Harm to all foes Leading (2) or Trailing (2) a character with an <span class=\"infinite-revolution-highlight\"><strong>ANTIMATTER SHELL</strong></span>.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

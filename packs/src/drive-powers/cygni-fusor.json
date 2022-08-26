@@ -1,0 +1,17 @@
+{
+  "_id": "NXMSOVmWlpBxd0K4",
+  "name": "Cygni Fusor",
+  "type": "power",
+  "img": "icons/magic/earth/explosion-lava-stone-red.webp",
+  "data": {
+    "cost": "3",
+    "description": "<p>Enter <span class=\"infinite-revolution-highlight\"><strong>RED GIANT STANCE</strong></span> until the end of your next turn. If youʼre in <span class=\"infinite-revolution-highlight\"><strong>RED GIANT STANCE</strong></span>, deal 5 Harm to all Matched foes instead.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

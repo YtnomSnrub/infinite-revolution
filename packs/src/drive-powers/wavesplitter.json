@@ -1,0 +1,17 @@
+{
+  "name": "Wavesplitter",
+  "type": "power",
+  "img": "icons/magic/water/barrier-ice-wall-snow.webp",
+  "data": {
+    "cost": "2",
+    "description": "<p><strong>Boost 2</strong>, attack with a Projected weapon, then <strong>Boost 2</strong> again.&nbsp;</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {},
+  "_id": "bAFIDSx7OY1A3yCZ"
+}

@@ -27,12 +27,12 @@ import { preloadHandlebarsTemplates } from "./templates.js";
 /**
  * Init hook.
  */
-Hooks.once("init", async function () {
-  console.log(`Initializing Infinite Revolution System`);
+Hooks.once("init", async function() {
+  console.log("Initializing Infinite Revolution System");
 
   /**
    * Set an initiative formula for the system. This will be updated later.
-   * @type {String}
+   * @type {string}
    */
   CONFIG.Combat.initiative = {
     formula: "0",
@@ -49,7 +49,7 @@ Hooks.once("init", async function () {
   CONFIG.Item.documentClass = ItemIR;
   CONFIG.Token.documentClass = TokenDocumentIR;
   CONFIG.Token.objectClass = TokenIR;
-  
+
   CONFIG.ui.chat = ChatLogIR;
 
   // TinyMCE
@@ -60,9 +60,9 @@ Hooks.once("init", async function () {
       {
         title: "Highlight",
         inline: "span",
-        classes: "infinite-revolution-highlight",
-      },
-    ],
+        classes: "infinite-revolution-highlight"
+      }
+    ]
   });
 
   // Register sheet application classes
@@ -78,7 +78,7 @@ Hooks.once("init", async function () {
   /**
    * Slugify a string.
    */
-  Handlebars.registerHelper('slugify', function (value) {
+  Handlebars.registerHelper("slugify", function(value) {
     return value.slugify({ strict: true });
   });
 

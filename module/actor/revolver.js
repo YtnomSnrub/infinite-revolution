@@ -31,16 +31,16 @@ export class ActorSheetRevolver extends ActorSheetIR {
     context.systemData = context.data.data;
 
     // Add weapons
-    context.items.weapons = context.data.items.filter(x => x.type === 'weapon').map(item => ({
+    context.items.weapons = context.data.items.filter(x => x.type === "weapon").map(item => ({
       ...item,
       tagLabels: item.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value })),
       hasParry: item.data.tags.some(x => x.name === "parry")
     }));
 
     // Add powers
-    context.items.powers = context.data.items.filter(x => x.type === 'power');
+    context.items.powers = context.data.items.filter(x => x.type === "power");
     // Add sections
-    context.items.sections = context.data.items.filter(x => x.type === 'section');
+    context.items.sections = context.data.items.filter(x => x.type === "section");
 
     return context;
   }

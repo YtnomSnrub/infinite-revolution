@@ -1,0 +1,33 @@
+{
+  "_id": "RK5S7b5sgZLtzsiL",
+  "name": "Bludgeon: Flail",
+  "type": "weapon",
+  "img": "icons/weapons/hammers/hammer-double-steel-embossed.webp",
+  "data": {
+    "band": "M",
+    "hits": "3",
+    "tags": [
+      {
+        "name": "decel",
+        "value": "1"
+      }
+    ],
+    "category": "projected",
+    "projectedData": {
+      "pattern": "Bludgeon",
+      "patternTrait": "<p>As long as you have 5 or more Speed, your attacks with Bludgeons gain <strong>Decel +1</strong> and all bonus stats marked with a star* (they donʼt have these bonuses at Speeds below 5).</p>",
+      "type": "Flail"
+    },
+    "rangeType": "melee",
+    "harm": "1+1*",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

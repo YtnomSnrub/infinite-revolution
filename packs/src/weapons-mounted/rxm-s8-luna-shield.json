@@ -1,0 +1,37 @@
+{
+  "_id": "UuhgOqnYu4W8B5sF",
+  "name": "RXM-S8 \"Luna\" Shield",
+  "type": "weapon",
+  "img": "icons/equipment/shield/heater-steel-segmented-purple.webp",
+  "data": {
+    "band": "M",
+    "hits": "1",
+    "tags": [
+      {
+        "name": "anchor",
+        "value": "1"
+      },
+      {
+        "name": "parry",
+        "value": true
+      }
+    ],
+    "category": "mounted",
+    "projectedData": {
+      "pattern": "",
+      "patternTrait": "",
+      "type": ""
+    },
+    "rangeType": "melee",
+    "harm": "3",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

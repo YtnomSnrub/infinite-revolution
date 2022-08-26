@@ -1,0 +1,17 @@
+{
+  "_id": "7poZOPIo8nyYcNKl",
+  "name": "Artemis Rush",
+  "type": "power",
+  "img": "icons/magic/movement/pinwheel-turning-blue.webp",
+  "data": {
+    "cost": "2",
+    "description": "<p><strong>Boost</strong>, then attack with a Ranged weapon. Whenever you Crit, you can use this power automatically (you still take <strong>Drive Stress</strong> if you do).</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

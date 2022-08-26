@@ -1,0 +1,21 @@
+{
+  "_id": "gtxBTrpBL2LIHH57",
+  "name": "Passive: Sunkiller Blades",
+  "type": "section",
+  "img": "icons/skills/melee/strike-axe-red.webp",
+  "data": {
+    "useResource": false,
+    "resource": {
+      "name": "",
+      "value": ""
+    },
+    "description": "<p>Your Projected Melee weapons deal +1 Harm <strong>for each Status</strong> on the target, including special Statuses.</p>\n<p>At the start of your turn, you may <strong>Prime</strong> or <strong>Slow</strong> a Leading (2) foe until the start of your next turn.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

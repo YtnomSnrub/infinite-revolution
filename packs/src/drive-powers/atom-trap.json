@@ -1,0 +1,17 @@
+{
+  "_id": "xPmskl49yqPb7dnv",
+  "name": "Atom Trap",
+  "type": "power",
+  "img": "icons/magic/sonic/explosion-shock-wave-teal.webp",
+  "data": {
+    "cost": "3",
+    "description": "<p>The next time an <span class=\"infinite-revolution-highlight\"><strong>ANTIMATTER SHELL</strong></span> detonates, it deals 5 Harm, <strong>Weakens</strong>, and <strong>Fractures</strong> the target. You can use this power at any time, even when itʼs not your turn.&nbsp;</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

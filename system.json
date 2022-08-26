@@ -14,7 +14,7 @@
     "module/init.js"
   ],
   "styles": [
-    "styles/_styles.css"
+    "styles/infinite-revolution.css"
   ],
   "packs": [
     {
@@ -71,6 +71,7 @@
   "gridUnits": "",
   "primaryTokenAttribute": "speed",
   "url": "https://github.com/YtnomSnrub/infinite-revolution/",
-  "manifest": "https://raw.githubusercontent.com/YtnomSnrub/infinite-revolution/main/system.json",
+  "manifest": "https://github.com/YtnomSnrub/infinite-revolution/releases/download/latest/system.json",
+  "download": "https://github.com/YtnomSnrub/infinite-revolution/releases/download/latest/pf2e.zip",
   "license": "LICENSE"
 }

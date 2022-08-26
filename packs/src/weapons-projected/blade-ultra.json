@@ -1,0 +1,37 @@
+{
+  "_id": "5WbgMRjPT7VcptI1",
+  "name": "Blade: Ultra",
+  "type": "weapon",
+  "img": "icons/weapons/swords/greatsword-crossguard-embossed-gold.webp",
+  "data": {
+    "band": "M",
+    "hits": "1",
+    "tags": [
+      {
+        "name": "overwhelm",
+        "value": true
+      },
+      {
+        "name": "taxing",
+        "value": true
+      }
+    ],
+    "category": "projected",
+    "projectedData": {
+      "pattern": "Blade",
+      "patternTrait": "<p>Blades have an <strong>Edge Die</strong>, a d6 that starts each mission at 6. After you roll an attack with a Blade, you can choose to either remove the highest die and use it as your new <strong>Edge Die</strong>, or add your <strong>Edge Die</strong> to your attack as if youʼd rolled a die with that value.</p>\n<p>Once you use an Edge Die, itʼs gone until you create a new one. You can only have one Edge Die at a time.&nbsp;</p>",
+      "type": "Ultra"
+    },
+    "rangeType": "melee",
+    "harm": "5",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,17 @@
+{
+  "_id": "7Xw2kwBTJMKoQ4lw",
+  "name": "Great Attractor",
+  "type": "power",
+  "img": "icons/magic/lightning/orb-ball-purple.webp",
+  "data": {
+    "cost": "2",
+    "description": "<p>Pull a target within Speed 3 to Match you. Foes take 1 Harm.&nbsp;</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

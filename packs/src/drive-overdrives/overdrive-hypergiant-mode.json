@@ -1,0 +1,21 @@
+{
+  "_id": "ltVMRz3ic3HNFB1L",
+  "name": "Overdrive: Hypergiant Mode",
+  "type": "section",
+  "img": "icons/magic/earth/barrier-lava-stone-orange.webp",
+  "data": {
+    "useResource": false,
+    "resource": {
+      "name": "",
+      "value": ""
+    },
+    "description": "<p>For the of rest the scene, whenever you end your turn in <span class=\"infinite-revolution-highlight\"><strong>RED GIANT STANCE</strong></span>, Matched foes take 3 Harm. Whenever you destroy a foe, you may extend the duration of <span class=\"infinite-revolution-highlight\"><strong>RED GIANT STANCE</strong></span> by 1 round.</p>\n<p>Enter <span class=\"infinite-revolution-highlight\"><strong>RED GIANT STANCE</strong></span> now, until the end of your next turn.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

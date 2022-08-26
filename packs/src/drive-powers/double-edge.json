@@ -1,0 +1,17 @@
+{
+  "_id": "RJzCwOPeqTfb2kop",
+  "name": "Double Edge",
+  "type": "power",
+  "img": "icons/skills/melee/swords-parry-block-yellow.webp",
+  "data": {
+    "cost": "2",
+    "description": "<p>Deal 2 Harm to a foe Matched to you, then 2 Harm to a foe Matched to your <span class=\"infinite-revolution-highlight\"><strong>QUANTUM DOUBLE</strong></span>. If you both hit the same target, <strong>Fracture</strong> them (before dealing Harm) until the end of your next turn.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

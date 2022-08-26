@@ -1,0 +1,21 @@
+{
+  "_id": "d4Sc5Mjb2egdZuLm",
+  "name": "Passive: Equilibrium",
+  "type": "section",
+  "img": "icons/magic/symbols/cog-shield-white-blue.webp",
+  "data": {
+    "useResource": false,
+    "resource": {
+      "name": "",
+      "value": ""
+    },
+    "description": "<p>Whenever you take <strong>Drive Stress</strong>, you gain that much <strong>Inertia</strong>. This stacks with other sources of <strong>Inertia</strong>.</p>\n<p>At the end your turn, Matched allies gain half your current <strong>Inertia</strong>, rounded up.&nbsp;</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

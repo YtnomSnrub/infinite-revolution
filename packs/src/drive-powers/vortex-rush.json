@@ -1,0 +1,17 @@
+{
+  "name": "Vortex Rush",
+  "type": "power",
+  "img": "icons/magic/water/vortex-water-whirlpool.webp",
+  "data": {
+    "cost": "1",
+    "description": "<p><strong>Boost</strong>, then deal Harm equal to your <span class=\"infinite-revolution-highlight\"><strong>FLOW</strong></span> (minimum 1) to one foe at each Speed you passed.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {},
+  "_id": "VlDv5vh4cOwPOu1A"
+}

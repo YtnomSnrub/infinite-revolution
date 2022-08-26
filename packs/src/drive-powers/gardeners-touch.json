@@ -1,0 +1,17 @@
+{
+  "_id": "NRSkZsDqH6rPr31Q",
+  "name": "Gardener's Touch",
+  "type": "power",
+  "img": "icons/magic/nature/beam-hand-leaves-green.webp",
+  "data": {
+    "cost": "1",
+    "description": "<p>Choose a Leading (2) ally. The next time that ally takes <strong>Drive Stress</strong>, open a Veil Breach Matched to them.&nbsp;</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

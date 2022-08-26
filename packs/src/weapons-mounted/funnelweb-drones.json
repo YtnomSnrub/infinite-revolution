@@ -1,0 +1,33 @@
+{
+  "_id": "xJG6DNsbmXF9ak1l",
+  "name": "\"Funnelweb\" Drones",
+  "type": "weapon",
+  "img": "icons/creatures/webs/web-sparse-pink.webp",
+  "data": {
+    "band": "L4, T4",
+    "hits": "2",
+    "tags": [
+      {
+        "name": "prime",
+        "value": true
+      }
+    ],
+    "category": "mounted",
+    "projectedData": {
+      "pattern": "",
+      "patternTrait": "",
+      "type": ""
+    },
+    "rangeType": "ranged",
+    "harm": "2",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

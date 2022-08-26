@@ -1,0 +1,17 @@
+{
+  "name": "Inertia Charge",
+  "type": "power",
+  "img": "icons/magic/water/strike-ice-blades.webp",
+  "data": {
+    "cost": "2",
+    "description": "<p><strong>Boost</strong>, then plant an <span class=\"infinite-revolution-highlight\"><strong>INERTIA CHARGE</strong></span> on one foe you passed. At the start of each of your turns, you can detonate all active charges, dealing Harm to their targets equal to your current Speed. The charges last until detonated or until the end of the scene. You can have any number of charges active at once.&nbsp;</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {},
+  "_id": "XtPTzHCkAdpgkG92"
+}

@@ -1,0 +1,21 @@
+{
+  "_id": "7RsHKh5fc7D95AWk",
+  "name": "Passive: Antimatter Shell",
+  "type": "section",
+  "img": "icons/magic/defensive/barrier-shield-dome-blue-purple.webp",
+  "data": {
+    "useResource": false,
+    "resource": {
+      "name": "",
+      "value": ""
+    },
+    "description": "<p>At the start of your turn, you can take 1 <strong>Drive Stress</strong> to create an <span class=\"infinite-revolution-highlight\"><strong>ANTIMATTER SHELL</strong></span> around your or an allyʼs Drive. The shell lasts until its target takes any Impact &mdash; then it detonates, reducing the Impact by 1 and dealing 3 Harm to a Matched foe. You can create any number of <span class=\"infinite-revolution-highlight\"><strong>ANTIMATTER SHELLS</strong></span>, but their effects donʼt stack.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

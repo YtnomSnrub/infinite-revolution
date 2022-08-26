@@ -1,0 +1,28 @@
+{
+  "_id": "wDjtbDBLuWAdokpt",
+  "name": "SGR-1 \"Dragon\" Axe",
+  "type": "weapon",
+  "img": "icons/weapons/axes/axe-battle-elemental-lava.webp",
+  "data": {
+    "band": "M, L2",
+    "hits": "2",
+    "tags": [],
+    "category": "mounted",
+    "projectedData": {
+      "pattern": "",
+      "patternTrait": "",
+      "type": ""
+    },
+    "rangeType": "melee",
+    "harm": "3",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,17 @@
+{
+  "_id": "aZDGDPXXy1XrHzrs",
+  "name": "Coronal Flare",
+  "type": "power",
+  "img": "icons/magic/light/projectile-flare-expliosion-yellow.webp",
+  "data": {
+    "cost": "3",
+    "description": "<p>Deal 1 Harm to Trailing (5) foes. Foes with <span class=\"infinite-revolution-highlight\"><strong>RADIANCE</strong></span> take 3 Harm instead.&nbsp;</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Seeker: Volley Die",
+  "type": "section",
+  "img": "icons/skills/ranged/bullets-triple-ball-orange.webp",
+  "data": {
+    "useResource": true,
+    "resource": {
+      "name": "Volley Die",
+      "value": "0"
+    },
+    "description": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {},
+  "_id": "vjwxseUiT1evQIdi"
+}

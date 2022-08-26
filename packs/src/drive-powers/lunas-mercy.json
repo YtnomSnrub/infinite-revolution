@@ -1,0 +1,17 @@
+{
+  "_id": "RPKdiY3KR9YSCWyH",
+  "name": "Luna's Mercy",
+  "type": "power",
+  "img": "icons/magic/water/barrier-ice-shield.webp",
+  "data": {
+    "cost": "2",
+    "description": "<p>1/round when an ally within Speed 3 would take Impact or a <strong>Status</strong> from a hostile source, you can activate this power, <strong>Blinking</strong> to Match that ally and taking the effect instead.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

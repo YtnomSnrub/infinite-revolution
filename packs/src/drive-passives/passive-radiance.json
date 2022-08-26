@@ -1,0 +1,21 @@
+{
+  "_id": "dfR3PeYftA65942g",
+  "name": "Passive: Radiance",
+  "type": "section",
+  "img": "icons/magic/light/explosion-beam-impact-silhouette.webp",
+  "data": {
+    "useResource": false,
+    "resource": {
+      "name": "",
+      "value": 0
+    },
+    "description": "<p>Your Projected weapons apply <span class=\"infinite-revolution-highlight\"><strong>RADIANCE</strong></span> on hit. Foes with <span class=\"infinite-revolution-highlight\"><strong>RADIANCE</strong></span> take 1 Harm at the end of each round, and continue to burn even if you <strong>Zero Out</strong> or otherwise leave the encounter.</p>\n<p>When a foe with <span class=\"infinite-revolution-highlight\"><strong>RADIANCE</strong></span> is destroyed, they explode, applying <span class=\"infinite-revolution-highlight\"><strong>RADIANCE</strong></span> to all foes Matched to them</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

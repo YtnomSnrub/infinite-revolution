@@ -1,0 +1,45 @@
+{
+  "_id": "QWz9kESoS5r55dHw",
+  "name": "AHM-88 Antimat Rifle",
+  "type": "weapon",
+  "img": "icons/magic/unholy/beam-ringed-impact-purple.webp",
+  "data": {
+    "band": "T6",
+    "hits": "1",
+    "tags": [
+      {
+        "name": "cooldown",
+        "value": true
+      },
+      {
+        "name": "pierce",
+        "value": true
+      },
+      {
+        "name": "precise",
+        "value": true
+      },
+      {
+        "name": "taxing",
+        "value": true
+      }
+    ],
+    "category": "mounted",
+    "projectedData": {
+      "pattern": "",
+      "patternTrait": "",
+      "type": ""
+    },
+    "rangeType": "ranged",
+    "harm": "5",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}

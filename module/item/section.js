@@ -1,8 +1,4 @@
-import { Helper } from "../helper.js";
-
 import { ItemSheetIR } from "./itemSheet.js";
-
-import { TraitSelector } from "../traitSelector.js";
 
 /**
  * ItemSheet for sections within actor sheets
@@ -17,7 +13,7 @@ export class ItemSheetSection extends ItemSheetIR {
       template: "systems/infinite-revolution/templates/item/item-sheet-section.html",
       width: 520,
       height: 480,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }],
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
     });
   }
 

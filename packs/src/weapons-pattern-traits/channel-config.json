@@ -1,0 +1,21 @@
+{
+  "name": "Channel: Config",
+  "type": "section",
+  "img": "icons/commodities/tech/cog-large-steel-white.webp",
+  "data": {
+    "useResource": true,
+    "resource": {
+      "name": "Config",
+      "value": "0"
+    },
+    "description": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {},
+  "_id": "SM03BZqlicC8VCWl"
+}

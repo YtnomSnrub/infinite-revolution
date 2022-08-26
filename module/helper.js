@@ -1,5 +1,7 @@
 export class Helper {
   /**
+   * @param data
+   * @param options
    * @see ClientDocumentMixin.createDialog
    */
   static async createDialog(data = {}, options = {}) {
@@ -13,15 +15,15 @@ export class Helper {
     const collection = game.collections.get(this.documentName);
     const collectionType = this.metadata.collection;
     const types = {
-      "actors": {
-        "revolver": game.i18n.localize("IR.ActorTypeRevolver"),
-        "veil": game.i18n.localize("IR.ActorTypeVeil"),
+      actors: {
+        revolver: game.i18n.localize("IR.ActorTypeRevolver"),
+        veil: game.i18n.localize("IR.ActorTypeVeil")
       },
-      "items": {
-        "weapon": game.i18n.localize("IR.ItemTypeWeapon"),
-        "power": game.i18n.localize("IR.ItemTypePower"),
-        "attack": game.i18n.localize("IR.ItemTypeAttack"),
-        "section": game.i18n.localize("IR.ItemTypeSection"),
+      items: {
+        weapon: game.i18n.localize("IR.ItemTypeWeapon"),
+        power: game.i18n.localize("IR.ItemTypePower"),
+        attack: game.i18n.localize("IR.ItemTypeAttack"),
+        section: game.i18n.localize("IR.ItemTypeSection")
       }
     };
 
@@ -70,10 +72,10 @@ export class Helper {
     const content = await renderTemplate(`systems/infinite-revolution/templates/chat/item-card-${item.type}.html`, { item: item.data, color });
 
     await ChatMessage.create({
-        rollMode: game.settings.get("core", "rollMode"),
-        user: game.user.id,
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        content: content
+      rollMode: game.settings.get("core", "rollMode"),
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: content
     });
   }
 }

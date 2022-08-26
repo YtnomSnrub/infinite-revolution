@@ -1,0 +1,33 @@
+{
+  "_id": "aWDXxh73Cv6lkc8c",
+  "name": "Kata: Nova [3]",
+  "type": "weapon",
+  "img": "icons/skills/melee/unarmed-punch-fist.webp",
+  "data": {
+    "band": "M",
+    "hits": "∞",
+    "tags": [
+      {
+        "name": "overwhelm",
+        "value": true
+      }
+    ],
+    "category": "projected",
+    "projectedData": {
+      "pattern": "Kata",
+      "patternTrait": "<p>Each Kata has 3 unique versions of its attack, called <strong>Strikes</strong>. The stats and tags for each <strong>Strike</strong> are separated by /slashes/. Each time you attack with a Kata, your next Kata attack will use the stats and tags of the following <strong>Strike</strong>. When you make your third <strong>Strike</strong>, loop back around to the first. <strong>Strike</strong> counts carry over between turns.</p>",
+      "type": "Nova"
+    },
+    "rangeType": "melee",
+    "harm": "5",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "permission": {
+    "default": 0
+  },
+  "flags": {}
+}
