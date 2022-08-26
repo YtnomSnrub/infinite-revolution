@@ -53,7 +53,7 @@ Hooks.once("init", async function() {
   CONFIG.ui.chat = ChatLogIR;
 
   // TinyMCE
-  CONFIG.TinyMCE.content_css = CONFIG.TinyMCE.content_css.concat("systems/infinite-revolution/styles/_styles.css");
+  CONFIG.TinyMCE.content_css = CONFIG.TinyMCE.content_css.concat("systems/infinite-revolution/infinite-revolution.css");
   CONFIG.TinyMCE.style_formats = (CONFIG.TinyMCE.style_formats ?? []).concat({
     title: "Infinite Revolution",
     items: [
