@@ -1,14 +1,33 @@
 {
   "_id": "UGsO0CyOTUFfuJZv",
   "name": "SHK-II Harpoon Gun",
+  "type": "weapon",
   "img": "icons/weapons/crossbows/crossbow-golden-bolt.webp",
-  "data": {},
+  "data": {
+    "band": "M, L3",
+    "hits": "1",
+    "tags": [
+      {
+        "name": "decel",
+        "value": "3"
+      }
+    ],
+    "category": "mounted",
+    "projectedData": {
+      "pattern": "",
+      "patternTrait": "",
+      "type": ""
+    },
+    "rangeType": "ranged",
+    "harm": "3",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "weapon"
+  "flags": {}
 }

@@ -1,14 +1,17 @@
 {
   "_id": "5eIb9udSPOMP3S3L",
   "name": "Aegis Throw",
+  "type": "power",
   "img": "icons/magic/movement/trail-streak-impact-blue.webp",
-  "data": {},
+  "data": {
+    "cost": "2",
+    "description": "<p>Deal 3 Harm to a Leading (2) foe. You can use this power any number of times in succession, as long as you target a different foe within Speed 2 of the previous target each time.</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "power"
+  "flags": {}
 }

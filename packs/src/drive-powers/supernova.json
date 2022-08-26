@@ -1,14 +1,17 @@
 {
   "_id": "E5L8CGra2rAKnTFG",
   "name": "Supernova",
+  "type": "power",
   "img": "icons/magic/light/explosion-star-large-orange.webp",
-  "data": {},
+  "data": {
+    "cost": "X+1",
+    "description": "<p>Deal X Harm to foes within Speed X, where X is the number of foes with <span class=\"infinite-revolution-highlight\"><strong>RADIANCE</strong></span>, up to 6.</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "power"
+  "flags": {}
 }

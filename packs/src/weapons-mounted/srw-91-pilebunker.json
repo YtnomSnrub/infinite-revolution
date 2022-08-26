@@ -1,14 +1,41 @@
 {
   "_id": "b15EBuEIC4sju85D",
   "name": "SRW-91 Pilebunker",
+  "type": "weapon",
   "img": "icons/weapons/hammers/hammer-drilling-spiked.webp",
-  "data": {},
+  "data": {
+    "band": "M",
+    "hits": "1",
+    "tags": [
+      {
+        "name": "cooldown",
+        "value": true
+      },
+      {
+        "name": "fracture",
+        "value": true
+      },
+      {
+        "name": "pierce",
+        "value": true
+      }
+    ],
+    "category": "mounted",
+    "projectedData": {
+      "pattern": "",
+      "patternTrait": "",
+      "type": ""
+    },
+    "rangeType": "melee",
+    "harm": "5",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "weapon"
+  "flags": {}
 }

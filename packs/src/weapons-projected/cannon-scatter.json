@@ -1,14 +1,33 @@
 {
   "_id": "dwlKgzJCsJbBlKnb",
   "name": "Cannon: Scatter",
+  "type": "weapon",
   "img": "icons/skills/ranged/cannon-barrel-firing-yellow.webp",
-  "data": {},
+  "data": {
+    "band": "L2 (L2)",
+    "hits": "2",
+    "tags": [
+      {
+        "name": "burst",
+        "value": true
+      }
+    ],
+    "category": "projected",
+    "projectedData": {
+      "pattern": "Cannon",
+      "patternTrait": "<p>Cannons have a <strong>Threat</strong> range, represented by the Speed band in (parentheses). 1/round when a foe acts within your Cannonʼs <strong>Threat</strong>, you may deal the Harm in (parentheses) to the target <strong>after they act</strong>. This is not an attack, but still applies tags like <strong>Burst</strong> and other effects that trigger on dealing Harm.</p>",
+      "type": "Scatter"
+    },
+    "rangeType": "ranged",
+    "harm": "2 (1)",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "weapon"
+  "flags": {}
 }

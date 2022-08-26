@@ -1,14 +1,33 @@
 {
   "_id": "QGYGC9FJZQA7sxJr",
   "name": "Beam: Flicker",
+  "type": "weapon",
   "img": "icons/magic/light/projectile-beam-yellow.webp",
-  "data": {},
+  "data": {
+    "band": "L, T (All)",
+    "hits": "3",
+    "tags": [
+      {
+        "name": "agile",
+        "value": true
+      }
+    ],
+    "category": "projected",
+    "projectedData": {
+      "pattern": "Beam",
+      "patternTrait": "<p>Beams donʼt target foes normally. Instead, on a successful attack, a Beam deals Harm to the closest X foes in its Range, where X is its Hits. If there are multiple foes at the same Speed, choose only one per increment of Speed.</p>",
+      "type": "Flicker"
+    },
+    "rangeType": "ranged",
+    "harm": "1",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "weapon"
+  "flags": {}
 }

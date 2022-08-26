@@ -1,14 +1,21 @@
 {
   "_id": "8VlmxnFYGmaCAJsW",
   "name": "Overdrive: Flowering Night",
+  "type": "section",
   "img": "icons/magic/nature/plant-undersea-seaweed-glow-green.webp",
-  "data": {},
+  "data": {
+    "useResource": false,
+    "resource": {
+      "name": "",
+      "value": ""
+    },
+    "description": "<p>For the rest of the scene, Veil Breaches canʼt be opened, and whenever a foe is destroyed, create a <span class=\"infinite-revolution-highlight\"><strong>VOID BLOOM</strong></span> at its Speed. <span class=\"infinite-revolution-highlight\"><strong>VOID BLOOMS</strong></span> last until the end of the scene, count as Veil Breaches for friendly powers and abilities, and donʼt count for <strong>Incursion</strong>. Allies that end their turns Matched to one or more <span class=\"infinite-revolution-highlight\"><strong>VOID BLOOMS</strong></span> may clear 3 <strong>Drive Stress</strong>.</p>\n<p>Close all open Veil Breaches and create <span class=\"infinite-revolution-highlight\"><strong>VOID BLOOMS</strong></span> in their place now.</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "section"
+  "flags": {}
 }

@@ -1,14 +1,21 @@
 {
   "_id": "p5zLG6nHGBnsoHJD",
   "name": "Passive: Veilborn",
+  "type": "section",
   "img": "icons/magic/air/wind-vortex-swirl-blue-purple.webp",
-  "data": {},
+  "data": {
+    "useResource": false,
+    "resource": {
+      "name": "",
+      "value": ""
+    },
+    "description": "<p>As long as youʼre Matched to one or more active Veil Breaches, your Projected melee weapons gain +2 Harm and <strong>Overwhelm</strong>, and you gain 2 <strong>Inertia</strong> at the start of your turn.</p>\n<p>Whenever you destroy a foe, you may open a Veil Breach at the targetʼs Speed.</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "section"
+  "flags": {}
 }

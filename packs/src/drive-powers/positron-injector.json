@@ -1,14 +1,17 @@
 {
   "_id": "tQEQBkijiwUTIm6u",
   "name": "Positron Injector",
+  "type": "power",
   "img": "icons/magic/air/air-wave-gust-blue.webp",
-  "data": {},
+  "data": {
+    "cost": "1",
+    "description": "<p>An ally with an <span class=\"infinite-revolution-highlight\"><strong>ANTIMATTER SHELL</strong></span> may immediately <strong>Boost</strong> or attack with a Projected Weapon.&nbsp;</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "power"
+  "flags": {}
 }

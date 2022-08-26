@@ -1,14 +1,17 @@
 {
   "_id": "K0xcbmjNPGOlBRMv",
   "name": "Winnower's Scythe",
+  "type": "power",
   "img": "icons/skills/melee/blade-tip-smoke-green.webp",
-  "data": {},
+  "data": {
+    "cost": "1",
+    "description": "<p>Choose a Leading Chaff or Standard foe Matched to a Veil Breach. Close the Breach; the target is instantly destroyed.</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "power"
+  "flags": {}
 }

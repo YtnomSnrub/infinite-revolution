@@ -1,14 +1,21 @@
 {
   "_id": "XI6vSl7Gs73IZHPc",
   "name": "Passive: Entropic Harvest",
+  "type": "section",
   "img": "icons/magic/nature/leaf-drip-light-green.webp",
-  "data": {},
+  "data": {
+    "useResource": false,
+    "resource": {
+      "name": "",
+      "value": ""
+    },
+    "description": "<p>Whenever a foe is destroyed, clear 1 <strong>Drive Stress</strong>. You donʼt clear any <strong>Drive Stress</strong> for closing a Veil Breach.</p>\n<p>Whenever the GM rolls to open Veil Breaches, they roll 2d6 per foe destroyed and <strong>you</strong> pick either result.</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "section"
+  "flags": {}
 }

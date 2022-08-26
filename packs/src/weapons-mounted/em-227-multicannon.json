@@ -1,14 +1,33 @@
 {
   "_id": "fN07TQYxz7F49J57",
   "name": "EM-227 Multicannon",
+  "type": "weapon",
   "img": "icons/skills/ranged/bullets-triple-ball-yellow.webp",
-  "data": {},
+  "data": {
+    "band": "L4",
+    "hits": "3",
+    "tags": [
+      {
+        "name": "slowing",
+        "value": true
+      }
+    ],
+    "category": "mounted",
+    "projectedData": {
+      "pattern": "",
+      "patternTrait": "",
+      "type": ""
+    },
+    "rangeType": "ranged",
+    "harm": "3",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "weapon"
+  "flags": {}
 }

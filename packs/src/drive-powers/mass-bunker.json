@@ -1,14 +1,17 @@
 {
   "_id": "nZ1kAJNDkbeMdFSe",
   "name": "Mass Bunker",
+  "type": "power",
   "img": "icons/magic/defensive/barrier-shield-dome-pink.webp",
-  "data": {},
+  "data": {
+    "cost": "4",
+    "description": "<p>You and Matched allies of your choice gain +4 <strong>Weight</strong> and are <strong>Locked</strong> until the start of your next turn. If an ally changes Speed, they lose this effect immediately.</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "power"
+  "flags": {}
 }

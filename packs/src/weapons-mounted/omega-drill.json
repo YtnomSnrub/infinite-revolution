@@ -1,14 +1,37 @@
 {
   "_id": "Rs4jjRu5msaXqX6A",
   "name": "Omega Drill",
+  "type": "weapon",
   "img": "icons/tools/hand/drill-steel-brown-grey.webp",
-  "data": {},
+  "data": {
+    "band": "M",
+    "hits": "1",
+    "tags": [
+      {
+        "name": "overwhelm",
+        "value": true
+      },
+      {
+        "name": "pierce",
+        "value": true
+      }
+    ],
+    "category": "mounted",
+    "projectedData": {
+      "pattern": "",
+      "patternTrait": "",
+      "type": ""
+    },
+    "rangeType": "melee",
+    "harm": "4",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "weapon"
+  "flags": {}
 }

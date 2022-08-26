@@ -1,14 +1,17 @@
 {
   "_id": "K6sVlk1oZq3u29sI",
   "name": "Double Take",
+  "type": "power",
   "img": "icons/magic/movement/trail-streak-zigzag-yellow.webp",
-  "data": {},
+  "data": {
+    "cost": "1",
+    "description": "<p>Your <span class=\"infinite-revolution-highlight\"><strong>QUANTUM DOUBLE</strong></span> may <strong>Boost 3</strong>, then make a Projected weapon attack.</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "power"
+  "flags": {}
 }

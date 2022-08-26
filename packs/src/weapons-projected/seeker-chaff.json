@@ -1,14 +1,33 @@
 {
   "_id": "kLtF4uBdAfIacJk0",
   "name": "Seeker: Chaff",
+  "type": "weapon",
   "img": "icons/magic/light/projectiles-salvo-teal.webp",
-  "data": {},
+  "data": {
+    "band": "T4",
+    "hits": "[Volley]",
+    "tags": [
+      {
+        "name": "slowing",
+        "value": true
+      }
+    ],
+    "category": "projected",
+    "projectedData": {
+      "pattern": "Seeker",
+      "patternTrait": "<p>Seekers have a <strong>Volley Die</strong>, a d6 that starts each scene at 1 and determines their Hits. At the end of each of your turns, if you didnʼt attack with a Seeker this round, add 1 to your <strong>Volley Die</strong>, up to 6. When you attack with a Seeker, the Volley Die <strong>resets back to 1</strong>. You can also use your action to increase the <strong>Volley Die</strong> by 1, which stacks with the end-of-turn increase.</p>",
+      "type": "Chaff"
+    },
+    "rangeType": "ranged",
+    "harm": "2",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "weapon"
+  "flags": {}
 }

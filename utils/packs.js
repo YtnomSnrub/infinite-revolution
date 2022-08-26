@@ -195,7 +195,7 @@ function extract() {
           const name = entry.name.toLowerCase();
           if ( entryName && (entryName !== name) ) return;
           cleanPackEntry(entry);
-          const output = `${JSON.stringify(entry, ["_id", "name", "img", ...Object.keys(entry).sort()], 2)}\n`;
+          const output = `${JSON.stringify(entry, null, 2)}\n`;
           const outputName = name.replace("'", "").replace(/[^a-z0-9]+/gi, " ").trim().replace(/\s+|-{2,}/g, "-");
           const subfolder = path.join(folder, _getSubfolderName(entry, filename));
           if ( !fs.existsSync(subfolder) ) fs.mkdirSync(subfolder, { recursive: true, mode: 0o775 });

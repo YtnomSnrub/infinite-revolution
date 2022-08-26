@@ -1,14 +1,17 @@
 {
   "_id": "OANexeJWWMk2J6nt",
   "name": "Persei Charge",
+  "type": "power",
   "img": "icons/magic/fire/elemental-creature-horse.webp",
-  "data": {},
+  "data": {
+    "cost": "1",
+    "description": "<p><strong>Boost</strong>, then deal Harm to a Matched foe equal to the Speed you lost or gained. If youʼre in <span class=\"infinite-revolution-highlight\"><strong>RED GIANT STANCE</strong></span>, this targets <strong>all</strong> Matched foes instead.</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "power"
+  "flags": {}
 }

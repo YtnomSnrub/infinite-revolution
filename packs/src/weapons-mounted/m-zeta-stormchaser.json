@@ -1,14 +1,37 @@
 {
   "_id": "8eLo3vaD6aornsux",
   "name": "M-Zeta Stormchaser",
+  "type": "weapon",
   "img": "icons/magic/lightning/bolt-strike-forked-blue.webp",
-  "data": {},
+  "data": {
+    "band": "L1, T1",
+    "hits": "2",
+    "tags": [
+      {
+        "name": "slowing",
+        "value": true
+      },
+      {
+        "name": "weaken",
+        "value": true
+      }
+    ],
+    "category": "mounted",
+    "projectedData": {
+      "pattern": "",
+      "patternTrait": "",
+      "type": ""
+    },
+    "rangeType": "ranged",
+    "harm": "2",
+    "strongHitMinimum": 6,
+    "parryDice": 1
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "weapon"
+  "flags": {}
 }

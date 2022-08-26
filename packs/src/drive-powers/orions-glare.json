@@ -1,14 +1,17 @@
 {
   "_id": "vNLEtGq3iV8R4z44",
   "name": "Orion's Glare",
+  "type": "power",
   "img": "icons/magic/unholy/silhouette-robe-evil-power.webp",
-  "data": {},
+  "data": {
+    "cost": "1",
+    "description": "<p>Choose a Leading (6) foe, then deal Harm equal to your difference in Speed. This power canʼt target foes less than 4 Speed away.</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "power"
+  "flags": {}
 }

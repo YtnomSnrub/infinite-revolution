@@ -1,14 +1,21 @@
 {
   "_id": "W3x73GKn6WVNQHFW",
   "name": "Passive: Red Giant",
+  "type": "section",
   "img": "icons/magic/earth/orb-ringed-lava-black-orange.webp",
-  "data": {},
+  "data": {
+    "useResource": false,
+    "resource": {
+      "name": "",
+      "value": ""
+    },
+    "description": "<p>On your very first turn each combat, enter <span class=\"infinite-revolution-highlight\"><strong>RED GIANT STANCE</strong></span> until the start of your next turn. While in <span class=\"infinite-revolution-highlight\"><strong>RED GIANT STANCE</strong></span>, you gain +2 <strong>Accel</strong>, and your Projected weapons gain +1 Harm and <strong>Decel</strong> +2.</p>\n<p>Once you exit <span class=\"infinite-revolution-highlight\"><strong>RED GIANT STANCE</strong></span>, you canʼt enter it again until a full round has passed.</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "section"
+  "flags": {}
 }

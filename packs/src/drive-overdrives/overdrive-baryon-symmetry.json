@@ -1,14 +1,21 @@
 {
   "_id": "pmLDzFoTZbUGFjER",
   "name": "Overdrive: Baryon Symmetry",
+  "type": "section",
   "img": "icons/magic/defensive/barrier-shield-dome-deflect-teal.webp",
-  "data": {},
+  "data": {
+    "useResource": false,
+    "resource": {
+      "name": "",
+      "value": ""
+    },
+    "description": "<p>For the rest of the encounter, your <span class=\"infinite-revolution-highlight\"><strong>ANTIMATTER SHELLS</strong></span> donʼt expire when they detonate. All allies without an <span class=\"infinite-revolution-highlight\"><strong>ANTIMATTER SHELL</strong></span> gain one now.</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "section"
+  "flags": {}
 }

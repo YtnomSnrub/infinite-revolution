@@ -1,14 +1,21 @@
 {
   "_id": "9AxxiH8qMP6AoNSA",
   "name": "Passive: Gravity Well",
+  "type": "section",
   "img": "icons/magic/lightning/barrier-shield-crackling-orb-pink.webp",
-  "data": {},
+  "data": {
+    "useResource": false,
+    "resource": {
+      "name": "",
+      "value": ""
+    },
+    "description": "<p>At the start of each of your turns, you can take 2 <strong>Drive Stress</strong> to activate your <span class=\"infinite-revolution-highlight\"><strong>GRAVITY WELL</strong></span> this round. While active, you gain +2 <strong>Weight</strong> and are <strong>Slowed</strong>, Matched allies gain +1 <strong>Weight</strong>, and Matched foes are <strong>Locked</strong>.</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "section"
+  "flags": {}
 }

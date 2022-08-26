@@ -1,14 +1,17 @@
 {
   "_id": "wvUtxajkrC97weGP",
   "name": "Antares Lance",
+  "type": "power",
   "img": "icons/magic/light/beam-red-orange.webp",
-  "data": {},
+  "data": {
+    "cost": "2",
+    "description": "<p>Deal 3 Harm to Leading (2) or Trailing (2) foes. If youʼre in <span class=\"infinite-revolution-highlight\"><strong>RED GIANT STANCE</strong></span>, this targets <strong>all</strong> Leading or Trailing foes instead.</p>"
+  },
   "effects": [],
-  "flags": {},
   "folder": null,
+  "sort": 0,
   "permission": {
     "default": 0
   },
-  "sort": 0,
-  "type": "power"
+  "flags": {}
 }
