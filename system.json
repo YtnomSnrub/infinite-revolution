@@ -14,7 +14,7 @@
     "module/init.js"
   ],
   "styles": [
-    "styles/infinite-revolution.css"
+    "infinite-revolution.css"
   ],
   "packs": [
     {
