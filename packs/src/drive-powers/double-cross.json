@@ -1,17 +1,14 @@
 {
   "_id": "qB9NnJhrNUK2uWMa",
   "name": "Double Cross",
-  "type": "power",
   "img": "icons/magic/movement/abstract-ribbons-red-orange.webp",
-  "data": {
-    "cost": "2",
-    "description": "<p>Swap Speeds with your <span class=\"infinite-revolution-highlight\"><strong>QUANTUM DOUBLE</strong></span>, then deal 2 Harm to all foes in the Speed bands between you.&nbsp;</p>"
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "power"
 }

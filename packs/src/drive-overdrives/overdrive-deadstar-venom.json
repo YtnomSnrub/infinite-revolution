@@ -1,21 +1,14 @@
 {
   "_id": "Hg6TU78MrEGBkEHj",
   "name": "Overdrive: Deadstar Venom",
-  "type": "section",
   "img": "icons/skills/wounds/injury-triple-slash-bleed.webp",
-  "data": {
-    "useResource": false,
-    "resource": {
-      "name": "",
-      "value": ""
-    },
-    "description": "<p>Choose a foe. Blink to Match them, then <strong>Prime</strong>, <strong>Lock</strong>, <strong>Weaken</strong>, <strong>Disrupt</strong>, and <strong>Fracture</strong> them until the end of the next round.</p>"
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "section"
 }

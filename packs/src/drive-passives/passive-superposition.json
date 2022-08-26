@@ -1,21 +1,14 @@
 {
   "_id": "74Lbfavchi8y3ZHE",
   "name": "Passive: Superposition",
-  "type": "section",
   "img": "icons/magic/light/orb-container-orange.webp",
-  "data": {
-    "useResource": false,
-    "resource": {
-      "name": "",
-      "value": 0
-    },
-    "description": "<p>You have a <strong><span class=\"infinite-revolution-highlight\">QUANTUM DOUBLE</span></strong>, an intangible copy of your Drive. It has its own Speed (tracked separately), <strong>ignores all Impact and effects</strong>, and starts each encounter Matched to you.</p>\n<p>Whenever you <strong>Boost</strong>, your <span class=\"infinite-revolution-highlight\"><strong>QUANTUM DOUBLE</strong></span> can <strong>Boost</strong> instead, and when you attack with a Projected weapon or use its <strong>Pattern Trait</strong>, you can treat your <span class=\"infinite-revolution-highlight\"><strong>QUANTUM DOUBLE</strong></span> as the origin for the effect.</p>\n<p>When you <strong>Zero Out</strong>, your <span class=\"infinite-revolution-highlight\"><strong>QUANTUM DOUBLE</strong></span> dissipates. If you <strong>Rally</strong>, it rematerializes Matched to you.</p>"
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "section"
 }

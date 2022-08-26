@@ -1,21 +1,14 @@
 {
   "_id": "CFgozkC0JaVWIHlo",
   "name": "Overdrive: The World",
-  "type": "section",
   "img": "icons/magic/water/beam-ice-impact.webp",
-  "data": {
-    "useResource": false,
-    "resource": {
-      "name": "",
-      "value": ""
-    },
-    "description": "<p>For the rest of the scene, a foe of your choice gains <span class=\"infinite-revolution-highlight\"><strong>SEQUENCED</strong></span> at the start of your turn, and you no longer take additional <strong>Drive Stress</strong> for targeting multiple <span class=\"infinite-revolution-highlight\"><strong>SEQUENCED</strong></span> foes.</p>"
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "section"
 }

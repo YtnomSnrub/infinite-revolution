@@ -1,17 +1,14 @@
 {
   "_id": "9UEktYonXDzoQfDc",
   "name": "Unlight Crusher",
-  "type": "power",
   "img": "icons/magic/earth/strike-fist-stone-gray.webp",
-  "data": {
-    "cost": "3",
-    "description": "<p>Deal 7 Harm to a Matched foe, <strong>ignoring reductions and immunity</strong>. Advance the <strong>Incursion Clock</strong> by 2.&nbsp;</p>"
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "power"
 }

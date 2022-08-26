@@ -1,17 +1,14 @@
 {
   "_id": "5infvwTXRUasiDtH",
   "name": "The Hanged Man",
-  "type": "power",
   "img": "icons/magic/time/clock-stopwatch-white-blue.webp",
-  "data": {
-    "cost": "1",
-    "description": "<p><strong>Slow</strong> a Leading (3) foe and all foes Matched to it until the end of your next turn.</p>"
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "power"
 }

@@ -1,33 +1,14 @@
 {
   "_id": "wsYSoVlRDVoveUjK",
   "name": "GF14 Charged Spear",
-  "type": "weapon",
   "img": "icons/skills/melee/strike-weapon-polearm-ice-blue.webp",
-  "data": {
-    "band": "M, L1, T1",
-    "hits": "1",
-    "tags": [
-      {
-        "name": "pierce",
-        "value": true
-      }
-    ],
-    "category": "mounted",
-    "projectedData": {
-      "pattern": "",
-      "patternTrait": "",
-      "type": ""
-    },
-    "rangeType": "melee",
-    "harm": "3",
-    "strongHitMinimum": 6,
-    "parryDice": 1
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "weapon"
 }

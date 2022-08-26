@@ -1,17 +1,14 @@
 {
   "_id": "NtFf4ZvZvQqery2O",
   "name": "Neutron Poison",
-  "type": "power",
   "img": "icons/skills/melee/blade-tip-acid-poison-green.webp",
-  "data": {
-    "cost": "1",
-    "description": "<p>Your next 2 hits with Projected Melee weapons <strong>Weaken</strong> and <strong>Lock</strong> their targets before dealing Harm.&nbsp;</p>"
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "power"
 }

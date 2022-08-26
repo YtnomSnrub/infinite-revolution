@@ -1,28 +1,14 @@
 {
   "_id": "SfvHdMCdbZSo1glG",
   "name": "Teracore Beam",
-  "type": "weapon",
   "img": "icons/magic/unholy/beam-impact-green.webp",
-  "data": {
-    "band": "L(All)",
-    "hits": "5",
-    "tags": [],
-    "category": "mounted",
-    "projectedData": {
-      "pattern": "",
-      "patternTrait": "",
-      "type": ""
-    },
-    "rangeType": "ranged",
-    "harm": "2",
-    "strongHitMinimum": 6,
-    "parryDice": 1
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "weapon"
 }

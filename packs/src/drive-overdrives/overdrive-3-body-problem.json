@@ -1,21 +1,14 @@
 {
   "_id": "k7epvRvmz750xqrE",
   "name": "Overdrive: 3-Body Problem",
-  "type": "section",
   "img": "icons/magic/defensive/illusion-evasion-echo-purple.webp",
-  "data": {
-    "useResource": false,
-    "resource": {
-      "name": "",
-      "value": ""
-    },
-    "description": "<p>For the rest of the encounter, you gain a second <span class=\"infinite-revolution-highlight\"><strong>QUANTUM DOUBLE</strong></span>, which materializes at a Speed of your choice. When a Power or ability references your <span class=\"infinite-revolution-highlight\"><strong>QUANTUM DOUBLE</strong></span>, you may choose either (but not both).</p>"
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "section"
 }

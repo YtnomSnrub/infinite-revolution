@@ -1,21 +1,14 @@
 {
   "_id": "ngA66WsNRu5F8UFO",
   "name": "Passive: Oracle Sequencing",
-  "type": "section",
   "img": "icons/skills/targeting/crosshair-arrowhead-blue.webp",
-  "data": {
-    "useResource": false,
-    "resource": {
-      "name": "",
-      "value": ""
-    },
-    "description": "<p>Whenever you hit with a Projected weapon, you can choose to deal 0 Harm and <span class=\"infinite-revolution-highlight\"><strong>SEQUENCE</strong></span> all targets until the end of the encounter instead. <span class=\"infinite-revolution-highlight\"><strong>SEQUENCED</strong></span> foes are permanently <strong>Primed</strong>.</p>\n<p>When you use a power, you can choose to target <strong>any number</strong> of <span class=\"infinite-revolution-highlight\"><strong>SEQUENCED</strong></span> foes instead of that powerʼs usual target, ignoring Band requirements and taking the powerʼs <strong>Drive Stress</strong> again for each target beyond the first.&nbsp;</p>"
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "section"
 }

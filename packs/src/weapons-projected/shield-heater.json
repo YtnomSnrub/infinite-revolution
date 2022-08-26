@@ -1,33 +1,14 @@
 {
   "_id": "ulw6qmEfCAaiF0L3",
   "name": "Shield: Heater",
-  "type": "weapon",
   "img": "icons/magic/defensive/shield-barrier-blue.webp",
-  "data": {
-    "band": "M (T1)",
-    "hits": "1",
-    "tags": [
-      {
-        "name": "anchor",
-        "value": "1"
-      }
-    ],
-    "category": "projected",
-    "projectedData": {
-      "pattern": "Shield",
-      "patternTrait": "<p>You can use your action to <strong>charge</strong> your Shield, projecting a bastion of Drivelight around you. When you <strong>charge</strong> your Shield, you, Matched allies, and allies within the bands in (parentheses) gain <strong>Inertia</strong> equal to your Shieldʼs Harm until the start of your next turn.</p>",
-      "type": "Heater"
-    },
-    "rangeType": "melee",
-    "harm": "2",
-    "strongHitMinimum": 6,
-    "parryDice": 1
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "weapon"
 }

@@ -1,21 +1,14 @@
 {
+  "_id": "13TaY9IhcgmjGjDc",
   "name": "Kata: Strike",
-  "type": "section",
   "img": "icons/skills/melee/unarmed-punch-fist.webp",
-  "data": {
-    "useResource": true,
-    "resource": {
-      "name": "Strike",
-      "value": "0"
-    },
-    "description": ""
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {},
-  "_id": "13TaY9IhcgmjGjDc"
+  "sort": 0,
+  "type": "section"
 }

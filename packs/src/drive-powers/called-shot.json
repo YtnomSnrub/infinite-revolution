@@ -1,17 +1,14 @@
 {
   "_id": "b3zKKUvmDTscmIrJ",
   "name": "Called Shot",
-  "type": "power",
   "img": "icons/skills/targeting/target-strike-gray.webp",
-  "data": {
-    "cost": "0",
-    "description": "<p><span class=\"infinite-revolution-highlight\"><strong>MARK</strong></span> a Leading foe. When you destroy a <span class=\"infinite-revolution-highlight\"><strong>MARKED</strong></span> target, clear 2 <strong>Drive Stress</strong>, or 4 if you destroyed them with a Crit. <span class=\"infinite-revolution-highlight\"><strong>MARKED</strong></span> lasts until you use this power again.</p>"
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "power"
 }

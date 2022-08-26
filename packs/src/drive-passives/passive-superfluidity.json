@@ -1,21 +1,14 @@
 {
   "_id": "EehQunMlEwaCwyS1",
   "name": "Passive: Superfluidity",
-  "type": "section",
   "img": "icons/magic/water/orb-water-transparent.webp",
-  "data": {
-    "useResource": true,
-    "resource": {
-      "name": "Flow",
-      "value": ""
-    },
-    "description": "<p>Whenever you <strong>Boost 2 or more</strong>, gain 1 <span class=\"infinite-revolution-highlight\"><strong>FLOW</strong></span>, up to 6. Your Projected weapons deal +1 Harm for every 2 <span class=\"infinite-revolution-highlight\"><strong>FLOW</strong></span> you have. Lose all <span class=\"infinite-revolution-highlight\"><strong>FLOW</strong></span> whenever you take <strong>Drive Burn</strong> or end your turn without <strong>Boosting</strong>.</p>\n<p>When you would lose Speed, you may spend any amount of <span class=\"infinite-revolution-highlight\"><strong>FLOW</strong></span> instead to reduce the amount lost, one-to-one.</p>"
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "section"
 }

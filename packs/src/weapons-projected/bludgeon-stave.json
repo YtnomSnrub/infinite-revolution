@@ -1,37 +1,14 @@
 {
   "_id": "c8dUzwBTPTQAohLU",
   "name": "Bludgeon: Stave",
-  "type": "weapon",
   "img": "icons/weapons/hammers/hammer-double-steel-embossed.webp",
-  "data": {
-    "band": "M",
-    "hits": "2",
-    "tags": [
-      {
-        "name": "agile",
-        "value": true
-      },
-      {
-        "name": "taxing",
-        "value": true
-      }
-    ],
-    "category": "projected",
-    "projectedData": {
-      "pattern": "Bludgeon",
-      "patternTrait": "<p>As long as you have 5 or more Speed, your attacks with Bludgeons gain <strong>Decel +1</strong> and all bonus stats marked with a star* (they donʼt have these bonuses at Speeds below 5).</p>",
-      "type": "Stave"
-    },
-    "rangeType": "melee",
-    "harm": "2+1*",
-    "strongHitMinimum": 6,
-    "parryDice": 1
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "weapon"
 }

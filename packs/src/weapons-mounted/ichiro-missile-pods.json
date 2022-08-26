@@ -1,37 +1,14 @@
 {
   "_id": "LKK0T0fwCZMvnx6H",
   "name": "\"Ichiro\" Missile Pods",
-  "type": "weapon",
   "img": "icons/magic/light/projectiles-salvo-blue.webp",
-  "data": {
-    "band": "L5",
-    "hits": "4",
-    "tags": [
-      {
-        "name": "burst",
-        "value": true
-      },
-      {
-        "name": "cooldown",
-        "value": true
-      }
-    ],
-    "category": "mounted",
-    "projectedData": {
-      "pattern": "",
-      "patternTrait": "",
-      "type": ""
-    },
-    "rangeType": "ranged",
-    "harm": "1",
-    "strongHitMinimum": 6,
-    "parryDice": 1
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "weapon"
 }

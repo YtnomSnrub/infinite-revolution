@@ -1,37 +1,14 @@
 {
   "_id": "CC9y74mj6EnEInhW",
   "name": "Shield: Buckler",
-  "type": "weapon",
   "img": "icons/magic/defensive/shield-barrier-blue.webp",
-  "data": {
-    "band": "M",
-    "hits": "1",
-    "tags": [
-      {
-        "name": "agile",
-        "value": true
-      },
-      {
-        "name": "parry",
-        "value": true
-      }
-    ],
-    "category": "projected",
-    "projectedData": {
-      "pattern": "Shield",
-      "patternTrait": "<p>You can use your action to <strong>charge</strong> your Shield, projecting a bastion of Drivelight around you. When you <strong>charge</strong> your Shield, you, Matched allies, and allies within the bands in (parentheses) gain <strong>Inertia</strong> equal to your Shieldʼs Harm until the start of your next turn.</p>",
-      "type": "Buckler"
-    },
-    "rangeType": "melee",
-    "harm": "1",
-    "strongHitMinimum": 6,
-    "parryDice": 1
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "weapon"
 }

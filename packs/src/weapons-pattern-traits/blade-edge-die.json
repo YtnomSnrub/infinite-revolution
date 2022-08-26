@@ -1,21 +1,14 @@
 {
+  "_id": "FywyN5ADXffHyklS",
   "name": "Blade: Edge Die",
-  "type": "section",
   "img": "icons/skills/melee/swords-parry-block-blue.webp",
-  "data": {
-    "useResource": true,
-    "resource": {
-      "name": "Edge Die",
-      "value": "6"
-    },
-    "description": ""
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {},
-  "_id": "FywyN5ADXffHyklS"
+  "sort": 0,
+  "type": "section"
 }

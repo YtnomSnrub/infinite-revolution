@@ -1,17 +1,14 @@
 {
   "_id": "ZSqXTTL4fR7rFwtd",
   "name": "Unveiling",
-  "type": "power",
   "img": "icons/magic/nature/root-vine-thorned-coil-green.webp",
-  "data": {
-    "cost": "3",
-    "description": "<p>Close up to 3 Veil Breaches. For each one closed, you may <strong>Disrupt</strong> and <strong>Fracture</strong> a Leading foe, or clear 2 <strong>Drive Stress</strong> from a Leading ally.</p>"
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "power"
 }

@@ -1,17 +1,14 @@
 {
   "_id": "CLZX7Vx5ucbNih47",
   "name": "The Tower",
-  "type": "power",
   "img": "icons/magic/air/wind-tornado-wall-blue.webp",
-  "data": {
-    "cost": "3",
-    "description": "<p>Force a Leading (3) foe to immediately attack another foe of your choice, dealing all Impact as Harm.</p>"
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "power"
 }

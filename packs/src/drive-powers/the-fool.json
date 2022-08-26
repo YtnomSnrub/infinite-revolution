@@ -1,17 +1,14 @@
 {
   "_id": "rnibrJtVwZ531Uns",
   "name": "The Fool",
-  "type": "power",
   "img": "icons/magic/water/projectile-water-rings.webp",
-  "data": {
-    "cost": "0",
-    "description": "<p>Any number of foes lose <span class=\"infinite-revolution-highlight\"><strong>SEQUENCED</strong></span>. Clear that much <strong>Drive Stress</strong>.&nbsp;</p>"
-  },
+  "data": {},
   "effects": [],
+  "flags": {},
   "folder": null,
-  "sort": 0,
   "permission": {
     "default": 0
   },
-  "flags": {}
+  "sort": 0,
+  "type": "power"
 }
