@@ -7,12 +7,23 @@
             <h1 class="charname">
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
             </h1>
-            <div class="sheet-property-group">
-                <div class="sheet-property">
-                    <label>{{localize "IR.PowerCost"}}</label>
-                    <input type="text" name="data.cost" value="{{systemData.cost}}" />
-                </div>
+            <div class="sheet-property">
+                <label>{{localize "IR.PowerType"}}</label>
+                <select name="data.type">
+                    {{#select systemData.type}}
+                    <option value="none">{{localize "IR.PowerTypeNone"}}</option>
+                    <option value="revolver">{{localize "IR.PowerTypeRevolver"}}</option>
+                    <option value="recharge">{{localize "IR.PowerTypeRecharge"}}</option>
+                    <option value="passive">{{localize "IR.PowerTypePassive"}}</option>
+                    {{/select}}
+                </select>
             </div>
+            {{#if (eq systemData.type "revolver")}}
+            <div class="sheet-property">
+                <label>{{localize "IR.PowerCost"}}</label>
+                <input type="text" name="data.cost" value="{{systemData.cost}}" />
+            </div>
+            {{/if}}
         </div>
     </header>
 

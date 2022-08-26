@@ -109,6 +109,13 @@
   "IR.WeaponTagWeakenDescription": "On a Strong Hit, Weakens targets until the start of your next turn.",
 
   "IR.PowerName": "Name",
+  "IR.PowerType": "Type",
+  "IR.PowerTypeNone": "None",
+  "IR.PowerTypeRevolver": "Revolver",
+  "IR.PowerTypeRecharge": "Recharge",
+  "IR.PowerTypeRechargeShort": "R",
+  "IR.PowerTypePassive": "Passive",
+  "IR.PowerTypePassiveShort": "P",
   "IR.PowerCost": "Cost",
   "IR.PowerDescription": "Description",
 

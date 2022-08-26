@@ -94,6 +94,7 @@
       "notes": ""
     },
     "power": {
+      "type": "revolver",
       "cost": 0,
       "description": ""
     },

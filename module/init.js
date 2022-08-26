@@ -61,6 +61,21 @@ Hooks.once("init", async function() {
         title: "Highlight",
         inline: "span",
         classes: "infinite-revolution-highlight"
+      },
+      {
+        title: "Hot",
+        inline: "span",
+        classes: "infinite-revolution-hot"
+      },
+      {
+        title: "Quick",
+        inline: "span",
+        classes: "infinite-revolution-quick"
+      },
+      {
+        title: "Bright",
+        inline: "span",
+        classes: "infinite-revolution-bright"
       }
     ]
   });

@@ -16,7 +16,20 @@
                 </div>
                 <div class="item-name">{{item.name}}</div>
             </div>
-            <div class="item-cost">{{item.data.cost}}</div>
+            <div class="item-cost">
+                {{#if (eq item.data.type "none")}}
+                -
+                {{/if}}
+                {{#if (eq item.data.type "revolver")}}
+                {{item.data.cost}}
+                {{/if}}
+                {{#if (eq item.data.type "recharge")}}
+                {{localize "IR.PowerTypeRechargeShort"}}
+                {{/if}}
+                {{#if (eq item.data.type "passive")}}
+                {{localize "IR.PowerTypePassiveShort"}}
+                {{/if}}
+            </div>
             <div class="item-controls">
                 <a class="item-control" title="{{ localize 'IR.ItemEdit' }}" data-action="edit"><i class="fas fa-edit"></i></a>
                 <a class="item-control" title="{{ localize 'IR.ItemDelete' }}" data-action="delete"><i class="fas fa-trash"></i></a>

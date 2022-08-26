@@ -1,6 +1,6 @@
 {
   "name": "infinite-revolution",
-  "version": "0.0.3-beta",
+  "version": "0.0.4-beta",
   "description": "Infinite Revolution",
   "scripts": {
     "build": "gulp buildAll",
