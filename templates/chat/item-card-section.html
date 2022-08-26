@@ -6,5 +6,9 @@
         </div>
     </div>
 
+    {{#if item.data.useResource}}
+    <p class="chat-item-property">{{item.data.resource.name}}: {{item.data.resource.value}}</p>
+    {{/if}}
+
     {{{item.data.description}}}
 </div>

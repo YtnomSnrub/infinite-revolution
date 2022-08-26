@@ -65,8 +65,7 @@
   input[type="number"],
   input[type="password"],
   input[type="date"],
-  input[type="time"],
-  select {
+  input[type="time"] {
     &:read-only {
       border: 1px dotted var(--color-border-light-tertiary);
     }
@@ -74,6 +73,10 @@
     &:disabled {
       opacity: 0.75;
     }
+  }
+
+  select:disabled {
+    opacity: 0.75;
   }
 
   .window-content {
@@ -351,7 +354,7 @@
       padding-right: 6px;
     }
 
-    .sheet-section-heading,
+    .sheet-section-flex,
     .sheet-subheading {
       flex: 1;
     }

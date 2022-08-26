@@ -85,19 +85,20 @@
                 </div>
                 <div class="sheet-section-divider"></div>
                 <div class="sheet-section">
-                    <h3 class="sheet-section-heading">{{localize "IR.SheetHeadingWeapons"}}</h3>
-                    {{> "systems/infinite-revolution/templates/actor/partials/item-table-weapons.html"}}
+                    <h3 class="sheet-section-heading">{{localize "IR.SheetHeadingPowers"}}</h3>
+                    {{> "systems/infinite-revolution/templates/actor/partials/item-table-powers.html"}}
                 </div>
                 <div class="sheet-section-divider"></div>
                 <div class="sheet-section">
-                    <h3 class="sheet-section-heading">{{localize "IR.SheetHeadingPowers"}}</h3>
-                    {{> "systems/infinite-revolution/templates/actor/partials/item-table-powers.html"}}
+                    <h3 class="sheet-section-heading">{{localize "IR.SheetHeadingWeapons"}}</h3>
+                    {{> "systems/infinite-revolution/templates/actor/partials/item-table-weapons.html"}}
                 </div>
                 {{#each items.sections as |item id|}}
                 <div class="sheet-section-divider"></div>
                 <div class="sheet-section item" data-item-id="{{item._id}}">
                     <div class="sheet-heading-toolbar">
                         <h3 class="sheet-section-heading item-action" title="{{ localize 'IR.ItemSendToChat' }}" data-action="message">{{item.name}}</h3>
+                        <div class="sheet-section-flex"></div>
                         <a class="sheet-heading-button item-control" title="{{ localize 'IR.ItemEdit' }}" data-action="edit"><i class="fas fa-edit"></i></a>
                         <a class="sheet-heading-button item-control" title="{{ localize 'IR.ItemDelete' }}" data-action="delete"><i class="fas fa-trash"></i></a>
                     </div>

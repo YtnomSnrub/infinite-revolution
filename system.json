@@ -51,6 +51,13 @@
       "system": "infinite-revolution",
       "path": "./packs/weapons-projected.db",
       "type": "Item"
+    },
+    {
+      "name": "weapons-pattern-traits",
+      "label": "Weapons: Pattern Traits",
+      "system": "infinite-revolution",
+      "path": "./packs/weapons-pattern-traits.db",
+      "type": "Item"
     }
   ],
   "languages": [

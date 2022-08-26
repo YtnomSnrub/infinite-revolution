@@ -100,8 +100,8 @@
     "section": {
       "useResource": false,
       "resource": {
-        "name": "",
-        "value": ""
+        "name": "Resource",
+        "value": "0"
       },
       "description": ""
     }

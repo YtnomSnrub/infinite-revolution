@@ -60,6 +60,10 @@
   color: var(--color-text-light-primary);
 }
 
+.chat-message .chat-item-property {
+  font-weight: bold;
+}
+
 .chat-message .attribute {
   font-weight: bold;
 }
@@ -437,6 +441,7 @@
   font-size: 16px;
   opacity: 0;
   transition: opacity 0.1s ease;
+  color: var(--color-text-light-highlight);
 }
 
 .infinite-revolution .item .item-title .item-icon:hover img {
@@ -653,8 +658,7 @@
 .infinite-revolution input[type="number"]:read-only,
 .infinite-revolution input[type="password"]:read-only,
 .infinite-revolution input[type="date"]:read-only,
-.infinite-revolution input[type="time"]:read-only,
-.infinite-revolution select:read-only {
+.infinite-revolution input[type="time"]:read-only {
   border: 1px dotted var(--color-border-light-tertiary);
 }
 
@@ -662,7 +666,10 @@
 .infinite-revolution input[type="number"]:disabled,
 .infinite-revolution input[type="password"]:disabled,
 .infinite-revolution input[type="date"]:disabled,
-.infinite-revolution input[type="time"]:disabled,
+.infinite-revolution input[type="time"]:disabled {
+  opacity: 0.75;
+}
+
 .infinite-revolution select:disabled {
   opacity: 0.75;
 }
@@ -921,7 +928,7 @@
   padding-right: 6px;
 }
 
-.infinite-revolution .sheet-heading-toolbar .sheet-section-heading,
+.infinite-revolution .sheet-heading-toolbar .sheet-section-flex,
 .infinite-revolution .sheet-heading-toolbar .sheet-subheading {
   flex: 1;
 }
