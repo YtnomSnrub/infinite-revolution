@@ -28,7 +28,7 @@ jobs:
         echo ::set-output name=TAG_NAME::$TAG
         echo ::set-output name=ZIP_NAME::infinite-revolution.zip
         echo ::set-output name=RELEASE_DOWNLOAD_URL::https://github.com/${{github.repository}}/releases/download/latest/infinite-revolution.zip
-        echo ::set-output name=RELEASE_INSTALL_URL::https://github.com/${{github.repository}}/releases/download/latest/system.json
+        echo ::set-output name=RELEASE_INSTALL_URL::https://github.com/${{github.repository}}/releases/download/$TAG/system.json
         JSON=$(cat ./system.json)
         echo ::set-output name=SYSTEM_JSON::${JSON//'%'/'%25'}
 
