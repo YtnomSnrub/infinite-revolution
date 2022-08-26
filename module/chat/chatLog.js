@@ -17,7 +17,7 @@ export class ChatLogIR extends ChatLog {
           const roll = message.roll;
           roll._evaluated = false;
 
-          const dialogHtml = await renderTemplate("systems/infinite-revolution/templates/chat/dialogs/dialog-add-die.html");
+          const dialogHtml = await renderTemplate("systems/infinite-revolution/templates/dialogs/dialog-add-die.html");
           const newFaceValue = await new Promise(resolve => {
             new Dialog({
               title: game.i18n.localize("IR.RerollMenu.AddDie"),
@@ -84,7 +84,7 @@ export class ChatLogIR extends ChatLog {
           const roll = message.roll;
           roll._evaluated = false;
 
-          const dialogHtml = await renderTemplate("systems/infinite-revolution/templates/chat/dialogs/dialog-remove-die.html");
+          const dialogHtml = await renderTemplate("systems/infinite-revolution/templates/dialogs/dialog-remove-die.html");
           const removeFaceValue = await new Promise(resolve => {
             new Dialog({
               title: game.i18n.localize("IR.RerollMenu.RemoveDie"),
@@ -100,7 +100,7 @@ export class ChatLogIR extends ChatLog {
             }, { width: 240 }).render(true);
           });
 
-          if (!removeFaceValue) {
+          if (removeFaceValue === null || removeFaceValue < 1 || removeFaceValue > 6) {
             return;
           }
 

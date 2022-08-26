@@ -118,6 +118,9 @@
 
   "IR.Done": "Done",
 
+  "IR.CheckModifier": "Check Modifier",
+  "IR.CheckRoll": "Roll Check",
+
   "IR.RerollMenu.DieValue": "Die Value",
   "IR.RerollMenu.BlankForRandom": "Leave blank for a random value",
   "IR.RerollMenu.AddDie": "Add Die",

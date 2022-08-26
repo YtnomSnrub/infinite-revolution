@@ -89,11 +89,14 @@ export class ActorSheetRevolver extends ActorSheetIR {
    */
   _onAttributeRoll(event) {
     event.preventDefault();
+
+    const useModifiers = event.shiftKey || event.ctrlKey || event.altKey;
+
     let button = $(event.currentTarget);
     const title = button.text();
     const attribute = button.data("attribute");
     const attributeValue = this.getData().systemData.attributes[attribute].value;
-    RollHelper.createAttributeCheckRoll(attribute, title, attributeValue, this.actor.getRollData());
+    RollHelper.createAttributeCheckRoll(attribute, title, attributeValue, this.actor.getRollData(), useModifiers);
   }
 
   /**
@@ -190,6 +193,8 @@ export class ActorSheetRevolver extends ActorSheetIR {
   _onWeaponAttack(event) {
     event.preventDefault();
 
+    const useModifiers = event.shiftKey || event.ctrlKey || event.altKey;
+
     let button = event.currentTarget;
     const attribute = button?.dataset.attribute;
     const attributeValue = this.getData().systemData.attributes[attribute].value;
@@ -197,7 +202,7 @@ export class ActorSheetRevolver extends ActorSheetIR {
     const li = button.closest(".item");
     const item = this.actor.items.get(li?.dataset.itemId);
 
-    RollHelper.createWeaponCheckRoll(item, attributeValue, this.actor.getRollData());
+    RollHelper.createWeaponCheckRoll(item, attributeValue, this.actor.getRollData(), useModifiers);
   }
 
   /**

@@ -38,21 +38,65 @@ export class RollHelper {
     });
   }
 
-  static async createAttributeCheckRoll(attributeName, attributeTitle, attributeValue, rollData) {
-    const r = new Roll(`${attributeValue}d6`, rollData);
-    const header = await renderTemplate("systems/infinite-revolution/templates/chat/action/attribute-header.html", { attributeName, attributeTitle });
-    this.createCheckRoll(r, header);
+  static async getRollFromValue(value, rollData, useModifiers) {
+    let modifier = 0;
+    if (useModifiers) {
+      const dialogHtml = await renderTemplate("systems/infinite-revolution/templates/dialogs/dialog-check-modifiers.html");
+
+      modifier = await new Promise(resolve => {
+        const dialog = new Dialog({
+          title: game.i18n.localize("IR.CheckModifier"),
+          content: dialogHtml,
+          buttons: {
+            roll: {
+              label: game.i18n.localize("IR.CheckRoll"),
+              callback: html => resolve(Number.parseInt(html[0].querySelector("form")["modifier-value"].value))
+            }
+          },
+          default: "roll",
+          close: () => resolve(null),
+          render: () => {
+            dialog.element.find("[data-modifier]").on("click", event => {
+              event.preventDefault();
+              const button = event.currentTarget;
+              resolve(Number.parseInt(button.dataset.modifier));
+              dialog.close();
+            });
+          }
+        }, { width: 280 }).render(true);
+      });
+    }
+
+    if (modifier === null) return;
+
+    if (!Number.isSafeInteger(modifier)) modifier = 0;
+
+    if (value + modifier > 0) {
+      return new Roll(`${value + modifier}d6`, rollData);
+    } else {
+      return new Roll("2d6kl", rollData);
+    }
   }
 
-  static async createWeaponCheckRoll(item, attributeValue, rollData) {
+  static async createAttributeCheckRoll(attributeName, attributeTitle, attributeValue, rollData, useModifiers) {
+    const r = await this.getRollFromValue(attributeValue, rollData, useModifiers);
+    if (r) {
+      const header = await renderTemplate("systems/infinite-revolution/templates/chat/action/attribute-header.html", { attributeName, attributeTitle });
+      this.createCheckRoll(r, header);
+    }
+  }
+
+  static async createWeaponCheckRoll(item, attributeValue, rollData, useModifiers) {
     let dice = attributeValue;
     if (item.data.data.tags.some(x => x.name === "precise")) dice += 1;
 
-    const r = new Roll(`${dice}d6`, rollData);
-    const tagLabels = item.data.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }));
-    const header = await renderTemplate("systems/infinite-revolution/templates/chat/action/attack-header.html", { item: item.data, tagLabels });
-    const content = await renderTemplate("systems/infinite-revolution/templates/chat/action/attack-body.html", { item: item.data, tagLabels });
-    this.createCheckRoll(r, header, content, { strongHitMinimum: item.data.data.strongHitMinimum });
+    const r = await this.getRollFromValue(dice, rollData, useModifiers);
+    if (r) {
+      const tagLabels = item.data.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }));
+      const header = await renderTemplate("systems/infinite-revolution/templates/chat/action/attack-header.html", { item: item.data, tagLabels });
+      const content = await renderTemplate("systems/infinite-revolution/templates/chat/action/attack-body.html", { item: item.data, tagLabels });
+      this.createCheckRoll(r, header, content, { strongHitMinimum: item.data.data.strongHitMinimum });
+    }
   }
 
   static async createWeaponParryRoll(item, rollData) {
