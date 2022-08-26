@@ -118,5 +118,9 @@
 
   "IR.Done": "Done",
 
+  "IR.RerollMenu.DieValue": "Die Value",
+  "IR.RerollMenu.BlankForRandom": "Leave blank for a random value",
+  "IR.RerollMenu.AddDie": "Add Die",
+  "IR.RerollMenu.RemoveDie": "Remove Die",
   "IR.RerollMenu.RerollLowest": "Reroll Lowest Die"
 }

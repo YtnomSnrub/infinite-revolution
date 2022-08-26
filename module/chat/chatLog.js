@@ -5,6 +5,141 @@ export class ChatLogIR extends ChatLog {
     const options = super._getEntryContextOptions();
     options.push(
       {
+        name: "IR.RerollMenu.AddDie",
+        icon: '<i class="fas fa-plus"></i>',
+        condition: $li => {
+          const message = game.messages.get($li.attr("data-message-id") ?? "", { strict: true });
+          const roll = message.isRoll ? message.roll : null;
+          return roll;
+        },
+        callback: async li => {
+          const message = game.messages.get(li.data("messageId"));
+          const roll = message.roll;
+          roll._evaluated = false;
+
+          const dialogHtml = await renderTemplate("systems/infinite-revolution/templates/chat/dialogs/dialog-add-die.html");
+          const newFaceValue = await new Promise(resolve => {
+            new Dialog({
+              title: game.i18n.localize("IR.RerollMenu.AddDie"),
+              content: dialogHtml,
+              buttons: {
+                add: {
+                  label: game.i18n.localize("IR.RerollMenu.AddDie"),
+                  callback: html => resolve(Number.parseInt(html[0].querySelector("form")["die-value"].value))
+                }
+              },
+              default: "add",
+              close: () => resolve(null)
+            }, { width: 240 }).render(true);
+          });
+
+          if (newFaceValue === null) {
+            return;
+          }
+
+          const oldNumbers = {};
+          roll.dice.forEach((x, i) => {
+            oldNumbers[i] = x.number;
+            const results = x.results;
+            if (results.length > 0) {
+              // Don't reroll existing dice
+              x.results.forEach(r => r.hidden = true);
+
+              // Roll the new dice
+              x.number = 1;
+              if (newFaceValue) {
+                x.results.push(({ result: newFaceValue, active: true }));
+                x.number = 0;
+              }
+
+              x._evaluated = false;
+            }
+          });
+
+          // Evaluate new roll
+          await roll.evaluate({ async: true });
+          // Adjust numbers to match previous roll
+          roll._evaluated = false;
+          roll.dice.forEach((x, i) => {
+            x.number = oldNumbers[i] + 1;
+          });
+
+          const content = new DOMParser().parseFromString(message.data.content, "text/html");
+          content.body.removeChild(content.querySelector(".result-data"));
+
+          await message.delete({ render: false });
+          RollHelper.createCheckRoll(roll, message.data.flavor, content.body.innerHTML);
+        }
+      },
+      {
+        name: "IR.RerollMenu.RemoveDie",
+        icon: '<i class="fas fa-minus"></i>',
+        condition: $li => {
+          const message = game.messages.get($li.attr("data-message-id") ?? "", { strict: true });
+          const roll = message.isRoll ? message.roll : null;
+          return roll;
+        },
+        callback: async li => {
+          const message = game.messages.get(li.data("messageId"));
+          const roll = message.roll;
+          roll._evaluated = false;
+
+          const dialogHtml = await renderTemplate("systems/infinite-revolution/templates/chat/dialogs/dialog-remove-die.html");
+          const removeFaceValue = await new Promise(resolve => {
+            new Dialog({
+              title: game.i18n.localize("IR.RerollMenu.RemoveDie"),
+              content: dialogHtml,
+              buttons: {
+                remove: {
+                  label: game.i18n.localize("IR.RerollMenu.RemoveDie"),
+                  callback: html => resolve(Number.parseInt(html[0].querySelector("form")["die-value"].value))
+                }
+              },
+              default: "remove",
+              close: () => resolve(null)
+            }, { width: 240 }).render(true);
+          });
+
+          if (!removeFaceValue) {
+            return;
+          }
+
+          const oldNumbers = {};
+          roll.dice.forEach((x, i) => {
+            oldNumbers[i] = x.number;
+            const results = x.results;
+            if (results.length > 0) {
+              // Remove the marked dice value
+              const lowestIndex = x.results.findIndex(x => x.result === removeFaceValue && x.active !== false);
+              if (lowestIndex >= 0) {
+                x.results.splice(lowestIndex, 1);
+
+                // Don't reroll existing dice
+                x.results.forEach(r => r.hidden = true);
+
+                // Roll the new dice
+                x.number = 0;
+                x._evaluated = false;
+              }
+            }
+          });
+
+          // Evaluate new roll
+          await roll.evaluate({ async: true });
+          // Adjust numbers to match previous roll
+          roll._evaluated = false;
+          roll.dice.forEach((x, i) => {
+            x.number = oldNumbers[i] - 1;
+          });
+
+          const content = new DOMParser().parseFromString(message.data.content, "text/html");
+          content.body.removeChild(content.querySelector(".result-data"));
+
+          await message.delete({ render: false });
+          RollHelper.createCheckRoll(roll, message.data.flavor, content.body.innerHTML);
+        }
+      },
+      {
         name: "IR.RerollMenu.RerollLowest",
         icon: '<i class="fas fa-dice-d6"></i>',
         condition: $li => {
@@ -19,7 +154,9 @@ export class ChatLogIR extends ChatLog {
           const roll = message.roll;
           roll._evaluated = false;
 
-          roll.dice.forEach(x => {
+          const oldNumbers = {};
+          roll.dice.forEach((x, i) => {
+            oldNumbers[i] = x.number;
             const results = x.results;
             if (results.length > 0) {
               // Mark the lowest dice as rerolled
@@ -36,6 +173,14 @@ export class ChatLogIR extends ChatLog {
               x.number = 1;
               x._evaluated = false;
             }
+          });
+
+          // Evaluate new roll
+          await roll.evaluate({ async: true });
+          // Adjust numbers to match previous roll
+          roll._evaluated = false;
+          roll.dice.forEach((x, i) => {
+            x.number = oldNumbers[i];
           });
 
           const content = new DOMParser().parseFromString(message.data.content, "text/html");
