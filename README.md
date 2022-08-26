@@ -13,5 +13,11 @@ If that sounds cool (it does) then please check out the system: https://gwencie.
 ## Development Setup
 
 - `npm i`: Install dependencies
-- `npm run css`: Build css
-- `npm run watch`: Build css on file change
+- `npm run build`: Compile CSS and compendium packs
+- `npm run build:css`: Build CSS from Less
+- `npm run build:watch`: Monitor Less for changes and build CSS on change
+- `npm run build:json`: Extract compendium packs to JSON
+- `npm run build:clean`: Clean extracted pack JSON to remove excess data
+- `npm run build:db`: Compile compendium pack JSON to pack .db files
+- `npm run lint`: Run eslint for the project
+- `npm run lint:fix`: Automatically fix lint issues
