@@ -1,6 +1,6 @@
 
 /**
- * Extend the basic ItemSheetIR with some very simple modifications
+ * Extend the basic ItemSheet with Infinite Revolution functionality.
  * @extends {ActorSheet}
  */
 export class ItemSheetIR extends ItemSheet {

@@ -6,7 +6,7 @@ import { ActorSheetIR } from "./actorSheet.js";
 import { WEAPON_TRAITS } from "../item/weapon.js";
 
 /**
- * Extend the basic ActorSheet with some very simple modifications
+ * Extend the basic ActorSheet with functionality for revolvers.
  * @extends {ActorSheet}
  */
 export class ActorSheetRevolver extends ActorSheetIR {

@@ -6,7 +6,7 @@ const concat = require('gulp-concat-css');
 /*  Compile LESS
 /* ----------------------------------------- */
 
-const SIMPLE_LESS = ["styles/**/*.less"];
+const STYLES_LESS = ["styles/**/*.less"];
 function compileLESS() {
   return gulp.src("styles/**/*.less")
     .pipe(less())
@@ -21,7 +21,7 @@ const css = gulp.series(compileLESS);
 /* ----------------------------------------- */
 
 function watchUpdates() {
-  gulp.watch(SIMPLE_LESS, css);
+  gulp.watch(STYLES_LESS, css);
 }
 
 /* ----------------------------------------- */

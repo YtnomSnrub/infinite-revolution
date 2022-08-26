@@ -4,7 +4,7 @@ import { RollHelper } from "../chat/rollHelper.js";
 import { ActorSheetIR } from "./actorSheet.js";
 
 /**
- * Extend the basic ActorSheet with some very simple modifications
+ * Extend the basic ActorSheet with Veil functionality.
  * @extends {ActorSheet}
  */
 export class ActorSheetVeil extends ActorSheetIR {

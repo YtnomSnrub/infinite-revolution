@@ -1,6 +1,6 @@
 
 /**
- * Extend the basic ActorSheet with some very simple modifications
+ * Extend the basic ActorSheet for Infinite Revolution.
  * @extends {ActorSheet}
  */
 export class ActorSheetIR extends ActorSheet {

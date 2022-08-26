@@ -11,7 +11,7 @@
     }
   ],
   "esmodules": [
-    "module/simple.js"
+    "module/init.js"
   ],
   "styles": [
     "styles/_styles.css"

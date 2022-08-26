@@ -1,6 +1,6 @@
 /**
- * A simple and flexible system for world-building using an arbitrary collection of character and item attributes
- * Author: Atropos
+ * An implementation of the Infinite Revolution: First Flight system by Gwendolyn Clark
+ * Author: Joel Launder
  */
 
 // Import Modules
@@ -16,7 +16,7 @@ import { ItemSheetSection } from "./item/section.js";
 
 import { ChatLogIR } from "./chat/chatLog.js";
 
-import { SimpleToken, SimpleTokenDocument } from "./token.js";
+import { TokenIR, TokenDocumentIR } from "./token.js";
 
 import { preloadHandlebarsTemplates } from "./templates.js";
 
@@ -47,8 +47,8 @@ Hooks.once("init", async function () {
   // Define custom Document classes
   CONFIG.Actor.documentClass = ActorIR;
   CONFIG.Item.documentClass = ItemIR;
-  CONFIG.Token.documentClass = SimpleTokenDocument;
-  CONFIG.Token.objectClass = SimpleToken;
+  CONFIG.Token.documentClass = TokenDocumentIR;
+  CONFIG.Token.objectClass = TokenIR;
   
   CONFIG.ui.chat = ChatLogIR;
 
