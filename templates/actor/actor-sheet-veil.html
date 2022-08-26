@@ -1,22 +1,88 @@
-<form class="flexcol {{cssClass}}" autocomplete="off">
-    {{!-- Sheet Header --}}
-    <header class="sheet-header">
-        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
-        <div class="header-fields">
-            <h1 class="charname">
-                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
-            </h1>
-            {{!-- Speed --}}
-            <div class="sheet-property-list">
-                <div class="property">
-                    <label>{{localize "IR.CoreSpeed"}}</label>
-                    <input type="number" name="data.speed" value="{{systemData.speed}}" />
-                </div>
-            </div>
-        </div>
-    </header>
-
+<form class="flexcol {{cssClass}} sheet-veil" autocomplete="off">
     {{!-- Sheet Body --}}
     <section class="sheet-body">
+        <div>
+            <input type="text" name="name" value="{{data.name}}" class="input-veil title-color-dark" />
+            <div class="sheet-section">
+                {{!-- Speed and Drive Stress --}}
+                <div class="sheet-header-list">
+                    <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+                    <div class="sheet-property-list">
+                        <div class="property">
+                            <label>{{localize "IR.VeilPresence"}}</label>
+                            <input type="number" name="data.presence.value" value="{{systemData.presence.value}}" />
+                            <span> / </span>
+                            <input type="number" name="data.presence.max" value="{{systemData.presence.max}}" />
+                        </div>
+                        <div class="property">
+                            <label>{{localize "IR.VeilSpeed"}}</label>
+                            <input type="number" name="data.speed" value="{{systemData.speed}}" />
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- Core Properties --}}
+                <div class="sheet-property-group">
+                    <div class="sheet-property">
+                        <label>{{localize "IR.VeilRank"}}</label>
+                        <select name="data.rank">
+                            {{#select systemData.rank}}
+                            <option value="chaff">{{localize "IR.VeilRankChaff"}}</option>
+                            <option value="standard">{{localize "IR.VeilRankStandard"}}</option>
+                            <option value="elite">{{localize "IR.VeilRankElite"}}</option>
+                            <option value="boss">{{localize "IR.VeilRankBoss"}}</option>
+                            {{/select}}
+                        </select>
+                    </div>
+                    <div class="sheet-property">
+                        <label>{{localize "IR.VeilArmor"}}</label>
+                        <input type="number" name="data.armor" value="{{systemData.armor}}" />
+                    </div>
+                </div>
+                <div class="sheet-property-group">
+                    <div class="sheet-property">
+                        <label>{{localize "IR.VeilAgility"}}</label>
+                        <input type="number" name="data.agility.value" value="{{systemData.agility.value}}" />
+                        <span class="sheet-property-divider-left"> (</span>
+                        <input type="number" name="data.agility.max" value="{{systemData.agility.max}}" />
+                        <span class="sheet-property-divider-right">)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sheet-section-divider"></div>
+            <div class="sheet-section">
+                <h3 class="sheet-section-heading">{{localize "IR.SheetHeadingAttacks"}}</h3>
+                {{> "systems/infinite-revolution/templates/actor/partials/item-table-attacks.html"}}
+            </div>
+            <div class="sheet-section-divider"></div>
+            <div class="sheet-section">
+                <h3 class="sheet-section-heading">{{localize "IR.SheetHeadingPowers"}}</h3>
+                {{> "systems/infinite-revolution/templates/actor/partials/item-table-powers.html"}}
+            </div>
+            {{#each items.sections as |item id|}}
+            <div class="sheet-section-divider"></div>
+            <div class="sheet-section item" data-item-id="{{item._id}}">
+                <div class="sheet-heading-toolbar">
+                    <h3 class="sheet-section-heading item-action" title="{{ localize 'IR.ItemSendToChat' }}" data-action="message">{{item.name}}</h3>
+                    <div class="sheet-section-flex"></div>
+                    <a class="sheet-heading-button item-control" title="{{ localize 'IR.ItemEdit' }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                    <a class="sheet-heading-button item-control" title="{{ localize 'IR.ItemDelete' }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                </div>
+                {{#if item.data.useResource}}
+                <div class="sheet-property">
+                    <label>{{item.data.resource.name}}</label>
+                    <input type="text" value="{{item.data.resource.value}}" data-action="resource-edit" />
+                </div>
+                {{/if}}
+                {{{item.data.description}}}
+            </div>
+            {{/each}}
+        </div>
+        <div class="sheet-section-buttons">
+            <a class="sheet-section-button item-control" data-action="create" data-item-type="section">
+                <i class="fas fa-plus"></i>
+                {{localize "IR.SheetButtonAddSection"}}
+            </a>
+        </div>
     </section>
 </form>

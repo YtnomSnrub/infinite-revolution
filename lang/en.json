@@ -20,6 +20,7 @@
   "IR.PlayerSectionDescription": "Description",
 
   "IR.SheetHeadingWeapons": "Weapons",
+  "IR.SheetHeadingAttacks": "Attacks",
   "IR.SheetHeadingPowers": "Powers",
   "IR.SheetHeadingPassive": "Passive",
   "IR.SheetHeadingOverdrive": "Overdrive",
@@ -39,6 +40,16 @@
   "IR.ItemTypeAttack": "Attack",
   "IR.ItemTypePower": "Power",
   "IR.ItemTypeSection": "Section",
+
+  "IR.VeilSpeed": "Speed",
+  "IR.VeilRank": "Rank",
+  "IR.VeilRankChaff": "Chaff",
+  "IR.VeilRankStandard": "Standard",
+  "IR.VeilRankElite": "Elite",
+  "IR.VeilRankBoss": "Boss",
+  "IR.VeilAgility": "Agility",
+  "IR.VeilArmor": "Armor",
+  "IR.VeilPresence": "Presence",
 
   "IR.ItemCreate": "Create Item",
   "IR.ItemEdit": "Edit Item",
@@ -62,6 +73,7 @@
   "IR.WeaponBand": "Band",
   "IR.WeaponHits": "Hits",
   "IR.WeaponHarm": "Harm",
+  "IR.WeaponImpact": "Impact",
   "IR.WeaponTags": "Tags",
   "IR.WeaponAttacks": "Attacks",
   "IR.WeaponStrongHitMinimum": "Strong Hit Minimum",
@@ -107,6 +119,9 @@
   "IR.WeaponTagTaxingDescription": "Can't attack if you've Boosted at all this turn. Once you've attacked, you can't Boost until the start of your next turn.",
   "IR.WeaponTagWeaken": "Weaken",
   "IR.WeaponTagWeakenDescription": "On a Strong Hit, Weakens targets until the start of your next turn.",
+
+  "IR.AttackImpact": "Impact",
+  "IR.AttackDescription": "Description",
 
   "IR.PowerName": "Name",
   "IR.PowerType": "Type",

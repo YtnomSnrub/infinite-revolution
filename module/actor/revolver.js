@@ -1,4 +1,3 @@
-import { Helper } from "../helper.js";
 import { RollHelper } from "../chat/rollHelper.js";
 
 import { ActorSheetIR } from "./actorSheet.js";
@@ -61,13 +60,6 @@ export class ActorSheetRevolver extends ActorSheetIR {
     // Weapon actions
     html.find(".weapon-attribute").on("click", this._onWeaponAttack.bind(this));
     html.find(".weapon-action[data-action='parry']").on("click", this._onWeaponParry.bind(this));
-    // Item controls
-    html.find(".item-name").on("click", this._onItemExpand.bind(this));
-    html.find(".item-control[data-action='create']").on("click", this._onItemCreate.bind(this));
-    html.find(".item-control[data-action='edit']").on("click", this._onItemEdit.bind(this));
-    html.find(".item-control[data-action='delete']").on("click", this._onItemDelete.bind(this));
-    html.find(".item-action[data-action='message']").on("click", this._onItemSendToChat.bind(this));
-    html.find("input[data-action='resource-edit']").on("change", this._onChangeResourceValue.bind(this));
   }
 
   /**
@@ -97,93 +89,6 @@ export class ActorSheetRevolver extends ActorSheetIR {
     const attribute = button.data("attribute");
     const attributeValue = this.getData().systemData.attributes[attribute].value;
     RollHelper.createAttributeCheckRoll(attribute, title, attributeValue, this.actor.getRollData(), useModifiers);
-  }
-
-  /**
-   * Listen for click events on item expand button.
-   * @param {MouseEvent} event The originating left click event
-   */
-  _onItemSendToChat(event) {
-    event.preventDefault();
-
-    const button = event.currentTarget;
-    const li = button.closest(".item");
-    const item = this.actor.items.get(li?.dataset.itemId);
-    if (item.data.data.tags) {
-      item.data.data.tagLabels = item.data.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }));
-    }
-
-    Helper.sendItemToChat(item, this.object.data.data.color);
-  }
-
-  /**
-   * Listen for resource value change events.
-   * @param {MouseEvent} event The originating left click event
-   */
-  _onChangeResourceValue(event) {
-    event.preventDefault();
-
-    const input = event.currentTarget;
-    const li = input.closest(".item");
-    const item = this.actor.items.get(li?.dataset.itemId);
-    item.update({ "data.resource.value": input.value });
-  }
-
-  /**
-   * Listen for click events on item expand button.
-   * @param {MouseEvent} event The originating left click event
-   */
-  _onItemExpand(event) {
-    event.preventDefault();
-
-    const button = event.currentTarget;
-    const $li = $(button.closest(".item"));
-
-    if ($li.hasClass("expanded")) {
-      $li.children(".item-summary").slideUp(200);
-      $li.removeClass("expanded");
-    } else {
-      $li.children(".item-summary").slideDown(200);
-      $li.addClass("expanded");
-    }
-  }
-
-  /**
-   * Listen for click events on item create button.
-   * @param {MouseEvent} event The originating left click event
-   */
-  _onItemCreate(event) {
-    event.preventDefault();
-
-    const button = event.currentTarget;
-    const cls = getDocumentClass("Item");
-    return cls.create({ name: game.i18n.localize("IR.ItemNew"), type: button.dataset.itemType }, { parent: this.actor });
-  }
-
-  /**
-   * Listen for click events on item edit button.
-   * @param {MouseEvent} event The originating left click event
-   */
-  _onItemEdit(event) {
-    event.preventDefault();
-
-    const button = event.currentTarget;
-    const li = button.closest(".item");
-    const item = this.actor.items.get(li?.dataset.itemId);
-    return item.sheet.render(true);
-  }
-
-  /**
-   * Listen for click events on item delete button.
-   * @param {MouseEvent} event The originating left click event
-   */
-  _onItemDelete(event) {
-    event.preventDefault();
-
-    const button = event.currentTarget;
-    const li = button.closest(".item");
-    const item = this.actor.items.get(li?.dataset.itemId);
-    return item.delete();
   }
 
   /**

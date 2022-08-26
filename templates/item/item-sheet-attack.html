@@ -1,0 +1,54 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+            </h1>
+            <div class="sheet-property sheet-property-tags sheet-property-tags-flex">
+                <label>{{localize "IR.WeaponTags"}}</label>
+                <div class="item-tag-list">
+                    {{#each tagLabels as |tag key|}}
+                    {{#if (eq tag.type "number")}}
+                    <span class="item-tag">{{localize tag.label}} {{tag.value}}</span>
+                    {{else}}
+                    <span class="item-tag">{{localize tag.label}}</span>
+                    {{/if}}
+                    {{/each}}
+                </div>
+                <a class="weapon-control" title="{{localize 'IR.WeaponTags'}}" data-action="tags">
+                    <i class="fas fa-edit"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        <div class="sheet-subsection">
+            <div class="sheet-property-group">
+                <div class="sheet-property">
+                    <label>{{localize "IR.WeaponHits"}}</label>
+                    <input type="text" name="data.hits" value="{{systemData.hits}}" />
+                </div>
+                <div class="sheet-property">
+                    <label>{{localize "IR.AttackImpact"}}</label>
+                    <input type="text" name="data.impact" value="{{systemData.impact}}" />
+                </div>
+            </div>
+            <div class="sheet-property-group">
+                <div class="sheet-property">
+                    <label>{{localize "IR.WeaponBand"}}</label>
+                    <input type="text" name="data.band" value="{{systemData.band}}" />
+                </div>
+            </div>
+        </div>
+        <h3 class="sheet-subheading">{{localize "IR.AttackDescription"}}</h3>
+        <div class="editor-wrapper-flex">
+            {{editor content=systemData.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+    </section>
+
+</form>

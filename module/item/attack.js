@@ -1,5 +1,9 @@
 import { ItemSheetIR } from "./itemSheet.js";
 
+import { TraitSelector } from "../traitSelector.js";
+
+import { WEAPON_TRAITS } from "./weapon.js";
+
 /**
  * ItemSheet for attacks made by actors
  * @extends {ItemSheet}
@@ -23,6 +27,7 @@ export class ItemSheetAttack extends ItemSheetIR {
   getData() {
     const context = super.getData();
     context.systemData = context.data.data;
+    context.tagLabels = context.systemData.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }));
     return context;
   }
 
@@ -34,9 +39,22 @@ export class ItemSheetAttack extends ItemSheetIR {
 
     // Everything below here is only needed if the sheet is editable
     if (!this.isEditable) return;
+
+    html.find(".weapon-control[data-action='tags']").on("click", this._onTagSelector.bind(this));
   }
 
   /* -------------------------------------------- */
+
+  _onTagSelector(event) {
+    event.preventDefault();
+    const selectorOptions = {
+      title: "Weapon Tags",
+      traits: WEAPON_TRAITS,
+      objectProperty: "data.tags"
+    };
+
+    new TraitSelector(this.item, selectorOptions).render(true);
+  }
 
   /* -------------------------------------------- */
 
