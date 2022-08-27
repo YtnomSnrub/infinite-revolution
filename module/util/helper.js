@@ -79,6 +79,18 @@ export class Helper {
     });
   }
 
+  static async sendEffectToChat(effect, color) {
+    console.log(effect);
+    const content = await renderTemplate("systems/infinite-revolution/templates/chat/card-effect.html", { effect, color });
+
+    await ChatMessage.create({
+      rollMode: game.settings.get("core", "rollMode"),
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: content
+    });
+  }
+
   static getAttackModifier(item, actor) {
     let modifier = 0;
     const itemData = item.data.data;

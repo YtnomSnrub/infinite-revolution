@@ -26,11 +26,12 @@ export class ActorSheetIR extends ActorSheet {
     html.find(".item-control[data-action='edit']").on("click", this._onItemEdit.bind(this));
     html.find(".item-control[data-action='delete']").on("click", this._onItemDelete.bind(this));
     html.find(".item-action[data-action='message']").on("click", this._onItemSendToChat.bind(this));
+    html.find(".effect-action[data-action='message']").on("click", this._onEffectSendToChat.bind(this));
     html.find("input[data-action='resource-edit']").on("change", this._onChangeResourceValue.bind(this));
   }
 
   /**
-   * Listen for click events on item expand button.
+   * Listen for click events on item send to chat button.
    * @param {MouseEvent} event The originating left click event
    */
   _onItemSendToChat(event) {
@@ -44,6 +45,19 @@ export class ActorSheetIR extends ActorSheet {
     }
 
     Helper.sendItemToChat(item, this.object.data.data.color);
+  }
+
+  /**
+   * Listen for click events on effect send to chat button.
+   * @param {MouseEvent} event The originating left click event
+   */
+  _onEffectSendToChat(event) {
+    event.preventDefault();
+
+    const button = event.currentTarget;
+    const li = button.closest(".effect");
+    const effect = this.actor.effects.get(li?.dataset.effectId);
+    Helper.sendEffectToChat(effect, this.object.data.data.color);
   }
 
   /**
