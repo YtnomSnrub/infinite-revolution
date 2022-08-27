@@ -78,4 +78,22 @@ export class Helper {
       content: content
     });
   }
+
+  static getAttackModifier(item, actor) {
+    let modifier = 0;
+    const itemData = item.data.data;
+    // Get tags
+    const tags = itemData.tags;
+    // Apply tags
+    if (tags.some(x => x.name === "precise")) modifier += 1;
+
+    // Get flags
+    const flags = actor.data.flags.ir || {};
+    // Apply flags
+    modifier += Number.parseInt(flags.bonusAttack) || 0;
+    if (itemData.rangeType === "melee") modifier += Number.parseInt(flags.bonusAttackMelee) || 0;
+    if (itemData.rangeType === "ranged") modifier += Number.parseInt(flags.bonusAttackRanged) || 0;
+
+    return modifier;
+  }
 }

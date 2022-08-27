@@ -3,7 +3,8 @@
  * Author: Joel Launder
  */
 
-// Import Modules
+import { IR } from "./config.js";
+
 import { ActorIR } from "./actor/entity.js";
 import { ActorSheetRevolver } from "./actor/revolver.js";
 import { ActorSheetVeil } from "./actor/veil.js";
@@ -12,13 +13,13 @@ import { ItemIR } from "./item/item.js";
 import { ItemSheetWeapon } from "./item/weapon.js";
 import { ItemSheetAttack } from "./item/attack.js";
 import { ItemSheetPower } from "./item/power.js";
-import { ItemSheetSection } from "./item/section.js";
+import { ItemSheetTab } from "./item/section.js";
 
 import { ChatLogIR } from "./chat/chatLog.js";
 
-import { TokenIR, TokenDocumentIR } from "./token.js";
+import { TokenIR, TokenDocumentIR } from "./token/token.js";
 
-import { preloadHandlebarsTemplates } from "./templates.js";
+import { preloadHandlebarsTemplates } from "./util/templates.js";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -29,6 +30,8 @@ import { preloadHandlebarsTemplates } from "./templates.js";
  */
 Hooks.once("init", async function() {
   console.log("Initializing Infinite Revolution System");
+
+  CONFIG.IR = IR;
 
   /**
    * Set an initiative formula for the system. This will be updated later.
@@ -88,7 +91,7 @@ Hooks.once("init", async function() {
   Items.registerSheet("infinite-revolution", ItemSheetWeapon, { types: ["weapon"], makeDefault: true });
   Items.registerSheet("infinite-revolution", ItemSheetAttack, { types: ["attack"], makeDefault: true });
   Items.registerSheet("infinite-revolution", ItemSheetPower, { types: ["power"], makeDefault: true });
-  Items.registerSheet("infinite-revolution", ItemSheetSection, { types: ["section"], makeDefault: true });
+  Items.registerSheet("infinite-revolution", ItemSheetTab, { types: ["section"], makeDefault: true });
 
   /**
    * Slugify a string.

@@ -11,7 +11,29 @@
     },
     "description": "<p>At the start of each of your turns, you can take 2 <strong>Drive Stress</strong> to activate your <span class=\"infinite-revolution-highlight\"><strong>GRAVITY WELL</strong></span> this round. While active, you gain +2 <strong>Weight</strong> and are <strong>Slowed</strong>, Matched allies gain +1 <strong>Weight</strong>, and Matched foes are <strong>Locked</strong>.</p>"
   },
-  "effects": [],
+  "effects": [
+    {
+      "_id": "f9n1IvRGr73FeuHn",
+      "changes": [
+        {
+          "key": "data.core.weight",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "disabled": true,
+      "duration": {
+        "startTime": null,
+        "rounds": 1
+      },
+      "icon": "icons/magic/lightning/barrier-shield-crackling-orb-pink.webp",
+      "label": "Gravity Well",
+      "origin": "Compendium.infinite-revolution.drive-passives.9AxxiH8qMP6AoNSA",
+      "transfer": true,
+      "flags": {},
+      "tint": null
+    }
+  ],
   "folder": null,
   "sort": 0,
   "permission": {

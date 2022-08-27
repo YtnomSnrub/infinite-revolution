@@ -1,7 +1,5 @@
 import { ActorSheetIR } from "./actorSheet.js";
 
-import { WEAPON_TRAITS } from "../item/weapon.js";
-
 /**
  * Extend the basic ActorSheet with Veil functionality.
  * @extends {ActorSheet}
@@ -30,7 +28,7 @@ export class ActorSheetVeil extends ActorSheetIR {
     // Add attacks
     context.items.attacks = context.data.items.filter(x => x.type === "attack").map(item => ({
       ...item,
-      tagLabels: item.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }))
+      tagLabels: item.data.tags.map(x => ({ ...CONFIG.IR.weaponTraits.find(y => x.name === y.name), value: x.value }))
     }));
 
     // Add powers

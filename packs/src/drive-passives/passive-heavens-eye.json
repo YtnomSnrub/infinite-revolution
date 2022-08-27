@@ -11,7 +11,28 @@
     },
     "description": "<p>Your Ranged weapons gain +1 die and deal <strong>triple</strong> Harm on Crits.</p>\n<p>Once per turn after you roll to attack, you can take any amount of <strong>Drive Stress</strong> to reroll that many dice.</p>"
   },
-  "effects": [],
+  "effects": [
+    {
+      "_id": "dKFmz8TdWXEExsiK",
+      "changes": [
+        {
+          "key": "flags.ir.bonusAttackRanged",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null
+      },
+      "icon": "icons/magic/perception/eye-tendrils-web-purple.webp",
+      "label": "Heaven's Eye",
+      "origin": "Compendium.infinite-revolution.drive-passives.Or9CTgDlVKVJjo1W",
+      "transfer": true,
+      "flags": {},
+      "tint": null
+    }
+  ],
   "folder": null,
   "sort": 0,
   "permission": {

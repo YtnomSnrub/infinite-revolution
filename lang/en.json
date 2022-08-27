@@ -15,9 +15,10 @@
   "IR.CheckResultFailure": "Failure",
   "IR.CheckResultSuccess": "Success",
 
-  "IR.PlayerSectionCore": "Core",
-  "IR.PlayerSectionEffects": "Effects",
-  "IR.PlayerSectionDescription": "Description",
+  "IR.SheetTabCore": "Core",
+  "IR.SheetTabEffects": "Effects",
+  "IR.SheetTabDescription": "Description",
+  "IR.SheetTabSection": "Section",
 
   "IR.SheetHeadingWeapons": "Weapons",
   "IR.SheetHeadingAttacks": "Attacks",
@@ -138,6 +139,22 @@
   "IR.SectionUseResource": "Use Resource",
   "IR.SectionDescription": "Description",
 
+  "IR.EffectName": "Name",
+  "IR.EffectSource": "Source",
+  "IR.EffectDuration": "Duration",
+  "IR.EffectCreate": "Create Effect",
+  "IR.EffectToggle": "Toggle Effect",
+  "IR.EffectEdit": "Edit Effect",
+  "IR.EffectEnable": "Enable Effect",
+  "IR.EffectDelete": "Delete Effect",
+  "IR.EffectDisable": "Disable Effect",
+  "IR.EffectTemporary": "Temporary Effects",
+  "IR.EffectPassive": "Passive Effects",
+  "IR.EffectInactive": "Inactive Effects",
+  "IR.EffectNew": "New Effect",
+  "IR.EffectUnavailable": "Unavailable Effects",
+  "IR.EffectUnavailableInfo": "Source item must be equipped or attuned to activate these",
+
   "IR.Done": "Done",
 
   "IR.CheckModifier": "Check Modifier",
@@ -147,5 +164,10 @@
   "IR.RerollMenu.BlankForRandom": "Leave blank for a random value",
   "IR.RerollMenu.AddDie": "Add Die",
   "IR.RerollMenu.RemoveDie": "Remove Die",
-  "IR.RerollMenu.RerollLowest": "Reroll Lowest Die"
+  "IR.RerollMenu.RerollLowest": "Reroll Lowest Die",
+
+  "IR.SectionBonuses": "Bonuses",
+  
+  "IR.FlagsBonusAttackRanged": "Ranged bonus",
+  "IR.FlagsBonusAttackRangedHint": "Modify the number of dice rolled by ranged attacks."
 }

@@ -1,4 +1,4 @@
-import { WEAPON_TRAITS } from "../item/weapon.js";
+import { Helper } from "../util/helper.js";
 
 export class RollHelper {
   static async createCheckRoll(r, htmlHeader, htmlContent, options = {}) {
@@ -86,20 +86,25 @@ export class RollHelper {
     }
   }
 
-  static async createWeaponCheckRoll(item, attributeValue, rollData, useModifiers) {
-    let dice = attributeValue;
-    if (item.data.data.tags.some(x => x.name === "precise")) dice += 1;
+  static async createWeaponCheckRoll(item, actor, attributeValue, useModifiers) {
+    const rollData = actor.getRollData();
+
+    // Apply modifiers
+    let dice = attributeValue + Helper.getAttackModifier(item, actor);
+    console.log(dice);
 
     const r = await this.getRollFromValue(dice, rollData, useModifiers);
     if (r) {
-      const tagLabels = item.data.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }));
+      const tagLabels = item.data.data.tags.map(x => ({ ...CONFIG.IR.weaponTraits.find(y => x.name === y.name), value: x.value }));
       const header = await renderTemplate("systems/infinite-revolution/templates/chat/action/attack-header.html", { item: item.data, tagLabels });
       const content = await renderTemplate("systems/infinite-revolution/templates/chat/action/attack-body.html", { item: item.data, tagLabels });
       this.createCheckRoll(r, header, content, { strongHitMinimum: item.data.data.strongHitMinimum });
     }
   }
 
-  static async createWeaponParryRoll(item, rollData) {
+  static async createWeaponParryRoll(item, actor) {
+    const rollData = actor.getRollData();
+
     const parryDice = item.data.data.parryDice || 1;
     const r = new Roll(`${parryDice}d6`, rollData);
     // Perform roll

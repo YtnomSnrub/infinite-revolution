@@ -26,7 +26,8 @@
             vertical-align: middle;
         }
 
-        .item-controls {
+        .item-controls,
+        .effect-controls {
             text-align: right;
         }
 
@@ -95,22 +96,30 @@
         .item-hits,
         .item-harm,
         .item-cost,
+        .item-source,
+        .item-duration,
         .item-attributes,
-        .item-controls {
+        .item-controls,
+        .effect-controls {
             flex: 1;
 
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
+
+            text-align: center;
         }
 
         .item-band,
         .item-hits,
         .item-harm,
         .item-cost,
+        .item-source,
+        .item-duration,
         .item-attributes,
-        .item-controls {
+        .item-controls,
+        .effect-controls {
             border-left: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -123,7 +132,7 @@
         }
 
         .item-hits {
-            flex: 0 0 70px;
+            flex: 0 0 80px;
         }
 
         .item-harm {
@@ -134,6 +143,14 @@
             flex: 0 0 60px;
         }
 
+        .item-source {
+            flex: 0 0 160px;
+        }
+
+        .item-duration {
+            flex: 0 0 110px;
+        }
+
         .item-attributes {
             flex: 0 0 110px;
 
@@ -142,16 +159,23 @@
             }
         }
 
-        .item-controls {
+        .item-controls,
+        .effect-controls {
             flex: 0 0 56px;
 
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
 
-            .item-control {
-                padding-right: 6px;
+            .item-control,
+            .effect-control {
+                margin-right: 2px;
+                width: 20px;
             }
+        }
+
+        .effect-controls {
+            flex: 0 0 72px;
         }
     }
 

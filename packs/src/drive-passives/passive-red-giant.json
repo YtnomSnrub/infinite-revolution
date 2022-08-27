@@ -11,7 +11,29 @@
     },
     "description": "<p>On your very first turn each combat, enter <span class=\"infinite-revolution-highlight\"><strong>RED GIANT STANCE</strong></span> until the start of your next turn. While in <span class=\"infinite-revolution-highlight\"><strong>RED GIANT STANCE</strong></span>, you gain +2 <strong>Accel</strong>, and your Projected weapons gain +1 Harm and <strong>Decel</strong> +2.</p>\n<p>Once you exit <span class=\"infinite-revolution-highlight\"><strong>RED GIANT STANCE</strong></span>, you canʼt enter it again until a full round has passed.</p>"
   },
-  "effects": [],
+  "effects": [
+    {
+      "_id": "lls6Z2nwBkgzyyDl",
+      "changes": [
+        {
+          "key": "data.core.accel",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "disabled": true,
+      "duration": {
+        "startTime": null,
+        "rounds": 1
+      },
+      "icon": "icons/magic/earth/orb-ringed-lava-black-orange.webp",
+      "label": "Red Giant Stance",
+      "origin": "Compendium.infinite-revolution.drive-passives.W3x73GKn6WVNQHFW",
+      "transfer": true,
+      "flags": {},
+      "tint": null
+    }
+  ],
   "folder": null,
   "sort": 0,
   "permission": {

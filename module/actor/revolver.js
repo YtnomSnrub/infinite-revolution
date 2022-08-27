@@ -2,7 +2,7 @@ import { RollHelper } from "../chat/rollHelper.js";
 
 import { ActorSheetIR } from "./actorSheet.js";
 
-import { WEAPON_TRAITS } from "../item/weapon.js";
+import { ActiveEffectIR } from "../effects/activeEffect.js";
 
 /**
  * Extend the basic ActorSheet with functionality for revolvers.
@@ -32,7 +32,7 @@ export class ActorSheetRevolver extends ActorSheetIR {
     // Add weapons
     context.items.weapons = context.data.items.filter(x => x.type === "weapon").map(item => ({
       ...item,
-      tagLabels: item.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value })),
+      tagLabels: item.data.tags.map(x => ({ ...CONFIG.IR.weaponTraits.find(y => x.name === y.name), value: x.value })),
       hasParry: item.data.tags.some(x => x.name === "parry")
     }));
 
@@ -40,6 +40,8 @@ export class ActorSheetRevolver extends ActorSheetIR {
     context.items.powers = context.data.items.filter(x => x.type === "power");
     // Add sections
     context.items.sections = context.data.items.filter(x => x.type === "section");
+    // Prepare active effects
+    context.effectCategories = ActiveEffectIR.prepareActiveEffectCategories(this.actor.effects);
 
     return context;
   }
@@ -60,6 +62,9 @@ export class ActorSheetRevolver extends ActorSheetIR {
     // Weapon actions
     html.find(".weapon-attribute").on("click", this._onWeaponAttack.bind(this));
     html.find(".weapon-action[data-action='parry']").on("click", this._onWeaponParry.bind(this));
+
+    // Active Effect management
+    html.find(".effect-control").click(ev => ActiveEffectIR.onManageActiveEffect(ev, this.actor));
   }
 
   /**
@@ -107,7 +112,7 @@ export class ActorSheetRevolver extends ActorSheetIR {
     const li = button.closest(".item");
     const item = this.actor.items.get(li?.dataset.itemId);
 
-    RollHelper.createWeaponCheckRoll(item, attributeValue, this.actor.getRollData(), useModifiers);
+    RollHelper.createWeaponCheckRoll(item, this.actor, attributeValue, useModifiers);
   }
 
   /**
@@ -121,7 +126,7 @@ export class ActorSheetRevolver extends ActorSheetIR {
     const li = button.closest(".item");
     const item = this.actor.items.get(li?.dataset.itemId);
 
-    RollHelper.createWeaponParryRoll(item, this.actor.getRollData());
+    RollHelper.createWeaponParryRoll(item, this.actor);
   }
 
   /* -------------------------------------------- */

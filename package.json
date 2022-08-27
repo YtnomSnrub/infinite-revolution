@@ -1,7 +1,4 @@
 {
-  "name": "infinite-revolution",
-  "version": "0.0.4-beta",
-  "description": "Infinite Revolution",
   "scripts": {
     "build": "gulp buildAll",
     "build:clean": "gulp cleanPacks",
@@ -12,12 +9,6 @@
     "lint": "gulp lint",
     "lint:fix": "gulp lint --fix"
   },
-  "browserslist": [
-    "last 3 versions"
-  ],
-  "author": "",
-  "license": "MIT",
-  "private": true,
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.4",
     "eslint-plugin-jsdoc": "^39.3.6",

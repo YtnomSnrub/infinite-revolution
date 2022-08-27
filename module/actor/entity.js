@@ -1,4 +1,4 @@
-import { Helper } from "../helper.js";
+import { Helper } from "../util/helper.js";
 
 /**
  * Extend the base Actor document to support attributes and groups with a custom template creation dialog.

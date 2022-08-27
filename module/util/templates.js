@@ -6,6 +6,7 @@
 export const preloadHandlebarsTemplates = async function() {
   // Define template paths to load
   const templatePaths = [
+    "systems/infinite-revolution/templates/partials/item-table-effects.html",
     "systems/infinite-revolution/templates/actor/partials/item-table-attacks.html",
     "systems/infinite-revolution/templates/actor/partials/item-table-powers.html",
     "systems/infinite-revolution/templates/actor/partials/item-table-weapons.html"

@@ -1,4 +1,4 @@
-import { Helper } from "../helper.js";
+import { Helper } from "../util/helper.js";
 
 /**
  * Extend the base Item document for Infinite Revolution

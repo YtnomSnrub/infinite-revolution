@@ -1,0 +1,53 @@
+{{#each effectCategories as |section sid|}}
+{{#unless section.hidden}}
+<div class="sheet-section-divider"></div>
+<div class="sheet-section">
+    <h3 class="sheet-section-heading">{{localize section.label}}</h3>
+
+    {{#if section.info}}
+    <ol class="info">
+        {{#each section.info}}
+        <li class="notification info">{{this}}</li>
+        {{/each}}
+    </ol>
+    {{/if}}
+
+    <div class="item-list" data-effect-type="{{section.type}}">
+        <div class="item-list-header">
+            <div class="item-list-heading item-title">{{localize "IR.EffectName"}}</div>
+            <div class="item-list-heading item-source">{{localize "IR.EffectSource"}}</div>
+            <div class="item-list-heading item-duration">{{localize "IR.EffectDuration"}}</div>
+            <div class="item-list-heading effect-controls">
+                {{#if @root.editable}}
+                <a class="effect-control" title="{{ localize 'IR.EffectCreate' }}" data-action="create"><i class="fas fa-plus"></i></a>
+                {{/if}}
+            </div>
+        </div>
+        <ol class="item-list-body">
+            {{#each section.effects as |effect|}}
+            <li class="item effect" data-effect-id="{{effect.id}}">
+                <div class="item-title">
+                    <div class="item-icon item-action" title="{{ localize 'IR.ItemSendToChat' }}" data-action="message">
+                        <img src="{{effect.data.icon}}" title="{{effect.data.label}}" />
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <div class="item-name">{{effect.data.label}}</div>
+                </div>
+                <div class="item-source">{{effect.sourceName}}</div>
+                <div class="item-duration">{{effect.duration.label}}</div>
+                <div class="effect-controls">
+                    {{#if @root.editable}}
+                    <a class="effect-control" data-action="toggle" title="{{#if effect.data.disabled}}{{localize 'IR.EffectEnable'}}{{else}}{{localize 'IR.EffectDisable'}}{{/if}}">
+                        <i class="fas {{#if effect.data.disabled}}fa-check{{else}}fa-times{{/if}}"></i>
+                    </a>
+                    <a class="effect-control" title="{{ localize 'IR.EffectEdit' }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                    <a class="effect-control" title="{{ localize 'IR.EffectDelete' }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                    {{/if}}
+                </div>
+            </li>
+            {{/each}}
+        </ol>
+    </div>
+</div>
+{{/unless}}
+{{/each}}

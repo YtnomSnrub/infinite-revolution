@@ -1,4 +1,3 @@
-
 /**
  * Extend the basic ItemSheet with Infinite Revolution functionality.
  * @extends {ActorSheet}

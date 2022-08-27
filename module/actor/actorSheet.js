@@ -1,6 +1,4 @@
-import { Helper } from "../helper.js";
-
-import { WEAPON_TRAITS } from "../item/weapon.js";
+import { Helper } from "../util/helper.js";
 
 /**
  * Extend the basic ActorSheet for Infinite Revolution.
@@ -42,7 +40,7 @@ export class ActorSheetIR extends ActorSheet {
     const li = button.closest(".item");
     const item = this.actor.items.get(li?.dataset.itemId);
     if (item.data.data.tags) {
-      item.data.data.tagLabels = item.data.data.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }));
+      item.data.data.tagLabels = item.data.data.tags.map(x => ({ ...CONFIG.IR.weaponTraits.find(y => x.name === y.name), value: x.value }));
     }
 
     Helper.sendItemToChat(item, this.object.data.data.color);

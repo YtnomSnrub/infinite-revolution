@@ -34,9 +34,9 @@
 
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="core">{{localize "IR.PlayerSectionCore"}}</a>
-        <a class="item" data-tab="effects">{{localize "IR.PlayerSectionEffects"}}</a>
-        <a class="item" data-tab="description">{{localize "IR.PlayerSectionDescription"}}</a>
+        <a class="item" data-tab="core">{{localize "IR.SheetTabCore"}}</a>
+        <a class="item" data-tab="effects">{{localize "IR.SheetTabEffects"}}</a>
+        <a class="item" data-tab="description">{{localize "IR.SheetTabDescription"}}</a>
     </nav>
 
     {{!-- Sheet Body --}}
@@ -122,6 +122,11 @@
                     {{localize "IR.SheetButtonAddSection"}}
                 </a>
             </div>
+        </div>
+
+        {{!-- Effects Tab --}}
+        <div class="tab effects" data-group="primary" data-tab="effects">
+            {{> "systems/infinite-revolution/templates/partials/item-table-effects.html"}}
         </div>
 
         {{!-- Biography Tab --}}

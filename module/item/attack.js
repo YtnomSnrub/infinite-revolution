@@ -1,8 +1,6 @@
 import { ItemSheetIR } from "./itemSheet.js";
 
-import { TraitSelector } from "../traitSelector.js";
-
-import { WEAPON_TRAITS } from "./weapon.js";
+import { TraitSelector } from "../util/traitSelector.js";
 
 /**
  * ItemSheet for attacks made by actors
@@ -27,7 +25,7 @@ export class ItemSheetAttack extends ItemSheetIR {
   getData() {
     const context = super.getData();
     context.systemData = context.data.data;
-    context.tagLabels = context.systemData.tags.map(x => ({ ...WEAPON_TRAITS.find(y => x.name === y.name), value: x.value }));
+    context.tagLabels = context.systemData.tags.map(x => ({ ...CONFIG.IR.weaponTraits.find(y => x.name === y.name), value: x.value }));
     return context;
   }
 
@@ -49,7 +47,7 @@ export class ItemSheetAttack extends ItemSheetIR {
     event.preventDefault();
     const selectorOptions = {
       title: "Weapon Tags",
-      traits: WEAPON_TRAITS,
+      traits: CONFIG.IR.weaponTraits,
       objectProperty: "data.tags"
     };
 

@@ -6,7 +6,8 @@
     ],
     "templates": {
       "common": {
-        "speed": 0
+        "speed": 0,
+        "bonuses": {}
       }
     },
     "revolver": {
