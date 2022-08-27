@@ -5,6 +5,8 @@
 
 import { IR } from "./config.js";
 
+import { ActiveEffectIR } from "./effects/activeEffect.js";
+
 import { ActorIR } from "./actor/entity.js";
 import { ActorSheetRevolver } from "./actor/revolver.js";
 import { ActorSheetVeil } from "./actor/veil.js";
@@ -48,6 +50,7 @@ Hooks.once("init", async function() {
   };
 
   // Define custom Document classes
+  CONFIG.ActiveEffect.documentClass = ActiveEffectIR;
   CONFIG.Actor.documentClass = ActorIR;
   CONFIG.Item.documentClass = ItemIR;
   CONFIG.Token.documentClass = TokenDocumentIR;

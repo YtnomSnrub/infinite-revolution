@@ -48,6 +48,8 @@ export class ActiveEffectIR extends ActiveEffect {
     if (data.type === Boolean) {
       if (value === "false") change.value = false;
       else change.value = Boolean(value);
+    } else if (data.type === Number) {
+      change.value = Number.parseInt(value, 10);
     }
 
     return change;

@@ -25,7 +25,7 @@ export class ChatLogIR extends ChatLog {
               buttons: {
                 add: {
                   label: game.i18n.localize("IR.RerollMenu.AddDie"),
-                  callback: html => resolve(Number.parseInt(html[0].querySelector("form")["die-value"].value))
+                  callback: html => resolve(Number.parseInt(html[0].querySelector("form")["die-value"].value, 10))
                 }
               },
               default: "add",
@@ -92,7 +92,7 @@ export class ChatLogIR extends ChatLog {
               buttons: {
                 remove: {
                   label: game.i18n.localize("IR.RerollMenu.RemoveDie"),
-                  callback: html => resolve(Number.parseInt(html[0].querySelector("form")["die-value"].value))
+                  callback: html => resolve(Number.parseInt(html[0].querySelector("form")["die-value"].value, 10))
                 }
               },
               default: "remove",

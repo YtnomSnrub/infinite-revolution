@@ -19,6 +19,16 @@
           "key": "data.core.accel",
           "mode": 2,
           "value": "2"
+        },
+        {
+          "key": "flags.ir.bonusHarmProjected",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "flags.ir.bonusTagsProjected.decel",
+          "mode": 2,
+          "value": "2"
         }
       ],
       "disabled": true,

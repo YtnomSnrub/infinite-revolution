@@ -50,7 +50,7 @@ export class RollHelper {
           buttons: {
             roll: {
               label: game.i18n.localize("IR.CheckRoll"),
-              callback: html => resolve(Number.parseInt(html[0].querySelector("form")["modifier-value"].value))
+              callback: html => resolve(Number.parseInt(html[0].querySelector("form")["modifier-value"].value, 10))
             }
           },
           default: "roll",
@@ -59,7 +59,7 @@ export class RollHelper {
             dialog.element.find("[data-modifier]").on("click", event => {
               event.preventDefault();
               const button = event.currentTarget;
-              resolve(Number.parseInt(button.dataset.modifier));
+              resolve(Number.parseInt(button.dataset.modifier, 10));
               dialog.close();
             });
           }
@@ -90,14 +90,26 @@ export class RollHelper {
     const rollData = actor.getRollData();
 
     // Apply modifiers
-    let dice = attributeValue + Helper.getAttackModifier(item, actor);
-    console.log(dice);
+    const dice = attributeValue + Helper.getAttackModifier(item, actor);
+    // Determine harm
+    let harm = item.data.data.harm;
+    const harmBonus = Helper.getHarmModifier(item, actor);
+    if (Number.isNumeric(item.data.data.harm)) {
+      const harmValue = Number.parseInt(item.data.data.harm, 10);
+      harm = harmValue + harmBonus;
+    } else if (harmBonus > 0) {
+      harm = `${item.data.data.harm} + ${harmBonus}`;
+    } else if (harmBonus < 0) {
+      harm = `${item.data.data.harm} - ${-harmBonus}`;
+    }
 
     const r = await this.getRollFromValue(dice, rollData, useModifiers);
     if (r) {
-      const tagLabels = item.data.data.tags.map(x => ({ ...CONFIG.IR.weaponTraits.find(y => x.name === y.name), value: x.value }));
+      const weaponTags = Helper.modifyItemLabels(item, actor);
+      const tagLabels = weaponTags.map(x => ({ ...CONFIG.IR.weaponTraits.find(y => x.name === y.name), value: x.value }));
+
       const header = await renderTemplate("systems/infinite-revolution/templates/chat/action/attack-header.html", { item: item.data, tagLabels });
-      const content = await renderTemplate("systems/infinite-revolution/templates/chat/action/attack-body.html", { item: item.data, tagLabels });
+      const content = await renderTemplate("systems/infinite-revolution/templates/chat/action/attack-body.html", { item: item.data, harm, tagLabels });
       this.createCheckRoll(r, header, content, { strongHitMinimum: item.data.data.strongHitMinimum });
     }
   }

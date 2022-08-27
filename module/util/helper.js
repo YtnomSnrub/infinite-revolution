@@ -102,10 +102,64 @@ export class Helper {
     // Get flags
     const flags = actor.data.flags.ir || {};
     // Apply flags
-    modifier += Number.parseInt(flags.bonusAttack) || 0;
-    if (itemData.rangeType === "melee") modifier += Number.parseInt(flags.bonusAttackMelee) || 0;
-    if (itemData.rangeType === "ranged") modifier += Number.parseInt(flags.bonusAttackRanged) || 0;
+    modifier += flags.bonusAttack || 0;
+    if (itemData.rangeType === "melee") modifier += flags.bonusAttackMelee || 0;
+    if (itemData.rangeType === "ranged") modifier += flags.bonusAttackRanged || 0;
+    if (itemData.category === "mounted") modifier += flags.bonusAttackMounted || 0;
+    if (itemData.category === "projected") modifier += flags.bonusAttackProjected || 0;
 
     return modifier;
+  }
+
+  static getHarmModifier(item, actor) {
+    let modifier = 0;
+    const itemData = item.data.data;
+    // Get flags
+    const flags = actor.data.flags.ir || {};
+    // Apply flags
+    modifier += flags.bonusHarm || 0;
+    if (itemData.rangeType === "melee") modifier += flags.bonusHarmMelee || 0;
+    if (itemData.rangeType === "ranged") modifier += flags.bonusHarmRanged || 0;
+    if (itemData.category === "mounted") modifier += flags.bonusHarmMounted || 0;
+    if (itemData.category === "projected") modifier += flags.bonusHarmProjected || 0;
+    if (itemData.category === "projected" && itemData.rangeType === "melee") modifier += flags.bonusHarmProjectedMelee || 0;
+    if (itemData.category === "projected" && itemData.rangeType === "ranged") modifier += flags.bonusHarmProjectedRanged || 0;
+
+    return modifier;
+  }
+
+  static modifyItemLabels(item, actor) {
+    const itemData = item.data.data;
+    const itemTags = [...itemData.tags];
+    const flags = actor.data.flags.ir || {};
+
+    let bonusTagArray = [flags.bonusTags];
+    if (itemData.rangeType === "melee" && flags.bonusTagsMelee) bonusTagArray.push(flags.bonusTagsMelee);
+    if (itemData.rangeType === "ranged" && flags.bonusTagsRanged) bonusTagArray.push(flags.bonusTagsRanged);
+    if (itemData.category === "mounted" && flags.bonusTagsMounted) bonusTagArray.push(flags.bonusTagsMounted);
+    if (itemData.category === "projected" && flags.bonusTagsProjected) bonusTagArray.push(flags.bonusTagsProjected);
+    if (itemData.category === "projected" && itemData.rangeType === "melee" && flags.bonusTagsProjectedMelee) bonusTagArray.push(flags.bonusTagsProjectedMelee);
+    if (itemData.category === "projected" && itemData.rangeType === "ranged" && flags.bonusTagsProjectedRanged) bonusTagArray.push(flags.bonusTagsProjectedRanged);
+
+    bonusTagArray.forEach(bonusTags => {
+      if (bonusTags) {
+        Object.keys(bonusTags).forEach(tag => {
+          const index = itemTags.findIndex(x => x.name === tag);
+          if (index >= 0) {
+            if (Number.isNumeric(itemTags[index].value) && Number.isNumeric(bonusTags[tag])) {
+              const currentValue = Number.parseInt(itemTags[index].value);
+              const bonusValue = Number.parseInt(bonusTags[tag]);
+              itemTags[index] = {name: tag, value: currentValue + bonusValue};
+            } else {
+              itemTags[index] = {name: tag, value: `${itemTags[index].value} + ${bonusTags[tag]}`};
+            }
+          } else {
+            itemTags.push({name: tag, value: bonusTags[tag]});
+          }
+        });
+      }
+    });
+
+    return itemTags;
   }
 }

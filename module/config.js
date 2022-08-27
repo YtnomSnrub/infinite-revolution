@@ -37,10 +37,118 @@ IR.weaponTraits = [
 * }}
 */
 IR.characterFlags = {
+  bonusAttack: {
+    name: "IR.FlagsBonusAttack",
+    hint: "IR.FlagsBonusAttackHint",
+    section: "IR.SectionBonuses",
+    type: Number
+  },
+  bonusAttackMelee: {
+    name: "IR.FlagsBonusAttackMelee",
+    hint: "IR.FlagsBonusAttackMeleeHint",
+    section: "IR.SectionBonuses",
+    type: Number
+  },
   bonusAttackRanged: {
     name: "IR.FlagsBonusAttackRanged",
     hint: "IR.FlagsBonusAttackRangedHint",
     section: "IR.SectionBonuses",
     type: Number
+  },
+  bonusAttackMounted: {
+    name: "IR.FlagsBonusAttackMounted",
+    hint: "IR.FlagsBonusAttackMountedHint",
+    section: "IR.SectionBonuses",
+    type: Number
+  },
+  bonusAttackProjected: {
+    name: "IR.FlagsBonusAttackProjected",
+    hint: "IR.FlagsBonusAttackProjectedHint",
+    section: "IR.SectionBonuses",
+    type: Number
+  },
+  bonusHarm: {
+    name: "IR.FlagsBonusHarm",
+    hint: "IR.FlagsBonusHarmHint",
+    section: "IR.SectionBonuses",
+    type: Number
+  },
+  bonusHarmMelee: {
+    name: "IR.FlagsBonusHarmMelee",
+    hint: "IR.FlagsBonusHarmMeleeHint",
+    section: "IR.SectionBonuses",
+    type: Number
+  },
+  bonusHarmRanged: {
+    name: "IR.FlagsBonusHarmRanged",
+    hint: "IR.FlagsBonusHarmRangedHint",
+    section: "IR.SectionBonuses",
+    type: Number
+  },
+  bonusHarmMounted: {
+    name: "IR.FlagsBonusHarmMounted",
+    hint: "IR.FlagsBonusHarmMountedHint",
+    section: "IR.SectionBonuses",
+    type: Number
+  },
+  bonusHarmProjected: {
+    name: "IR.FlagsBonusHarmProjected",
+    hint: "IR.FlagsBonusHarmProjectedHint",
+    section: "IR.SectionBonuses",
+    type: Number
+  },
+  bonusHarmProjectedMelee: {
+    name: "IR.FlagsBonusHarmProjectedMelee",
+    hint: "IR.FlagsBonusHarmProjectedMeleeHint",
+    section: "IR.SectionBonuses",
+    type: Number
+  },
+  bonusHarmProjectedRanged: {
+    name: "IR.FlagsBonusHarmProjectedRanged",
+    hint: "IR.FlagsBonusHarmProjectedRangedHint",
+    section: "IR.SectionBonuses",
+    type: Number
+  },
+  bonusTags: {
+    name: "IR.FlagsBonusTags",
+    hint: "IR.FlagsBonusTagsHint",
+    section: "IR.SectionBonuses",
+    type: String
+  },
+  bonusTagsMelee: {
+    name: "IR.FlagsBonusTagsMelee",
+    hint: "IR.FlagsBonusTagsMeleeHint",
+    section: "IR.SectionBonuses",
+    type: String
+  },
+  bonusTagsRanged: {
+    name: "IR.FlagsBonusTagsRanged",
+    hint: "IR.FlagsBonusTagsRangedHint",
+    section: "IR.SectionBonuses",
+    type: String
+  },
+  bonusTagsMounted: {
+    name: "IR.FlagsBonusTagsMounted",
+    hint: "IR.FlagsBonusTagsMountedHint",
+    section: "IR.SectionBonuses",
+    type: String
+  },
+  bonusTagsProjected: {
+    name: "IR.FlagsBonusTagsProjected",
+    hint: "IR.FlagsBonusTagsProjectedHint",
+    section: "IR.SectionBonuses",
+    type: String
+  },
+  bonusTagsProjectedMelee: {
+    name: "IR.FlagsBonusTagsProjectedMelee",
+    hint: "IR.FlagsBonusTagsProjectedMeleeHint",
+    section: "IR.SectionBonuses",
+    type: String
+  },
+  bonusTagsProjectedRanged: {
+    name: "IR.FlagsBonusTagsProjectedRanged",
+    hint: "IR.FlagsBonusTagsProjectedRangedHint",
+    section: "IR.SectionBonuses",
+    type: String
   }
 };

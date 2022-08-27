@@ -10,10 +10,6 @@
       {
         "name": "agile",
         "value": true
-      },
-      {
-        "name": "taxing",
-        "value": true
       }
     ],
     "category": "projected",
