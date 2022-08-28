@@ -106,3 +106,31 @@ Hooks.once("init", async function() {
   // Preload template partials
   await preloadHandlebarsTemplates();
 });
+
+Hooks.once("canvasReady", async () => {
+  const statusIconFolder = "systems/infinite-revolution/icons/status";
+  const statusEffects = [
+    { id: "disrupted", label: "IR.StatusEffectDisrupted" },
+    { id: "fractured", label: "IR.StatusEffectFrcatured" },
+    { id: "locked", label: "IR.StatusEffectLocked" },
+    { id: "primed", label: "IR.StatusEffectPrimed" },
+    { id: "slowed", label: "IR.StatusEffectSlowed" },
+    { id: "strained", label: "IR.StatusEffectStrained" },
+    { id: "stunned", label: "IR.StatusEffectStunned" },
+    { id: "weakened", label: "IR.StatusEffectWeakened" },
+
+    { id: "antimatter-shell", label: "IR.StatusEffectAntimatterShell" },
+    { id: "dead-zone", label: "IR.StatusEffectDeadZone" },
+    { id: "inertia-charge", label: "IR.StatusEffectInertiaCharge" },
+    { id: "quantum-double", label: "IR.StatusEffectQuantumDouble" },
+    { id: "radiance", label: "IR.StatusEffectRadiance" },
+    { id: "sequenced", label: "IR.StatusEffectSequenced" }
+  ].sort((a, b) => game.i18n.localize(a.label).localeCompare(game.i18n.localize(b.label)));
+  statusEffects.unshift({ id: "dead", label: "IR.StatusEffectDead" });
+
+  statusEffects.forEach(status => {
+    status.icon = `${statusIconFolder}/${status.id}.svg`;
+  });
+
+  CONFIG.statusEffects = statusEffects;
+});

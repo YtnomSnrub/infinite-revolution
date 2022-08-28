@@ -166,6 +166,22 @@
   "IR.RerollMenu.RemoveDie": "Remove Die",
   "IR.RerollMenu.RerollLowest": "Reroll Lowest Die",
 
+  "IR.StatusEffectDead": "Defeated",
+  "IR.StatusEffectDisrupted": "Disrupted",
+  "IR.StatusEffectFrcatured": "Fractured",
+  "IR.StatusEffectLocked": "Locked",
+  "IR.StatusEffectPrimed": "Primed",
+  "IR.StatusEffectSlowed": "Slowed",
+  "IR.StatusEffectStunned": "Stunned",
+  "IR.StatusEffectStrained": "Strained",
+  "IR.StatusEffectWeakened": "Weakened",
+  "IR.StatusEffectAntimatterShell": "Antimatter Shell",
+  "IR.StatusEffectDeadZone": "Dead Zone",
+  "IR.StatusEffectInertiaCharge": "Inertia Charge",
+  "IR.StatusEffectQuantumDouble": "Quantum Double",
+  "IR.StatusEffectRadiance": "Radiance",
+  "IR.StatusEffectSequenced": "Sequenced",
+
   "IR.SectionBonuses": "Bonuses",
   
   "IR.FlagsBonusAttack": "Attack bonus",
