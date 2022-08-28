@@ -29,6 +29,7 @@ jobs:
         echo ::set-output name=ZIP_NAME::infinite-revolution.zip
         echo ::set-output name=RELEASE_DOWNLOAD_URL::https://github.com/${{github.repository}}/releases/download/latest/infinite-revolution.zip
         echo ::set-output name=RELEASE_INSTALL_URL::https://github.com/${{github.repository}}/releases/download/$TAG/system.json
+        echo ::set-output name=RELEASE_INSTALL_URL_LATEST::https://github.com/${{github.repository}}/releases/download/latest/system.json
         JSON=$(cat ./system.json)
         echo ::set-output name=SYSTEM_JSON::${JSON//'%'/'%25'}
 
@@ -87,7 +88,7 @@ jobs:
 
 
     # Create a release for this specific version
-    - name: Update Release with Files
+    - name: Create Version Release
       id: create_version_release
       uses: ncipollo/release-action@v1
       with:
@@ -99,3 +100,17 @@ jobs:
         artifacts: './system.json, ./${{steps.get_vars.outputs.ZIP_NAME}}'
         tag: ${{steps.get_vars.outputs.TAG_NAME}}
         body: '**Installation:** To manually install this release, please use the following manifest URL: ${{steps.get_vars.outputs.RELEASE_INSTALL_URL}}'
+
+    # Create a release for latest version
+    - name: Create Latest Release
+      id: create_latest_release
+      uses: ncipollo/release-action@v1
+      with:
+        allowUpdates: true # Set this to false if you want to prevent updating existing releases
+        name: latest
+        draft: false
+        prerelease: false
+        token: ${{ secrets.GITHUB_TOKEN }}
+        artifacts: './system.json, ./${{steps.get_vars.outputs.ZIP_NAME}}'
+        tag: latest
+        body: '**Installation:** To manually install this release, please use the following manifest URL: ${{steps.get_vars.outputs.RELEASE_INSTALL_URL_LATEST}}'
