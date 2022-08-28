@@ -11,7 +11,23 @@
     },
     "description": "<p>For the rest of the scene, you can use your action to activate your <span class=\"infinite-revolution-highlight\"><strong>EQUINOX WARD</strong></span>. While active:</p>\n<ul>\n<li>Youʼre permanently <strong>Locked</strong>, and gain 3 <strong>Inertia</strong> at the start of your turn.</li>\n<li>Matched allies deal +2 Harm with all weapons, and gain full <strong>Inertia</strong> from your <strong>Equilibrium</strong> passive instead of half.</li>\n<li>Attacks and powers from foes that arenʼt Matched to you have their Impact reduced by 2 and donʼt apply <strong>Statuses</strong>.</li>\n</ul>\n<p>You can deactivate <span class=\"infinite-revolution-highlight\"><strong>EQUINOX WARD</strong></span> at any time. Activate it now.</p>"
   },
-  "effects": [],
+  "effects": [
+    {
+      "_id": "xUD5Mya1cY9buDjg",
+      "changes": [],
+      "disabled": true,
+      "duration": {
+        "startTime": null,
+        "rounds": 1
+      },
+      "icon": "icons/skills/trades/academics-astronomy-navigation-blue.webp",
+      "label": "Equinox Ward",
+      "origin": "Compendium.infinite-revolution.drive-overdrives.sTWVhziuREqxy3db",
+      "transfer": true,
+      "flags": {},
+      "tint": null
+    }
+  ],
   "folder": null,
   "sort": 0,
   "permission": {

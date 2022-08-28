@@ -11,7 +11,23 @@
     },
     "description": "<p>Your next attack with a Ranged Weapon rolls <strong>double</strong> dice and is an <strong>automatic Crit</strong>. For each 6 you roll, increase the Harm dealt by +1 (before multipliers).</p>"
   },
-  "effects": [],
+  "effects": [
+    {
+      "_id": "262gidpSfdtAuvUm",
+      "changes": [],
+      "disabled": true,
+      "duration": {
+        "startTime": null,
+        "rounds": 1
+      },
+      "icon": "icons/magic/unholy/beam-impact-purple.webp",
+      "label": "Starpiercer",
+      "origin": "Compendium.infinite-revolution.drive-overdrives.dMsZ8qBBxLYrOHrd",
+      "transfer": true,
+      "flags": {},
+      "tint": ""
+    }
+  ],
   "folder": null,
   "sort": 0,
   "permission": {
