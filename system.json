@@ -2,7 +2,7 @@
   "name": "infinite-revolution",
   "title": "Infinite Revolution",
   "description": "Infinite revolution.",
-  "version": "0.1.0-beta",
+  "version": "0.1.0",
   "minimumCoreVersion": "9.245",
   "compatibleCoreVersion": "9",
   "authors": [
