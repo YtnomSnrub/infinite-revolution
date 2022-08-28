@@ -98,9 +98,9 @@ export class RollHelper {
       const harmValue = Number.parseInt(item.data.data.harm, 10);
       harm = harmValue + harmBonus;
     } else if (harmBonus > 0) {
-      harm = `${item.data.data.harm} + ${harmBonus}`;
+      harm = `${item.data.data.harm} [+${harmBonus}]`;
     } else if (harmBonus < 0) {
-      harm = `${item.data.data.harm} - ${-harmBonus}`;
+      harm = `${item.data.data.harm} [-${-harmBonus}]`;
     }
 
     const r = await this.getRollFromValue(dice, rollData, useModifiers);
