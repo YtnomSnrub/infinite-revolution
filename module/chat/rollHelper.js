@@ -8,11 +8,12 @@ export class RollHelper {
     const results = roll.dice[0].results.filter(x => x.active !== false);
     const weakHits = results.filter(x => x.result >= (options.weakHitMinimum || 4)).length;
     const strongHits = results.filter(x => x.result >= (options.strongHitMinimum || 6)).length;
+    const criticalHits = results.filter(x => x.result >= 6).length;
 
     // Calculate hit type
     let hitType = game.i18n.localize("IR.CheckResultNull");
     let hitClass = "hit-null";
-    if (strongHits >= 2) {
+    if (criticalHits >= 2) {
       hitType = game.i18n.localize("IR.CheckResultCrit");
       hitClass = "hit-crit";
     } else if (strongHits >= 1) {
