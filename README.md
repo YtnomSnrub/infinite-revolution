@@ -1,6 +1,6 @@
 # Infinite Revolution
 
-WARNING: This SYSTEM IS STILL UNDER ACTIVE DEVELOPMENT.
+WARNING: THIS SYSTEM IS STILL UNDER ACTIVE DEVELOPMENT.
 
 This is a FoundryVTT implementation of the Infinite Revolution: First Flight Edition system by Gwendolyn Clark, found at https://gwencie.itch.io/infinite-revolution.
 
