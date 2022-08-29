@@ -106,6 +106,10 @@ export class RollHelper {
 
     const r = await this.getRollFromValue(dice, rollData, useModifiers);
     if (r) {
+      if ("AutoAnimations" in window && canvas.tokens.controlled?.length) {
+        AutoAnimations.playAnimation(canvas.tokens.controlled[0], Array.from(game.user.targets), item);
+      }
+
       const weaponTags = Helper.modifyItemLabels(item, actor);
       const tagLabels = weaponTags.map(x => ({ ...CONFIG.IR.weaponTraits.find(y => x.name === y.name), value: x.value }));
 
