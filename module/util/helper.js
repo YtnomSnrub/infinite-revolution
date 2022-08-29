@@ -70,6 +70,10 @@ export class Helper {
 
   static async sendItemToChat(item, color) {
     const content = await renderTemplate(`systems/infinite-revolution/templates/chat/item-card-${item.type}.html`, { item: item.data, color });
+    // Play item animation
+    if ("AutoAnimations" in window && canvas.tokens.controlled?.length) {
+      AutoAnimations.playAnimation(canvas.tokens.controlled[0], Array.from(game.user.targets), item);
+    }
 
     await ChatMessage.create({
       rollMode: game.settings.get("core", "rollMode"),
