@@ -225,6 +225,9 @@
 
   "IR.MissionClock.Tension": "Tension",
   "IR.MissionClock.Incursion": "Incursion",
+  "IR.MissionClock.Increase": "Increase",
+  "IR.MissionClock.Decrease": "Decrease",
+  "IR.MissionClock.Reset": "Reset",
 
   "IR.Settings.TensionClock": "Show tension clock",
   "IR.Settings.TensionClockHint": "Display tension clock for all players",

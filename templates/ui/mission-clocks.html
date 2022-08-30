@@ -5,10 +5,13 @@
         <div class="clock-value">{{tension}}</div>
         {{#if isEditable}}
         <div class="clock-buttons">
-            <button type="button" data-action="subtract" data-key="tensionClock.value">
+            <button type="button" data-action="subtract" data-key="tensionClock.value" title="{{localize 'IR.MissionClock.Decrease'}}">
                 <i class="fa fa-chevron-left"></i>
             </button>
-            <button type="button" data-action="add" data-key="tensionClock.value">
+            <button type="button" data-action="reset" data-key="tensionClock.value" title="{{localize 'IR.MissionClock.Reset'}}">
+                <i class="fa fa-circle-notch"></i>
+            </button>
+            <button type="button" data-action="add" data-key="tensionClock.value" title="{{localize 'IR.MissionClock.Increase'}}">
                 <i class="fa fa-chevron-right"></i>
             </button>
         </div>
@@ -24,10 +27,13 @@
         <div class="clock-value">{{incursion}}</div>
         {{#if isEditable}}
         <div class="clock-buttons">
-            <button type="button" data-action="subtract" data-key="incursionClock.value">
+            <button type="button" data-action="subtract" data-key="incursionClock.value" title="{{localize 'IR.MissionClock.Decrease'}}">
                 <i class="fa fa-chevron-left"></i>
             </button>
-            <button type="button" data-action="add" data-key="incursionClock.value">
+            <button type="button" data-action="reset" data-key="incursionClock.value" title="{{localize 'IR.MissionClock.Reset'}}">
+                <i class="fa fa-circle-notch"></i>
+            </button>
+            <button type="button" data-action="add" data-key="incursionClock.value" title="{{localize 'IR.MissionClock.Increase'}}">
                 <i class="fa fa-chevron-right"></i>
             </button>
         </div>

@@ -48,6 +48,9 @@ export class MissionClocks extends FormApplication {
       case "subtract":
         value -= 1;
         break;
+      case "reset":
+        value = 0;
+        break;
     }
 
     game.settings.set("infinite-revolution", button.dataset.key, value);
