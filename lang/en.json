@@ -221,5 +221,15 @@
   "IR.FlagsBonusTagsProjectedMelee": "Melee projected bonus tags",
   "IR.FlagsBonusTagsProjectedMeleeHint": "Modify the tags for projected melee attacks.",
   "IR.FlagsBonusTagsProjectedRanged": "Ranged projected bonus tags",
-  "IR.FlagsBonusTagsProjectedRangedHint": "Modify the tags for projected ranged attacks."
+  "IR.FlagsBonusTagsProjectedRangedHint": "Modify the tags for projected ranged attacks.",
+
+  "IR.MissionClock.Tension": "Tension",
+  "IR.MissionClock.Incursion": "Incursion",
+
+  "IR.Settings.TensionClock": "Show tension clock",
+  "IR.Settings.TensionClockHint": "Display tension clock for all players",
+  "IR.Settings.IncursionClock": "Show incursion clock",
+  "IR.Settings.IncursionClockHint": "Display incursion clock for all players",
+  "IR.Settings.TensionClockValue": "Tension clock value",
+  "IR.Settings.IncursionClockValue": "Tension clock value"
 }

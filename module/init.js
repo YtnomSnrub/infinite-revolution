@@ -22,6 +22,7 @@ import { ChatLogIR } from "./chat/chatLog.js";
 import { TokenIR, TokenDocumentIR } from "./token/token.js";
 
 import { preloadHandlebarsTemplates } from "./util/templates.js";
+import { MissionClocks } from "./ui/missionClocks.js";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -105,9 +106,8 @@ Hooks.once("init", async function() {
 
   // Preload template partials
   await preloadHandlebarsTemplates();
-});
 
-Hooks.once("canvasReady", async () => {
+  // Register status effects
   const statusIconFolder = "systems/infinite-revolution/icons/status";
   const statusEffects = [
     { id: "disrupted", label: "IR.StatusEffectDisrupted" },
@@ -133,4 +133,63 @@ Hooks.once("canvasReady", async () => {
   });
 
   CONFIG.statusEffects = statusEffects;
+
+  // Register settings
+  game.settings.register("infinite-revolution", "tensionClock", {
+    name: game.i18n.localize("IR.Settings.TensionClock"),
+    hint: game.i18n.localize("IR.Settings.TensionClockHint"),
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: true,
+    onChange: value => {
+      game.missionClocks.render();
+    }
+  });
+
+  game.settings.register("infinite-revolution", "incursionClock", {
+    name: game.i18n.localize("IR.Settings.IncursionClock"),
+    hint: game.i18n.localize("IR.Settings.IncursionClockHint"),
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: true,
+    onChange: value => {
+      game.missionClocks.render();
+    }
+  });
+
+  game.settings.register("infinite-revolution", "tensionClock.value", {
+    name: game.i18n.localize("IR.Settings.TensionClockValue"),
+    hint: game.i18n.localize("IR.Settings.TensionClockValue"),
+    scope: "world",
+    config: false,
+    type: Number,
+    default: 0,
+    onChange: value => {
+      game.missionClocks.render();
+    }
+  });
+
+  game.settings.register("infinite-revolution", "incursionClock.value", {
+    name: game.i18n.localize("IR.Settings.IncursionClockValue"),
+    hint: game.i18n.localize("IR.Settings.IncursionClockValue"),
+    scope: "world",
+    config: false,
+    type: Number,
+    default: 0,
+    onChange: value => {
+      game.missionClocks.render();
+    }
+  });
+});
+
+Hooks.once("canvasReady", async () => {
+  game.missionClocks = await new MissionClocks().render(true);
+});
+
+Hooks.on("collapseSidebar", async () => {
+  if (game.missionClocks) {
+    game.missionClocks.updatePosition();
+  }
 });

@@ -1,0 +1,37 @@
+<form class="flexcol app infinite-revolution mission-clocks" autocomplete="off">
+    {{#if showTensionClock}}
+    <div class="mission-clock">
+        <h3 class="clock-heading">{{localize "IR.MissionClock.Tension"}}</h3>
+        <div class="clock-value">{{tension}}</div>
+        {{#if isEditable}}
+        <div class="clock-buttons">
+            <button type="button" data-action="subtract" data-key="tensionClock.value">
+                <i class="fa fa-chevron-left"></i>
+            </button>
+            <button type="button" data-action="add" data-key="tensionClock.value">
+                <i class="fa fa-chevron-right"></i>
+            </button>
+        </div>
+        {{/if}}
+    </div>
+    {{/if}}
+    {{#if (and showTensionClock showIncusionClock)}}
+    <div class="mission-clock-divider"></div>
+    {{/if}}
+    {{#if showIncusionClock}}
+    <div class="mission-clock">
+        <h3 class="clock-heading">{{localize "IR.MissionClock.Incursion"}}</h3>
+        <div class="clock-value">{{incursion}}</div>
+        {{#if isEditable}}
+        <div class="clock-buttons">
+            <button type="button" data-action="subtract" data-key="incursionClock.value">
+                <i class="fa fa-chevron-left"></i>
+            </button>
+            <button type="button" data-action="add" data-key="incursionClock.value">
+                <i class="fa fa-chevron-right"></i>
+            </button>
+        </div>
+        {{/if}}
+    </div>
+    {{/if}}
+</form>
