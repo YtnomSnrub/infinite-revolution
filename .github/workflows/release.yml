@@ -84,7 +84,7 @@ jobs:
 
 
     # Create a zip file with all files required by the module to add to the release
-    - run: zip ${{steps.get_vars.outputs.ZIP_NAME}} -r fonts lang module packs/*.db templates infinite-revolution.css LICENSE README.md system.json template.json
+    - run: zip ${{steps.get_vars.outputs.ZIP_NAME}} -r fonts icons lang module packs/*.db templates infinite-revolution.css LICENSE README.md system.json template.json
 
 
     # Create a release for this specific version
