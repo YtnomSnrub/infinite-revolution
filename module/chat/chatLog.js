@@ -65,7 +65,8 @@ export class ChatLogIR extends ChatLog {
           });
 
           const content = new DOMParser().parseFromString(message.data.content, "text/html");
-          content.body.removeChild(content.querySelector(".result-data"));
+          const resultData = content.querySelector(".result-data");
+          if (resultData) content.body.removeChild(resultData);
 
           await message.delete({ render: false });
           RollHelper.createCheckRoll(roll, message.data.flavor, content.body.innerHTML);
